@@ -1,0 +1,38 @@
+<ValueSet xmlns="http://hl7.org/fhir">
+	<meta>
+		<lastUpdated value="2016-12-03T00:00:00+00:00"/>
+	</meta>
+	<url value="https://fhir.nhs.uk/ValueSet/spine-chargeable-status-1"/>
+	<version value="1.0.0"/>
+	<name value="Spine Chargeable Status"/>
+	<status value="draft"/>
+	<publisher value="NHS Digital"/>
+	<contact>
+		<name value="Interoperability Team"/>
+		<telecom>
+			<system value="email"/>
+			<value value="interoperabilityteam@nhs.net"/>
+			<use value="work"/>
+		</telecom>
+	</contact>
+	<description value="Basic chargeable status for the patient."/>
+	<copyright value="Copyright © 2016 Health and Social Care Information Centre"/>
+	<codeSystem>
+		<system value="https://fhir.nhs.uk/spine-chargeable-status-1"/>
+		<concept>
+			<code value="Y"/>
+			<display value="Chargeable"/>
+			<definition value="The patient is likely chargeable for NHS Services."/>
+		</concept>
+		<concept>
+			<code value="N"/>
+			<display value="Not Chargeable"/>
+			<definition value="Paid or exempt from the health surcharge. "/>
+		</concept>
+		<concept>
+			<code value="U"/>
+			<display value="Unset"/>
+			<definition value="No specific information is available from the HO or an OVM to make a chargeable status determination."/>
+		</concept>
+	</codeSystem>
+</ValueSet>

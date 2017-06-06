@@ -1,0 +1,142 @@
+{
+  "resourceType": "ValueSet",
+  "meta": {
+    "lastUpdated": "2016-12-03T00:00:00+00:00"
+  },
+  "url": "https://fhir.nhs.uk/ValueSet/spine-error-or-warning-code-1",
+  "version": "1.0.0",
+  "name": "Spine Error or Warning Code",
+  "status": "draft",
+  "publisher": "NHS Digital",
+  "contact": [
+    {
+      "name": "Interoperability Team",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "interoperabilityteam@nhs.net",
+          "use": "work"
+        }
+      ]
+    }
+  ],
+  "description": "Spine error or warning code in response to a request.",
+  "copyright": "Copyright © 2016 Health and Social Care Information Centre",
+  "codeSystem": {
+    "system": "https://fhir.nhs.uk/spine-error-or-warning-code-1",
+    "concept": [
+      {
+        "code": "NO_RECORD_FOUND",
+        "display": "No record found"
+      },
+      {
+        "code": "PATIENT_NOT_FOUND",
+        "display": "Patient not found"
+      },
+      {
+        "code": "INVALID_NHS_NUMBER",
+        "display": "Invalid NHS number"
+      },
+      {
+        "code": "INVALID_CODE_SYSTEM",
+        "display": "Invalid code system"
+      },
+      {
+        "code": "INVALID_CODE_VALUE",
+        "display": "Invalid code value"
+      },
+      {
+        "code": "INVALID_VALUE",
+        "display": "An input field has an invalid value for its type"
+      },
+      {
+        "code": "INVALID_IDENTIFIER_SYSTEM",
+        "display": "Invalid identifier system"
+      },
+      {
+        "code": "INVALID_IDENTIFIER_VALUE",
+        "display": "Invalid identifier value"
+      },
+      {
+        "code": "CONFLICTING_VALUES",
+        "display": "Conflicting values have been specified in different fields"
+      },
+      {
+        "code": "INVALID_ELEMENT",
+        "display": "Invalid element"
+      },
+      {
+        "code": "AUTHOR_CREDENTIALS_ERROR",
+        "display": "Author credentials error"
+      },
+      {
+        "code": "INVALID_PARAMETER",
+        "display": "Invalid parameter"
+      },
+      {
+        "code": "REQUEST_UNMATCHED",
+        "display": "Request does not match authorisation token"
+      },
+      {
+        "code": "MESSAGE_NOT_WELL_FORMED",
+        "display": "Message not well formed"
+      },
+      {
+        "code": "NO_PATIENT_CONSENT",
+        "display": "Patient has not provided consent to share data"
+      },
+      {
+        "code": "NO_ORGANISATIONAL_CONSENT",
+        "display": "Organisation has not provided consent to share data"
+      },
+      {
+        "code": "BAD_REQUEST",
+        "display": "Bad request"
+      },
+      {
+        "code": "INVALID_RESOURCE",
+        "display": "Invalid validation of resource"
+      },
+      {
+        "code": "ORGANISATION_NOT_FOUND",
+        "display": "Organisation not found"
+      },
+      {
+        "code": "PRACTITIONER_NOT_FOUND",
+        "display": "Practitioner not found"
+      },
+      {
+        "code": "PATIENT_SENSITIVE",
+        "display": "Patient sensitive"
+      },
+      {
+        "code": "NO_RELATIONSHIP",
+        "display": "No legitimate relationship exists with this patient"
+      },
+      {
+        "code": "FHIR_CONSTRAINT_VIOLATION",
+        "display": "FHIR constraint violated"
+      },
+      {
+        "code": "FLAG_ALREADY_SET",
+        "display": "Flag value was already set"
+      },
+      {
+        "code": "INVALID_REQUEST_STATE",
+        "display": "The request exists but is not in an appropriate state for the call to succeed"
+      },
+      {
+        "code": "INVALID_REQUEST_TYPE",
+        "display": "The type of request is not supported by the API call"
+      },
+      {
+        "code": "ACCESS DENIED",
+        "display": "Access has been denied to process this request"
+      },
+      {
+        "code": "ASID_CHECK_FAILED",
+        "display": "The sender or receiver's ASID is not authorised for this interaction"
+      }
+    ]
+  }
+}

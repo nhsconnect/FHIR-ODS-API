@@ -1,0 +1,63 @@
+<ValueSet xmlns="http://hl7.org/fhir">
+	<meta>
+		<lastUpdated value="2016-12-03T00:00:00+00:00"/>
+	</meta>
+	<url value="https://fhir.nhs.uk/ValueSet/spine-category-status-1"/>
+	<version value="1.0.0"/>
+	<name value="Spine Category Status"/>
+	<status value="draft"/>
+	<publisher value="NHS Digital"/>
+	<contact>
+		<name value="Interoperability Team"/>
+		<telecom>
+			<system value="email"/>
+			<value value="interoperabilityteam@nhs.net"/>
+			<use value="work"/>
+		</telecom>
+	</contact>
+	<description value="Category chargeable status for the patient."/>
+	<copyright value="Copyright © 2016 Health and Social Care Information Centre"/>
+	<codeSystem>
+		<system value="https://fhir.nhs.uk/spine-category-status-1"/>
+		<concept>
+			<code value="NONE"/>
+			<display value="None"/>
+			<definition value="No status, use to negate any previous status."/>
+		</concept>
+		<concept>
+			<code value="DECISION_PENDING"/>
+			<display value="Decision Pending"/>
+			<definition value="Awaiting confirmation of charging status."/>
+		</concept>
+		<concept>
+			<code value="A"/>
+			<display value="Standard NHS"/>
+			<definition value="Ordinarily resident in the UK (according to the domestic Charging Regulations)."/>
+		</concept>
+		<concept>
+			<code value="B"/>
+			<display value="Surcharge Payee (or exempt)"/>
+			<definition value="Resident in UK, in possession of a valid visa AND (surcharge paid OR exempt)."/>
+		</concept>
+		<concept>
+			<code value="C"/>
+			<display value="Charge exempt (EHIC/PRC/S2)"/>
+			<definition value="Ordinarily resident in another EEA country AND (EHIC/PRC/S2 OR exempt)."/>
+		</concept>
+		<concept>
+			<code value="D"/>
+			<display value="Chargeable EEA"/>
+			<definition value="Ordinarily resident in another EEA country AND (No EHIC/PRC/S2 OR not exempt)."/>
+		</concept>
+		<concept>
+			<code value="E"/>
+			<display value="Charge exempt overseas/non-EEA"/>
+			<definition value="Not ordinarily resident in the UK, not paid, but exempt by personal status or treatment."/>
+		</concept>
+		<concept>
+			<code value="F"/>
+			<display value="Chargeable non-EEA"/>
+			<definition value="Not ordinarily resident in the UK or EEA, not paid, not exempt by personal status or treatment."/>
+		</concept>
+	</codeSystem>
+</ValueSet>
