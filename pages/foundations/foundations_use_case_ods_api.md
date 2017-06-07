@@ -1,10 +1,10 @@
 ---
-title: Visitors and Migrants Chargeable-Status Indicator
-keywords: nhsnumber, chargeable-status
+title: FHIR&reg; ODS API Use Case
+keywords: ODS;
 tags: [foundations,use_case]
 sidebar: foundations_sidebar
-permalink: foundations_use_case_chargeable_status_indicator.html
-summary: "Use case to search for an overseas Visitors and Migrants chargeable status indicator."
+permalink: foundations_use_case_ods_api.html
+summary: "Use case to search for an ODS Record."
 ---
 
 ## Prerequisites ##
@@ -20,41 +20,42 @@ To use this API, the requester:
 
 ## Request Headers ##
 
-All Visitors and Migrants APIs should include the below additional HTTP request headers to support audit and security requirements on the Spine:
+All FHIR&reg; ODS APIs should include the below additional HTTP request headers to support audit and security requirements on the Spine:
 
 | Header               | Value |
 |----------------------|-------|
 | `Ssp-TraceID`        | Client System TraceID (i.e. GUID/UUID). This is a unique ID that the client system should provide. It can be used to identify specific requests when troubleshooting issues with API calls. All calls into the service should have a unique TraceID so they can be uniquely identified later if required. |
 | `Ssp-From`           | Client System ASID |
 | `Ssp-To`             | The Spine ASID |
-| `Ssp-InteractionID`  | `urn:nhs:names:services:visitorsandmigrants:fhir:rest:search:observation`|
+| `Ssp-InteractionID`  | |
 | `Ssp-Version`  | `1` |
 | `Authorization`      | This will carry the base64 encoded JSON web token required for audit - see [Cross Organisation Audit and Provenance](integration_cross_organisation_audit_and_provenance.html) for details. |
 
-- Note: The Ssp-Version defaults to 1 if not supplied (this is currently the only version of the API). This indicates the major version of the interaction, so when new major releases of this specification are released (for example releases with breaking changes), implementors will need to specify the correct version in this header.
+- Note: The Ssp-Version defaults to 1 if not supplied (this is currently the only version of the API). This indicates the major version of the interaction, so when new major releases of this specification are released (for example releases with breaking changes), implementers will need to specify the correct version in this header.
 
-## Search for Chargeable-Status Indicator ##
+## Search for an ODS Record ##
 
-Search for a Visitors and Migrants Chargeable-Status Indicator `Observation` for a specified patient using a business identifier (i.e. the NHS Number).
+Search for an ODS Record `Organization` for a specified organization using a business identifier (i.e. the ODS Code).
 
 ```http
-GET [base]/Observation?subject:Patient.identifier=[system]|[value]&code=[system]|[code]
+GET [base]/Organization? to be defined
 ```
 
-- The `[system]` field for the Paient Itentifier SHALL be populated with the identifier system URL: `https://fhir.nhs.uk/Id/nhs-number`.
-- The `[system]` field for the Code SHALL be populated with the identifier system URL: `https://fhir.nhs.uk/fhir-observation-code-1`.
+To Update
+- The `[system]` field for the Organization Identifier SHALL be populated with the identifier system URL: `https://fhir.nhs.uk/Id/ods-organization-code`.
 - The `[base]` is the URL of the Spine endpoint.
 - Note: The mime-type can be specified to request either XML or JSON using another URL parameter `?_format=[mime-type]`, or a `Content-Type` HTTP header as per the [FHIR specification](https://www.hl7.org/fhir/http.html#mime-type).
 
 ### Search Response ###
 
+To Update
 Success:
 
 - SHALL return a `200` **OK** HTTP status code on successful execution of the interaction.
 - SHALL return a `Bundle` of `type` searchset, containing either:
-	- One matching `Observation` resource that conforms to the `spine-vm-observation-1` profile; or
-	- One `OperationOutcome` resource if the interaction is a success, however no Overseas Visitors and Migrants record has been found.
-- Where an Observation is returned, it SHALL include the `versionId` and `fullUrl` of the current version of the `observation` resource.
+	- One matching `Organization` resource that conforms to the `UPDATE with profile` profile; or
+	- One `OperationOutcome` resource if the interaction is a success, however no ODS record has been found.
+- Where an Organization is returned, it SHALL include the `versionId` and `fullUrl` of the current version of the `organization` resource.
 
 
 ```json

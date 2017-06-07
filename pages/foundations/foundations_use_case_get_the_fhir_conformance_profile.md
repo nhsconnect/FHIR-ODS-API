@@ -38,7 +38,7 @@ Consumers SHALL include the following additional HTTP request headers:
 | `Ssp-TraceID`        | Consumer's TraceID (i.e. GUID/UUID) |
 | `Ssp-From`           | Consumer's ASID |
 | `Ssp-To`             | Provider's ASID |
-| `Ssp-InteractionID`  | `urn:nhs:names:services:visitorsandmigrants:fhir:rest:read:metadata`|
+| `Ssp-InteractionID`  | |
 | `Authorization`      | This will carry the base64 encoded JSON web token required for audit - see [Cross Organisation Audit and Provenance](integration_cross_organisation_audit_and_provenance.html) for details. |
 
 #### Payload Request Body ####
@@ -59,7 +59,7 @@ No additional headers expected beyond those described in the HTTP and FHIR&reg; 
 
 - The Spine will return a `200` **OK** HTTP status code on successful retrival of the conformance profile.
 
-An example Conformance profile is available [here](Conformance/Spine-VM-ConformanceStatement-1.xml) - client systems should always use the Conformance profile from the above URL as the authoritative conformance statement - this is provided as an example for reference only.
+An example Conformance profile is available [here(UPDATE)](Conformance/) - client systems should always use the Conformance profile from the above URL as the authoritative conformance statement - this is provided as an example for reference only.
 
 ### C# ###
 

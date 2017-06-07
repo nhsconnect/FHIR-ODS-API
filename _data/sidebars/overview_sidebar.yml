@@ -1,7 +1,7 @@
 entries:
-- title: Visitors and Migrants
-  product: Visitors and Migrants<br/>
-  version: 1.0.0-alpha.1
+- title: FHIR&reg; ODS API
+  product: FHIR&reg; ODS API<br/>
+  version: Experimental
   levels: one
   folders:
 
@@ -38,8 +38,8 @@ entries:
     - title: FHIR&reg; Conformance Profile
       url: /foundations_use_case_get_the_fhir_conformance_profile.html
       output: web
-    - title: Search V&M Chargeable-Status Indicator
-      url: /foundations_use_case_chargeable_status_indicator.html
+    - title: Search ODS Record
+      url: /foundations_use_case_ods_api.html
       output: web
 
       subfolders:

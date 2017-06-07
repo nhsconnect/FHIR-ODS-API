@@ -2,16 +2,16 @@
 output: web
 # this property is useful for conditional filtering of content that is separate from the PDF.
 
-topnav_title: Visitors and Migrants FHIR&reg; API
+topnav_title: FHIR&reg; ODS API
 # this appears on the top navigation bar next to the home button
 
-site_title: Visitors and Migrants
+site_title: FHIR&reg; ODS API
 # this appears in the html browser tab for the site title (seen mostly by search engines, not users)
 
 company_name: NHS Digital
 # this appears in the footer
 
-github_editme_path: /edit/master/
+github_editme_path: /edit/develop/
 # if you're using Github, provide the basepath to the branch you've created for reviews, following the sample here. if not, leave this value blank.
 
 #disqus: true
@@ -107,7 +107,7 @@ gist:
   noscript: false
 
 gems:
-   - jekyll-github-metadata
+#   - jekyll-github-metadata
    - jekyll-mentions
    - jemoji
    - jekyll-redirect-from
