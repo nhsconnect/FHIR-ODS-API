@@ -9,7 +9,7 @@ summary: An overview of how capability packs (and other technical assets) are ve
 
 ## Product Versioning ##
 
-Versioning of each technical "Product" or asset (i.e. API Capability Pack, Design Principle(s), Data Library) is managed using [Semantic Versioning 2.0.0](http://semver.org/){:target="_blank"}.
+Versioning of each technical "Product" or asset (i.e. API, Design Principle(s), Data Library) is managed using [Semantic Versioning 2.0.0](http://semver.org/){:target="_blank"}.
 
 ### Semantic Versioning ###
 
@@ -42,7 +42,7 @@ The following pre-release labels will be used across all products:
 
 {% include todo.html content="The following table is published as a **work in progress** version and as such is subject to change and extension." %}
 
-Taking a similar approach to the [FHIR Maturity Model](http://wiki.hl7.org/index.php?title=FHIR_Maturity_Model){:target="_blank"} Visitors and Migrants will only freeze / master a technical specification once it has been independently implemented in at least three commercial systems and demonstrated to interoperate.
+Taking a similar approach to the [FHIR Maturity Model](http://wiki.hl7.org/index.php?title=FHIR_Maturity_Model){:target="_blank"} Care Connect will only freeze / master a technical specification once it has been independently implemented in at least three systems and demonstrated to interoperate.
 
 | Level | Version | Description | 
 |-------|---------|-------------| 

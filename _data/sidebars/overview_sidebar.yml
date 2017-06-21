@@ -1,7 +1,7 @@
 entries:
 - title: FHIR&reg; ODS API
-  product: FHIR&reg; ODS API<br/>
-  version: Experimental
+  product: FHIR&reg; ODS API
+  version: 0.0.0-alpha.0
   levels: one
   folders:
 
@@ -12,62 +12,161 @@ entries:
       url: /index.html
       output: web, pdf
       type: homepage
+    - title: API Journey
+      url: /overview_api_journey.html
+      output: web
+    - title: Provide APIs
+      url: /overview_api_provide.html
+      output: web
+    - title: Guide Versioning
+      url: /overview_guide_versioning.html
+      output: web
+    - title: Release Notes
+      url: /overview_release_notes.html
+      output: web
     - title: Glossary
       url: /overview_glossary.html
       output: web
 
-  - title: Design Approach
+  - title: Engage
     output: web
     folderitems:
-    - title: Maturity Model
-      url: /design_maturity_model.html
-      output: web
-    - title: Product Versioning
-      url: /design_product_versioning.html
-      output: web
 
-  - title: Development Guidance
-    output: web
-    folderitems:
-    - title: Development Assets
-      url: /development_deliverables.html
-      output: web
-    - title: API Foundations
-      url: /foundations.html
-      output: web
-    - title: FHIR&reg; Conformance Profile
-      url: /foundations_use_case_get_the_fhir_conformance_profile.html
-      output: web
-    - title: Search ODS Record
-      url: /foundations_use_case_ods_api.html
-      output: web
+    - title: Engagement Approach
+      url: /engage.html
+      output: web, pdf
+      type: homepage
 
       subfolders:
-      - title: FHIR&reg; API Guidance
+      - title: Case Studies
         output: web
         subfolderitems:
 
+        - title: "Case Study Overview"
+          url: /engage_case_studies.html
+          output: web
+        - title: "Michael's Story"
+          url: /engage_michaelsstory.html
+          output: web
+        - title: Bristol Connecting Care POC
+          url: /engage_poc_bristolcc.html
+          output: web
+
+  - title: Explore
+    output: web
+    folderitems:
+    - title: Overview
+      url: /explore.html
+      output: web
+    - title: FHIR&reg ODS API Versioning
+      url: /explore_cc_versioning.html
+      output: web
+      subfolders:
+      - title: Individuals &amp; Entities
+        output: web
+        subfolderitems:
+          - title: Organization
+            url: /restfulapis_identification_organization.html
+            output: web
+      - title: Foundation
+        output: web
+        subfolderitems:
+        - title: CapabilityStatement
+          url: /restfulapis_conformance_capabilitystatement.html
+          output: web
+        - title: ValueSet
+          url: /restfulapis_terminology_valueset.html
+          output: web
+        - title: CodeSystem
+          url: /restfulapis_terminology_codesystem.html
+          output: web		  
+      - title: API Guidance | FHIR&reg;
+        output: web
+        subfolderitems:
+        - title: Foundations
+          url: /foundations.html
+          output: web
+        - title: API Codes
+          url: /development_api_codes.html
+          output: web
         - title: Open Source
           url: /development_fhir_open_source_guidance.html
           output: web
+        - title: Reference
+          url: /development_deliverables.html
           output: web
-        - title: Security Guidance
-          url: /development_api_security_guidance.html
-          output: web
-   
-  - title: Integrate With Spine
+  - title: Design & Build
     output: web
     folderitems:
-    - title: Cross Org Audit & Provenance
-      url: /integration_cross_organisation_audit_and_provenance.html
+    - title: Overview
+      url: /design.html
       output: web
-    - title: Personal Demographic Service
-      url: /integration_personal_demographic_service.html
-      output: web	
-    - title: Spine Directory Services
-      url: /integration_spine_directory_service.html
+    - title: Patterns / Topology
+      url: /design_patterns.html
       output: web
- 
+    - title: Access
+      url: /design_access.html
+      output: web
+    - title: Security
+      url: /design_security.html
+      output: web
+
+      subfolders:
+      - title: Build
+        output: web
+        subfolderitems:
+          - title: Patient Search
+            url: /design_patient_search.html
+            output: web
+          - title: Clinical | Care Coord
+            url: /design_pcc_clinical.html
+            output: web
+          - title: Medication | Care Coord
+            url: /design_pcc_medication.html
+            output: web
+
+  - title: Test
+    output: web
+    folderitems:
+    - title: Overview
+      url: /test.html
+      output: web
+    - title: Patterns / Topology
+      url: /test_patterns.html
+      output: web
+    - title: Access
+      url: /test_access.html
+      output: web
+    - title: Security
+      url: /test_security.html
+      output: web
+
+  - title: Assure
+    output: web
+    folderitems:
+    - title: Overview
+      url: /assure.html
+      output: web
+    - title: Access
+      url: /assure_access.html
+      output: web
+    - title: Security
+      url: /assure_security.html
+      output: web
+
+  - title: Deploy
+    output: web
+    folderitems:
+    - title: Overview
+      url: /deploy.html
+      output: web
+    - title: Access
+      url: /deploy_access.html
+      output: web
+    - title: Security
+      url: /deploy_security.html
+      output: web
+
   - title: Help & Support
     output: web
     folderitems:
@@ -77,6 +176,19 @@ entries:
     - title: Communication Channels
       url: /support_communications.html
       output: web
+      subfolders:
+      - title: Where Else Can I Look?
+        output: web
+        subfolderitems:
+        - title: Community
+          url: /support_community.html
+          output: web
+        - title: FHIR Tools
+          url: /support_fhirtools.html
+          output: web
+        - title: Resource Definitions
+          url: /support_referenceapiservers.html
+          output: web
 
   - title: Tags
     output: web
@@ -87,12 +199,18 @@ entries:
     - title: FHIR&reg;
       url: /tag_fhir.html
       output: web
-    - title: Use Case
-      url: /tag_use_case.html
+    - title: User Stories
+      url: /tag_user_stories.html
+      output: web
+    - title: Case Studies
+      url: /tag_casestudies.html
       output: web
     - title: Design
       url: /tag_design.html
-      output: web	  
+      output: web
     - title: Development
       url: /tag_development.html
+      output: web
+    - title: Support
+      url: /tag_support.html
       output: web

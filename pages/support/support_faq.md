@@ -12,14 +12,14 @@ summary: "Frequently Asked Questions (FAQ)."
 
 As DSTU3 hasn’t yet been balloted the current version of FHIR is still DSTU2 and will be until later this year. Grahame Grieve has recently posted an update on his [OnFHIR blog](https://onfhir.hl7.org) around the next version of FHIR being a STU3 release with a tentative target release date of March 31st 2017.
 
-As outlined in the [FHIR Timelines](development_fhir_api_guidance.html#fhir-timelineshttphl7orgfhirtimelineshtml) section uplifting to newer versions of the FHIR standard is expected (in the sense that in principle it shouldn’t come as a surprise to anyone, as we’re utilising what is currently still a draft standard after all). The mechanism and timing of uplifts will be agreed by the Visitors and Migrants Programme.
+As outlined in the [FHIR Timelines](development_fhir_api_guidance.html#fhir-timelineshttphl7orgfhirtimelineshtml) section uplifting to newer versions of the FHIR standard is expected (in the sense that in principle it shouldn’t come as a surprise to anyone, as we’re utilising what is currently still a draft standard after all). The mechanism and timing of uplifts will be agreed by the INTEROPen&reg; Community.
 
 #### Why are you mandating support for both XML and JSON formats? ####
 
 Both JSON and XML serialisation formats are in scope for a number of reasons. After surveying the existing major FHIR implementations they almost all support both JSON and XML. As a FHIR back-end service it is important to enable ‘low impedance’ integration with both traditional server/desktop applications (which often use XML) and mobile/web applications (which are largely JSON). Obviously, when establishing a new open API ecosystem we want to be as open and inclusive as possible and hence feel that excluding either format would be a divisive move. 
 Several existing open source FHIR libraries exist which already supports both serialization formats (such as Java HAPI or Furore FHIR .NET) which should minimise development overhead for implementers.
 
-To ensure maximum accessibility, Visitors and Migrants is expecting clients to support both formats. However since XML is on average 30% larger on the wire there is a preference towards use of JSON.
+To ensure maximum accessibility, the Care Connect FHIR&reg; APIs will expect clients to support both formats. However since XML is on average 30% larger on the wire there is a preference towards use of JSON.
 
 #### Why is resource versioning included as a mandatory requirement? ####
 
@@ -29,7 +29,7 @@ It is a key principle of the FHIR RESTful APIs that all resources are versioned;
 
 #### Will it be necessary in all cases to use an NHS service to look up staff/organisation/location information when a supplier may have their own index of this information? ####
 
-You are welcome to use your own ODS index (i.e. to find an organisation by name/address etc.). However, you will need to perform an SDS lookup using the ODS code to resolve the FHIR endpoint that represents that ODS code for the purpose of using the Visitors and Migrants APIs.
+You are welcome to use your own ODS index (i.e. to find an organisation by name/address etc.). However, you will need to perform an SDS lookup using the ODS code to resolve the FHIR endpoint that represents that ODS code for the purpose of using the Care Connect APIs.
 
 #### Why is oAuth2 not used? ####
 

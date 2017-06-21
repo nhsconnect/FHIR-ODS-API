@@ -1,1 +1,25 @@
-<Observation xmlns="http://hl7.org/fhir"><id value="76e39290-d1aa-11e6-9598-0800200c9a66" /><meta><profile value="https://fhir.nhs.uk/StructureDefinition/spine-vm-observation-1" /></meta><status value="final" /><code><coding><system value="https://fhir.nhs.uk/fhir-observation-code-1" /><code value="0001" /><display value="Visitors and Migrants status observation" /></coding></code><subject><reference value="Patient/9900002831" /><display value="TAYLOR, Mary (Miss)" /></subject><effectiveDateTime value="2015-01-01T15:00:00+00:00" /><component><code><coding><system value="https://fhir.nhs.uk/spine-vm-observation-component-1" /><code value="BASIC_CHARGEABLE_STATUS" /><display value="Basic Chargeable Status" /></coding></code><valueCodeableConcept><coding><system value="https://fhir.nhs.uk/spine-chargeable-status-1" /><code value="Y" /><display value="Chargeable" /></coding></valueCodeableConcept></component><component><code><coding><system value="https://fhir.nhs.uk/spine-vm-observation-component-1" /><code value="CATEGORY_CHARGEABLE_STATUS" /><display value="Category Chargeable Status" /></coding></code><valueCodeableConcept><coding><system value="https://fhir.nhs.uk/spine-category-status-1" /><code value="F" /><display value="Chargeable non-EEA" /></coding></valueCodeableConcept></component></Observation>
+<Observation xmlns="http://hl7.org/fhir">
+    <meta>
+        <lastUpdated value="2017-05-23T10:36:52.408-04:00"/>
+        <profile value="https://fhir.hl7.org.uk/StructureDefinition/CareConnect-Observation-1"/>
+    </meta>
+    <identifier>
+        <system value="http://fhir.jorvik.nhs.uk/EPR/Observation"/>
+        <value value="878281"/>
+    </identifier>
+    <status value="final"/>
+    <code>
+        <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="162864005"/>
+            <display value="Body mass index 30+ - obesity"/>
+        </coding>
+    </code>
+    <subject>
+        <reference value="https://pds.proxy.nhs.uk/Patient/9876543210"/>
+    </subject>
+    <effectiveDateTime value="2012-09-17"/>
+    <performer>
+        <reference value="https://sds.proxy.nhs.uk/Practitioner/G8133438"/>
+    </performer>
+</Observation>
