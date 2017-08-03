@@ -1,14 +1,14 @@
 ---
-title: Introduction to FHIR&reg; ODS API
+title: Introduction to FHIR&reg; ODS Lookup API
 keywords: homepage
 tags: [overview]
 sidebar: overview_sidebar
 permalink: index.html
 toc: false
-summary: A brief introduction to getting started with the FHIR&reg; ODS API.
+summary: A brief introduction to getting started with the FHIR&reg; ODS Lookup API.
 ---
 
-{% include important.html content="This site is under active development by NHS Digital and is intended to provide all the technical resources you need to successfully utilise the FHIR&reg; ODS API. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis." %}
+{% include important.html content="This site is under active development by NHS Digital and is intended to provide all the technical resources you need to successfully utilise the FHIR&reg; ODS Lookup API. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis." %}
 
 
 # Introduction #
@@ -16,7 +16,7 @@ To add...
 
 
 # Using this guide #
-This guide has been created to support the use of the FHIR&reg; ODS API. To add...
+This guide has been created to support the use of the FHIR&reg; ODS Lookup API. To add...
 
 # Focus #
 

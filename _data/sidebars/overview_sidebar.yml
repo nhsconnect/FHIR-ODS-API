@@ -1,6 +1,6 @@
 entries:
-- title: FHIR&reg; ODS API
-  product: FHIR&reg; ODS API
+- title: FHIR&reg; ODS Lookup API
+  product: FHIR&reg; ODS Lookup API
   version: 0.0.0-alpha.0
   levels: one
   folders:
@@ -58,8 +58,8 @@ entries:
     - title: Overview
       url: /explore.html
       output: web
-    - title: FHIR&reg ODS API Versioning
-      url: /explore_cc_versioning.html
+    - title: FHIR&reg ODS Lookup API Versioning
+      url: /explore_versioning.html
       output: web
       subfolders:
       - title: Individuals &amp; Entities

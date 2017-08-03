@@ -4,12 +4,12 @@ keywords: foundations, fhir
 tags: [foundations,use_case,fhir,rest,development]
 sidebar: accessrecord_rest_sidebar
 permalink: restfulapis_terminology_codesystem.html
-summary: A value set specifies a set of codes drawn from one or more code systems.
+summary: A code system resource specifies a set of codes drawn from one or more code systems.
 ---
 
 {% include custom/search.warnbanner.html %}
 
-{% include custom/fhir.referencemin.html resource="" page="" fhirlink="[ValueSet](http://www.hl7.org/fhir/dstu2/valueset.html)" content="User Stories" userlink="" %}
+{% include custom/fhir.referencemin.html resource="" page="" fhirlink="[CodeSystem](http://hl7.org/fhir/codesystem.html)" content="User Stories" userlink="" %}
 
 
 ## 1. Read ##
@@ -17,7 +17,7 @@ summary: A value set specifies a set of codes drawn from one or more code system
 <div markdown="span" class="alert alert-success" role="alert">
 GET [baseUrl]/ValueSet/[id]</div>
 
-{% include custom/read.response.html resource="ValueSet" content="" %}
+{% include custom/read.response.html resource="CodeSystem" content="" %}
 
 ## 2. Example ##
 
@@ -27,7 +27,7 @@ Return the ValueSet for Care Connect Administrative Gender. Replace 'baseUrl' wi
 
 #### 2.1.1. cURL ####
 
-{% include custom/embedcurl.html title="Read Care Connect Administrative Gender ValueSet" command="curl -H 'Accept: application/xml+fhir' -H 'Authorization: BEARER [token]' -X GET  '[baseUrl]/ValueSet/CareConnect-AdministrativeGender-1'" %}
+{% include custom/embedcurl.html title="Read Care Connect Administrative Gender ValueSet" command="curl -H 'Accept: application/fhir+xml' -H 'Authorization: BEARER [token]' -X GET  '[baseUrl]/ValueSet/CareConnect-AdministrativeGender-1'" %}
 
 {% include custom/search.response.headers.html resource="ValueSet"  %}
 

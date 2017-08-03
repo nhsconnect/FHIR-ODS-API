@@ -4,7 +4,7 @@ keywords: development,overview
 tags: [explanation]
 sidebar: overview_sidebar
 permalink: overview_api_journey.html
-summary: FHIR&reg; ODS API journey outlines the approach of developing a RESTful API and the journey taken to define and mature the FHIR&reg; ODS API
+summary: FHIR&reg; ODS Lookup API journey outlines the approach of developing a RESTful API and the journey taken to define and mature the FHIR&reg; ODS Lookup API
 ---
 
 {% include important.html content="All phases outlined below are indicative and subject to on-going review." %}
@@ -12,7 +12,7 @@ summary: FHIR&reg; ODS API journey outlines the approach of developing a RESTful
 
 # The Journey #
 
-The API Journey is a guide from imagination and exploring to developing FHIR&reg; ODS API profiles all the way to deploying a live API.  
+The API Journey is a guide from imagination and exploring to developing FHIR&reg; ODS Lookup API profiles all the way to deploying a live API.  
 
 {% include custom/api_overview.svg %}
 

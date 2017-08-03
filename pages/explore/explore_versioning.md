@@ -1,9 +1,9 @@
 ---
-title: Care Connect Profile Versioning
+title: Profile Versioning
 keywords: development, versioning
 tags: [rest,fhir]
 sidebar: overview_sidebar
-permalink: explore_cc_versioning.html
+permalink: explore_versioning.html
 summary: An overview of how profiles are versioned.
 ---
 
