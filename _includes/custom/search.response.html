@@ -1,0 +1,24 @@
+<h3 id="searchresponse">2.2. Search Response</h3>
+
+<p>If the search fails (cannot be executed, not that there is no matches), the return value is a status code 4xx or 5xx with an <a href="https://www.hl7.org/fhir/DSTU2/operationoutcome.html">OperationOutcome</a>.</p>
+
+<p>To be defined...</p>
+
+<p>A full set of response codes can be found here <a href="development_api_codes.html">API Response Codes</a>. FHIR Servers SHALL support the following response codes:</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>200</td>
+      <td>successful operation</td>
+    </tr>
+    <tr>
+      <td>404</td>
+      <td>resource not found</td>
+    </tr>
+    <tr>
+      <td>410</td>
+      <td>resource deleted</td>
+    </tr>
+  </tbody>
+</table>
