@@ -1,7 +1,7 @@
 entries:
 - title: FHIR&reg; ODS Lookup API
   product: FHIR&reg; ODS Lookup API
-  version: 1.0.0-alpha.0
+  version: 0.1.0-alpha.0
   levels: one
   folders:
 
@@ -45,14 +45,8 @@ entries:
         - title: "Case Study Overview"
           url: /engage_case_studies.html
           output: web
-        - title: Bristol Connecting Care POC
-          url: /engage_poc_bristolcc.html
-          output: web
-        - title: "University Hospital Southampton"
-          url: /engage_poc_uhscc.html
-          output: web
-        - title: "Michael's Story"
-          url: /engage_michaelsstory.html
+        - title: "Placeholder for case study"
+          url: /engage_casestudy_placeholder.html
           output: web
 
   - title: Resources
@@ -62,40 +56,6 @@ entries:
       url: /explore.html
       output: web
       subfolders:
-      - title: Clinical
-        output: web
-        subfolderitems:
-          - title: Allergy Intolerance
-            url: /api_clinical_allergyintolerance.html
-            output: web
-          - title: Condition
-            url: /api_clinical_condition.html
-            output: web
-          - title: Procedure
-            url: /api_clinical_procedure.html
-            output: web
-      - title: Diagnostics
-        output: web
-        subfolderitems:
-          - title: Observation
-            url: /api_diagnostics_observation.html
-            output: web
-      - title: Medication
-        output: web
-        subfolderitems:
-          - title: Medication
-            url: /api_medication_medication.html
-            output: web
-          - title: Medication Order
-            url: /api_medication_medicationorder.html
-            output: web
-          - title: Medication Statement
-            url: /api_medication_medicationstatement.html
-            output: web
-          - title: Immunization
-            url: /api_medication_immunization.html
-            output: web
-
       - title: Individuals &amp; Entities
         output: web
         subfolderitems:
@@ -105,17 +65,8 @@ entries:
           - title: Organisation
             url: /api_entity_organisation.html
             output: web
-          - title: Patient
-            url: /api_entity_patient.html
-            output: web
           - title: Practitoner
             url: /api_entity_practitoner.html
-            output: web
-      - title: Workflow
-        output: web
-        subfolderitems:
-          - title: Encounter
-            url: /api_workflow_encounter.html
             output: web
       - title: Foundation
         output: web

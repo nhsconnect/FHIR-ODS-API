@@ -1,10 +1,10 @@
 ---
-title: How To Write A Care Connect User Story
-keywords: engage, explore, care connect process, process, introduction, user, story, tutorial, actor, primary, secondary, need, justification, acceptance, feature, epic
+title: How To Write A User Story
+keywords: engage, explore, process, introduction, user, story, tutorial, actor, primary, secondary, need, justification, acceptance, feature, epic
 tags: [userstories]
 sidebar: foundations_sidebar
 permalink: howtouserstory.html
-summary: "Industry suggests various techniques for the creation of user stories. Care Connect extends this slightly to help make the creation of user stories more relevant to the creation of system interfaces."
+summary: "Industry suggests various techniques for the creation of user stories. NHS Digital extends this slightly to help make the creation of user stories more relevant to the creation of system interfaces."
 ---
 
 Given a clinical scenario, it is possible to derive several user stories that are suitable for mapping by considering the story from the perspective of the end users that will benefit from the final interface.
@@ -36,7 +36,7 @@ Given that a single data source is not clear, it suggests further refinement to 
 * *As a health care professional (hospital services) I wish to view current medication from mental health services…*
 * *As a health care professional (hospital services) I wish to view current medication from community dental services…*
 
-This begins to better specify the need for multiple interfaces at some point which may (or may not) be serviced by their own Care Connect API. Finally, the original story remains valid as a story in this context because it provides additional detail that influences how each of the interfaces are built. Here the need for a consolidated view means that the interfaces will need to be developed to send and receive structured data. This technical requirement is being expressed in a way that would be more easily understood by a non-technical audience. This technical detail, once understood would be written into the acceptance criteria of each of the user stories to facilitate the development of the consolidated user interface.
+This begins to better specify the need for multiple interfaces at some point which may (or may not) be serviced by their own API. Finally, the original story remains valid as a story in this context because it provides additional detail that influences how each of the interfaces are built. Here the need for a consolidated view means that the interfaces will need to be developed to send and receive structured data. This technical requirement is being expressed in a way that would be more easily understood by a non-technical audience. This technical detail, once understood would be written into the acceptance criteria of each of the user stories to facilitate the development of the consolidated user interface.
 ## Requirement
 The requirement forms the crux of the user story. This is the requirement expressed from the perspective of a user’s need or user’s goal. While the granularity of a story can vary, a good example should be something that doesn’t have strong dependencies on other stories and something that can be measured and tested.
 

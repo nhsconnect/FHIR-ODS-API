@@ -11,7 +11,7 @@ summary: An overview of this implementation guide is versioned.
 
 ## Alpha ##
 
-This implementation guide is in currently in an alpha state at the moment. This means that changes and releases are occurring regularly.
+This implementation guide is in currently in an alpha state at the moment. This means that changes and releases are occuring regularly.
 
 ### Semantic Versioning ###
 
@@ -25,7 +25,7 @@ Additional labels for pre-release and build metadata are available as extensions
 
 A pre-release version MAY be denoted by appending a hyphen (refer to [Semantic Versioning - Item 9](http://semver.org/#spec-item-9){:target="_blank"})
 
-For example: 1.0.0-alpha.1 is a valid pre-release version.
+For examples: 1.0.0-alpha.1 is a valid pre-release version.
 
 ### Pre-release Labels ###
 
