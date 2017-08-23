@@ -2,10 +2,10 @@
 output: web
 # this property is useful for conditional filtering of content that is separate from the PDF.
 
-topnav_title: ODS Lookup API | FHIR&reg;
+topnav_title: FHIR&reg; ODS Lookup API
 # this appears on the top navigation bar next to the home button
 
-site_title: FHIR&reg ODS Lookup API
+site_title: FHIR&reg; ODS Lookup API
 # this appears in the html browser tab for the site title (seen mostly by search engines, not users)
 
 company_name: NHS Digital
@@ -27,7 +27,7 @@ github_editme_path: /edit/develop/
 #twitter_username: twitter_username
 #twitter_site_hashtags: twitter_site_hashtags
 
-fhir_profile_baseurl: 
+fhir_profile_baseurl: https://fhir-test.hl7.org.uk/StructureDefinition/
 fhir_profile_ext:
 
 host: 127.0.0.1
@@ -42,10 +42,10 @@ exclude:
   - .gitignore
 # these are the files and directories that jekyll will exclude from the build
 
-feedback_email: 
+feedback_email: interoperabilityteam@nhs.net
 # used as a contact email for the Feedback link in the top navigation bar
 
-feedback_disable: 
+feedback_disable: true
 # if you uncomment the previous line, the Feedback link gets removed
 
 # feedback_text: "Need help?"
@@ -96,22 +96,22 @@ sidebars:
 - appointments_sidebar
 - tasks_sidebar
 
-description: "The FHIR&reg ODS API supports..."
+description: "The FHIR ODS Lookup API supports the read only retrieval of information stored by the Organization Data Service."
 # the description is used in the feed.xml file
 
 sitemap: true
 
 # needed for sitemap.xml file only
-url: https://nhsconnect.github.io/FHIR-ODS-API
+url: https://nhsconnect.github.io/CareConnectAPI
 
-repository: nhsconnect/FHIR-ODS-API
+repository: nhsconnect/CareConnectAPI
 
 gist:
   noscript: false
 
 site:
   fhirprofiles:
-    patient: "[]()"
+    patient: "[FHIR ODS Lookup](https://fhir.nhs.uk/STU3/StructureDefinition/Organization-1.html)"
 
 gems:
    - jekyll-github-metadata

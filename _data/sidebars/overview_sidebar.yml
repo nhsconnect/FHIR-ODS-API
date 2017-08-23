@@ -1,7 +1,7 @@
 entries:
 - title: FHIR&reg; ODS Lookup API
   product: FHIR&reg; ODS Lookup API
-  version: 1.0.0-alpha.1
+  version: 1.0.0-alpha.0
   levels: one
   folders:
 
@@ -28,7 +28,7 @@ entries:
       url: /overview_glossary.html
       output: web
 
-  - title: Engage
+  - title: Case Studies
     output: web
     folderitems:
 
@@ -45,55 +45,104 @@ entries:
         - title: "Case Study Overview"
           url: /engage_case_studies.html
           output: web
-        - title: "Michael's Story"
-          url: /engage_michaelsstory.html
-          output: web
         - title: Bristol Connecting Care POC
           url: /engage_poc_bristolcc.html
           output: web
+        - title: "University Hospital Southampton"
+          url: /engage_poc_uhscc.html
+          output: web
+        - title: "Michael's Story"
+          url: /engage_michaelsstory.html
+          output: web
 
-  - title: Explore
+  - title: Resources
     output: web
     folderitems:
     - title: Overview
       url: /explore.html
       output: web
-    - title: FHIR&reg ODS Lookup API Versioning
-      url: /explore_versioning.html
-      output: web
       subfolders:
+      - title: Clinical
+        output: web
+        subfolderitems:
+          - title: Allergy Intolerance
+            url: /api_clinical_allergyintolerance.html
+            output: web
+          - title: Condition
+            url: /api_clinical_condition.html
+            output: web
+          - title: Procedure
+            url: /api_clinical_procedure.html
+            output: web
+      - title: Diagnostics
+        output: web
+        subfolderitems:
+          - title: Observation
+            url: /api_diagnostics_observation.html
+            output: web
+      - title: Medication
+        output: web
+        subfolderitems:
+          - title: Medication
+            url: /api_medication_medication.html
+            output: web
+          - title: Medication Order
+            url: /api_medication_medicationorder.html
+            output: web
+          - title: Medication Statement
+            url: /api_medication_medicationstatement.html
+            output: web
+          - title: Immunization
+            url: /api_medication_immunization.html
+            output: web
+
       - title: Individuals &amp; Entities
         output: web
         subfolderitems:
-          - title: Organization
-            url: /restfulapis_identification_organization.html
+          - title: Location
+            url: /api_entity_location.html
+            output: web
+          - title: Organisation
+            url: /api_entity_organisation.html
+            output: web
+          - title: Patient
+            url: /api_entity_patient.html
+            output: web
+          - title: Practitoner
+            url: /api_entity_practitoner.html
+            output: web
+      - title: Workflow
+        output: web
+        subfolderitems:
+          - title: Encounter
+            url: /api_workflow_encounter.html
             output: web
       - title: Foundation
         output: web
         subfolderitems:
-        - title: CapabilityStatement
-          url: /restfulapis_conformance_capabilitystatement.html
+        - title: Conformance
+          url: /api_foundation_conformance.html
           output: web
         - title: ValueSet
-          url: /restfulapis_terminology_valueset.html
+          url: /api_foundation_valueset.html
           output: web
-        - title: CodeSystem
-          url: /restfulapis_terminology_codesystem.html
-          output: web		  
       - title: API Guidance | FHIR&reg;
         output: web
         subfolderitems:
-        - title: Foundations
-          url: /foundations.html
-          output: web
         - title: API Codes
-          url: /development_api_codes.html
+          url: /explore_api_codes.html
+          output: web
+        - title: Search Parameters
+          url: /explore_search_parameters.html
           output: web
         - title: Open Source
-          url: /development_fhir_open_source_guidance.html
+          url: /explore_fhir_open_source_guidance.html
           output: web
         - title: Reference
-          url: /development_deliverables.html
+          url: /explore_reference.html
+          output: web
+        - title: Care Connect Versioning
+          url: /explore_cc_versioning.html
           output: web
   - title: Design & Build
     output: web
@@ -104,27 +153,28 @@ entries:
     - title: Patterns / Topology
       url: /design_patterns.html
       output: web
+    - title: Exchange Patterns
+      url: /design_exchange_patterns.html
+      output: web
     - title: Access
       url: /design_access.html
       output: web
     - title: Security
       url: /design_security.html
       output: web
-
       subfolders:
       - title: Build
         output: web
         subfolderitems:
           - title: Patient Search
-            url: /design_patient_search.html
+            url: /build_patient_search.html
             output: web
           - title: Clinical | Care Coord
-            url: /design_pcc_clinical.html
+            url: /build_pcc_clinical.html
             output: web
           - title: Medication | Care Coord
-            url: /design_pcc_medication.html
+            url: /build_pcc_medication.html
             output: web
-
   - title: Test
     output: web
     folderitems:
@@ -140,6 +190,9 @@ entries:
     - title: Security
       url: /test_security.html
       output: web
+    - title: Test Data
+      url: /test_data.html
+      output: web
 
   - title: Assure
     output: web
@@ -152,6 +205,9 @@ entries:
       output: web
     - title: Security
       url: /assure_security.html
+      output: web
+    - title: End To End
+      url: /assure_end_to_end.html
       output: web
 
   - title: Deploy
