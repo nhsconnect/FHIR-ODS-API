@@ -1,5 +1,5 @@
 ---
-title: Care Connect Profile Versioning
+title: Profile Versioning
 keywords: development, versioning
 tags: [rest,fhir]
 sidebar: overview_sidebar

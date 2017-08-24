@@ -1,5 +1,5 @@
 ---
-title: Engage with Care Connect
+title: Engage with FHIR Profile Development
 keywords: engage, care connect process, process, introduction
 tags: [userstories,casestudies]
 sidebar: foundations_sidebar
@@ -9,9 +9,9 @@ summary: "These pages assist with requirements gathering and mapping stages of a
 
 ## Approach to Engagement ##
 
-This process lays down steps of engagement with the client to analyse their business requirements for interoperability in a way that it supports mapping your requirements to CareConnect Profiles (that user HL7 INTEROPen FHIR standards) and enable the development of a live API (Application Programming Interface) to read or exchange information/data.
+This process lays down steps of engagement with the client to analyse their business requirements for interoperability in a way that it supports mapping your requirements to Profiles (that use HL7 FHIR standards) and enable the development of a live API (Application Programming Interface) to read or exchange information/data.
 
-It has been cited that it’s very difficult to exchange information between various business units in health care sector as most of them follow their own data structures to exchange information. This causes lot of interoperability issues and rework. Implementing this process gives us the opportunity to demonstrate and guide the business units as to how these issues can be resolved using standards- FHIR (Fast Health Information Resources) and Care Connect Profiles which are built to FHIR standards and agreed within the health and social care community via the INTEROpen forum. A standardised approach provides a common language for engagement and will more easily support a framework for sharing knowledge that can continue to assist future projects and possibly become self sustaining within the community.
+It has been cited that it’s very difficult to exchange information between various business units in health care sector as most of them follow their own data structures to exchange information. This causes lot of interoperability issues and rework. Implementing this process gives us the opportunity to demonstrate and guide the business units as to how these issues can be resolved using standards- FHIR (Fast Health Information Resources) and Profiles which are built to FHIR standards and agreed within the health and social care community. A standardised approach provides a common language for engagement and will more easily support a framework for sharing knowledge that can continue to assist future projects and possibly become self sustaining within the community.
 <br><br>
 ## Business Benefit ##
 

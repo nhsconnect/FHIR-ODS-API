@@ -92,7 +92,7 @@ entries:
         - title: Reference
           url: /explore_reference.html
           output: web
-        - title: Care Connect Versioning
+        - title: FHIR&reg; ODS Lookup Versioning
           url: /explore_cc_versioning.html
           output: web
   - title: Design & Build
@@ -117,15 +117,10 @@ entries:
       - title: Build
         output: web
         subfolderitems:
-          - title: Patient Search
+          - title: Organisation Search
             url: /build_patient_search.html
             output: web
-          - title: Clinical | Care Coord
-            url: /build_pcc_clinical.html
-            output: web
-          - title: Medication | Care Coord
-            url: /build_pcc_medication.html
-            output: web
+
   - title: Test
     output: web
     folderitems:
