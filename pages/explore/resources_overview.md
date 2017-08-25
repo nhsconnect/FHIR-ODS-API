@@ -13,30 +13,26 @@ summary: "Overview of the Resources section"
 
 ## 1. Pre-Requisites for FHIR Servers ##
 
-### 1.1 CareConnectAPI Requirements ###
+### 1.1 API Requirements ###
 
 - SHALL support HL7 FHIR DSTU2 version 1.0.2.
-- SHALL support the CareConnect Patient resource profile.
-- SHALL support at least one additional resource profile from the list of CareConnect Profiles
-- SHALL Implement REST behavior according to the [FHIR specification](http://www.hl7.org/fhir/dstu2/http.html)
-- Resources SHALL identify the CareConnect profile supported as part of the [FHIR Base Resource](https://hl7.org/fhir/DSTU2/resource-definitions.html#Resource.meta)
-- SHALL support XML **or** JSON formats for all CareConnectAPI interactions and SHOULD support both formats.
+- SHALL support the FHIR ODS Organization resource profile.
+- SHALL support at least one additional resource profile from the list of Profiles
+- SHALL Implement REST behaviour according to the [FHIR specification](http://www.hl7.org/fhir/dstu2/http.html)
+- Resources SHALL identify the profile supported as part of the [FHIR Base Resource](https://hl7.org/fhir/DSTU2/resource-definitions.html#Resource.meta)
+- SHALL support XML **or** JSON formats for all API interactions and SHOULD support both formats.
 
 
 ### 1.2 FHIR Conformance ###
 
 SHALL declare a Conformance identifying the list of profiles, operations, search parameter supported.
 
-In order to be a compliant FHIR server, client systems need to expose a valid FHIR [Conformance](https://www.hl7.org/fhir/DSTU2/conformance.html) profile. See also [Care Connect API FHIR conformance profile](api_foundation_conformance.html).
+In order to be a compliant FHIR server, client systems need to expose a valid FHIR [Conformance](https://www.hl7.org/fhir/DSTU2/conformance.html) profile. See also [FHIR ODS Lookup API FHIR conformance profile](api_foundation_conformance.html).
 
-### 1.3 NHS Number ###
-
-Only verified NHS Number SHALL be used with CareConnect profiles. This can be achieved using a spine accredited system, a [Demographics Batch Service (DBS)](https://developer.nhs.uk/library/systems/demographic-batch-service-dbs/) batch-traced record (CSV), or using a [Spine Mini Services Provider (HL7v3)](https://nhsconnect.github.io/spine-smsp/) to verify the NHS Number.
-
-{% include custom/contribute.html content="Get in touch with careconnect@interopen.org to improve the Prerequisites." %}
+{% include custom/contribute.html content="Get in touch with interoperabilityteam@nhs.net to improve the Prerequisites." %}
 
 ## 2. Resource API Structure ##
-The FHIR Care Connect profile API's described in the Explore section of this implementation guide have been structured consistently in the following way:
+The FHIR ODS Lookup profile API described in the Explore section of this implementation guide have been structured consistently in the following way:
 - `0.` References
 - `1.` Read
 - `2.` Search Parameters
@@ -68,41 +64,8 @@ The FHIR Care Connect profile API's described in the Explore section of this imp
 </table>
 
 ## 3. Resource API's ##
-This section looks at the Care Connect profile API's covered within this implementation guide.
+This section looks at the ODS Lookup profile API covered within this implementation guide.
 
-
-<table style="min-width:100%;width:100%">
-<tr id="clinical">
-<th style="width:33%;">Clinical</th>
-<th style="width:33%;">&nbsp;</th>
-<th style="width:33%;">&nbsp;</th>
-</tr>
-<tr id="clinicald">
-<th>Summary</th>
-<th>Diagnostics</th>
-<th>Medications</th>
-</tr>
-<tr>
-<td><a href="api_clinical_allergyintolerance.html">AllergyIntolerance</a></td>
-<td><a href="api_diagnostics_observation.html">Observation</a></td>
-<td><a href="api_medication_medication.html">Medication</a></td>
-</tr>
-<tr>
-<td><a href="api_clinical_condition.html">Condition</a> (Problem)</td>
-<td>&nbsp;</td>
-<td><a href="api_medication_medicationorder.html">MedicationOrder</a></td>
-</tr>
-<tr>
-<td><a href="api_clinical_procedure.html">Procedure</a></td>
-<td>&nbsp;</td>
-<td><a href="api_medication_medicationstatement.html">MedicationStatement</a></td>
-</tr>
-<tr>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td><a href="api_medication_immunization.html">Immunization</a></td>
-</tr>
-</table>
 
 <table style="min-width:100%;width:100%">
 <tr id="base">
@@ -111,18 +74,12 @@ This section looks at the Care Connect profile API's covered within this impleme
 <th style="width:33%;">&nbsp;</th>
 </tr>
 <tr id="based">
-<th>Individuals</th>
 <th>Entities</th>
-<th>Workflow</th>
 </tr>
 <tr>
-<td><a href="api_entity_patient.html">Patient</a></td>
 <td><a href="api_entity_organisation.html">Organization</a></td>
-<td><a href="api_workflow_encounter.html">Encounter</a></td><td></td>
 </tr>
 <tr>
-<td><a href="api_entity_practitioner.html">Practitioner</a> (Problem)</td>
-<td><a href="api_entity_location.html">Location</a></td>
 <td>&nbsp;</td>
 </tr>
 </table>

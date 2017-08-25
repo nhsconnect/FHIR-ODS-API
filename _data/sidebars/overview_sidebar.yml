@@ -59,14 +59,8 @@ entries:
       - title: Individuals &amp; Entities
         output: web
         subfolderitems:
-          - title: Location
-            url: /api_entity_location.html
-            output: web
           - title: Organisation
-            url: /api_entity_organisation.html
-            output: web
-          - title: Practitoner
-            url: /api_entity_practitoner.html
+            url: /restfulapis_identification_organization.html
             output: web
       - title: Foundation
         output: web

@@ -52,7 +52,7 @@ Encryption and Signatures are used together i.e.:
 - The encrypted data could be signed to further ensure that data is neither seen or modified by unwanted parties.
 
 
-# Security and Care Connect APIs #
+# Security and APIs #
 
 Security is a key consideration when establishing API projects and should be considered within the design from the start of any project. The four key principles to consider are:
 

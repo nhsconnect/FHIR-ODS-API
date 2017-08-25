@@ -4,11 +4,11 @@ keywords: abbreviations, definitions, glossaries, terms
 tags: [overview]
 sidebar: overview_sidebar
 permalink: overview_glossary.html
-summary: "Glossary of terms used by Care Connect"
+summary: "Glossary of terms used in this implementation guide"
 toc: false
 ---
 
-Glossary of common terms and abbreviations used though-out the Care Connect documentation site.
+Glossary of common terms and abbreviations used though-out the documentation site.
 
 ADT
 : {{site.data.glossary.adt}}

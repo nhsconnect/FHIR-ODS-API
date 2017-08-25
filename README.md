@@ -77,16 +77,6 @@ Moreover, if your pull request contains patches or features, you must include [r
 Editor preferences are available in the [editor config]() for easy use in common text editors. Read more and download plugins at <http://editorconfig.org>.
 
 
-
-## Community
-
-Get updates on ODS FHIR APIs development and chat with the project maintainers and community members.
-
-- Follow [@careconnectapi on Twitter](https://twitter.com/getbootstrap).
-- Read and subscribe to [The INTEROpen CareConnect API](http://www.interopen.org/).
-- Join [the official Ryver room](https://interopen.ryver.com/).
-
-
 ## Versioning
 
 For transparency into our release cycle and in striving to maintain backward compatibility, ODS FHIR API is maintained under [the Semantic Versioning guidelines](http://semver.org/). Sometimes we make mistakes, but we'll adhere to those rules whenever possible.

@@ -1,6 +1,6 @@
 ---
 title: Engage with FHIR Profile Development
-keywords: engage, care connect process, process, introduction
+keywords: engage, process, introduction
 tags: [userstories,casestudies]
 sidebar: foundations_sidebar
 permalink: engage.html
@@ -41,13 +41,13 @@ The process is broken down into 15 discrete steps that are broadly organised ont
 
 <table style="min-width:100%;width:100%">
 <thead><tr id="step6"><th style="width:3em;"></th><th style="width:11em;">Step</th><th>Description</th><th style="width:11em;">Formal Output</th></tr></thead>
-<tr id="step7"><td>6</td><td>Identify FHIR Resources</td><td>Identify which FHIR resources can be used to meet the requirement. Depending on project, Care Connect Profiles may be used. An entity relationship diagram can help to describe the profiles. </td><td><ul style="padding-left:1em;"><li style="margin:0;">Entity Relationship Diagram</li></ul></td></tr>
+<tr id="step7"><td>6</td><td>Identify FHIR Resources</td><td>Identify which FHIR resources can be used to meet the requirement. Depending on project, exisiting Profiles may be used. An entity relationship diagram can help to describe the profiles. </td><td><ul style="padding-left:1em;"><li style="margin:0;">Entity Relationship Diagram</li></ul></td></tr>
 <tr id="step8"><td>7</td><td>Map Dataset</td><td>Map the dataset to the profile.</td><td><ul style="padding-left:1em;"><li style="margin:0;">Dataset Mapping</li></ul></td></tr>
 <tr id="step9"><td>8</td><td>Obtain Approval</td><td>Get Profile to Dataset Mapping reviewed and approved by the client.</td><td></td></tr>
 <tr id="step10"><td>9</td><td>Design API</td><td>Define API Signatures and use of Search Parameters</td><td><ul style="padding-left:1em;"><li style="margin:0;">API Signature</li><li>Search Parameters</li><li>Search Results</li></ul></td></tr>
 <tr id="step11"><td>10</td><td>Document Interaction Flow</td><td>Define the sequence of interactions expected including the function, input parameters, output parameters etc.</td><td><ul style="padding-left:1em;"><li style="margin:0;">API Sequence Diagram</li></ul></td></tr>
 <tr id="step12"><td>11</td><td>Document Additional Technical Context</td><td>Identify any further techincal considerations to aid understanding.</td><td><ul style="padding-left:1em;"><li style="margin:0;">System Diagrams</li><li>Acceptance Criteria</li></ul></td></tr>
-<tr><td>12</td><td>Resolve Curation Requirements</td><td>Feedback to INTEROpen any necessary changes to Profile definitions.</td><td><ul style="padding-left:1em;"><li style="margin:0;">Updated Care Connect Standards</li></ul></td></tr>
+<tr><td>12</td><td>Resolve Curation Requirements</td><td>Feedback any necessary changes to Profile definitions.</td><td><ul style="padding-left:1em;"><li style="margin:0;">Update Standards</li></ul></td></tr>
 </table>
 <br><br>
 ### Deliver the Solution ###
@@ -60,5 +60,3 @@ The process is broken down into 15 discrete steps that are broadly organised ont
 </table>
 <br><br>
 
-
-{% include custom/contribute.html content="Get in touch with careconnect@interopen.org to help with Case Studies of Care Connect Profiles"%}

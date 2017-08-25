@@ -1,6 +1,6 @@
 ---
 title: User Stories
-keywords: engage, care connect process, process, introduction, user stories
+keywords: engage, process, introduction, user stories
 tags: [userstories]
 sidebar: foundations_sidebar
 permalink: engage_userstories.html

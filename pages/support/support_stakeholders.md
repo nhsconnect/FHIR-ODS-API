@@ -5,7 +5,7 @@ tags: [support]
 toc: false
 sidebar: overview_sidebar
 permalink: support_whereelse.html
-summary: "Other key industry members related to FHIR or Care Connect"
+summary: "Other key industry members related to FHIR"
 ---
 <br><br>
 Within the UK, there are many system suppliers, trusts and other projects adopting FHIR and actively working with the standard. Within this environment, as the various tools and services are explored, there are a core set of organisations that keep featuring in discussions.
@@ -20,7 +20,6 @@ Endeavour Health is a charity set up to promote the adoption of healthcare IT an
 ## NHS Digital
 [http://developer.nhs.uk/]([http://developer.nhs.uk/) is home for developers creating software for healthcare with the UK, this site provides information and tools to help designers and developers create a variety of applications for the NHS. A wide variety of content exists within this site and it can be a little challenging to navigate the collection of hierarchical menus to arrive at the content required.
 
-An important influence on the Care Connect FHIR project is GP Connect. Technical information relating to GP Connect is being transferred from the [NHS Developer website](http://developer.nhs.uk/library/interoperability/gp-connect/) to [GitHub](https://nhsconnect.github.io/gpconnect/index.html). Further to this, non-technical overview can be found at the [NHS Digital Website](https://digital.nhs.uk/article/282/GP-Systems-of-Choice).  The GP Connect implementation guide is found on the [NHS Developer website](http://data.developer.nhs.uk/fhir/candidaterelease-170816-getrecord/Chapter.1.About/index.html) rather than the GitHub library. At the time of writing a reference server is currently under development.
 <br><br>
 ## NHS England and Code4Health
 Code4Health is an NHS initiative established for individuals and organisations providing a platform to bring together ideas, change working practice and build solutions to improve healthcare. Code4Health supports a rich asset and resource catalogue, a multitude of contributors and a sandpit environment for communities.
