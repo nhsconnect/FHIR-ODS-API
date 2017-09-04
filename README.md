@@ -68,15 +68,6 @@ Have a bug or a feature request? Please first read the [issue guidelines](https:
 
 No previous release available.
 
-## Contributing
-
-Please read through our [contributing guidelines](). Included are directions for opening issues, coding standards, and notes on development.
-
-Moreover, if your pull request contains patches or features, you must include [relevant unit tests](). All HTML and CSS should conform to the [Code Guide](), maintained by [XYZ]().
-
-Editor preferences are available in the [editor config]() for easy use in common text editors. Read more and download plugins at <http://editorconfig.org>.
-
-
 ## Versioning
 
 For transparency into our release cycle and in striving to maintain backward compatibility, ODS FHIR API is maintained under [the Semantic Versioning guidelines](http://semver.org/). Sometimes we make mistakes, but we'll adhere to those rules whenever possible.

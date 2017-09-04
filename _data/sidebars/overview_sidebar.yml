@@ -112,7 +112,7 @@ entries:
         output: web
         subfolderitems:
           - title: Organisation Search
-            url: /build_patient_search.html
+            url: /build_organization_search.html
             output: web
 
   - title: Test
