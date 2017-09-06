@@ -74,8 +74,6 @@ For transparency into our release cycle and in striving to maintain backward com
 
 See [the Releases section of our GitHub project](https://github.com/nhsconnect/FHIR-ODS-API/releases) for changelogs for each release version of Bootstrap. Release announcement posts on [the official FHIR-ODS-API blog](#) contain summaries of the most noteworthy changes made in each release.
 
-
-
 ## Copyright and license
 
 Code and documentation copyright 2011-2017 the [CareConnect API Authors](#) and [NHS Digital](#) Code released under the [MIT License](#). Docs released under [Creative Commons](#).

@@ -9,12 +9,11 @@ summary: "How to use FHIR ODS Lookup API to perform searches on ODS"
 
 {% include custom/search.warnbanner.html %}
 
-{% include custom/ihe.reference.html apicontent="[Organization](api_entity_organisation.html) "  ihecontent="[IHE Patient Demographic Query Mobile (IHE PDQM)](http://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_PDQm.pdf)"  patterncontent="[Shared Repository](https://developer.nhs.uk/library/architecture/integration-patterns/shared-repository/)" %}
+{% include custom/ihe.reference.html apicontent="[Organization](api_entity_organisation.html) "  odscontent="[NHS Digital ODS Offical Site](https://digital.nhs.uk/organisation-data-service)"  patterncontent="[Shared Repository](https://developer.nhs.uk/library/architecture/integration-patterns/portal/)" %}
 
 ## 1. Overview ##
 
-{% include custom/usecase.html content="Use case to be entered here." %}
-
+{% include custom/usecase.html content="" %}
 
 
 Within the NHS, there is a requirement to identify organizations across the Health and Social Care landscape. The Organizational Data Service (ODS) provides access to the repository of publishing codes that identify these organizations and provide valuable information that can reduce administration and improve data quality. ODS provide 3 file types:
@@ -49,7 +48,7 @@ caption="Organization Lookup FHIR Actor Diagram" %}
 The ODS API Lookup can use any of the search parameters defined in the [ODS Lookup API](api_entity_organization.html) API. For example if organization code RR8 is available, the query would be.
 
 ```
-GET https://fhir.nhs.uk/STU3/StructureDefinition/ODSAPI-Organization-1?postalCode=NG10 1ZZ
+GET https://fhir.nhs.uk/STU3/ODSAPI-Organization-1?postalCode=NG10 1ZZ
 ```
 
 A sample response is shown below
@@ -77,7 +76,7 @@ To search for Organizations by organization code, use the following query:
 
 
 ```
-GET https://fhir.nhs.uk/STU3/StructureDefinition/ODSAPI-Organization-1?identifier=https://https://fhir.nhs.uk/Id/ods-organization-code|RR8
+GET https://fhir.nhs.uk/STU3/ODSAPI-Organization-1?identifier=https://https://fhir.nhs.uk/Id/ods-organization-code|RR8
 ```
 
 This will return all organizations with a organization code of RR8 (this may be more than one). An organization code is the main identifier within a NHS Organisation or Health Enterprise. It should be noted that codes allocated to GP practices are supplied by the NHS Prescription Service.
