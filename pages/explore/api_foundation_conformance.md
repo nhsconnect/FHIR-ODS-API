@@ -4,12 +4,12 @@ keywords: foundations, fhir
 tags: [rest,fhir,use_case,api,foundation,noccprofile]
 sidebar: accessrecord_rest_sidebar
 permalink: api_foundation_conformance.html
-summary: A conformance statement is a set of capabilities of a FHIR Server that may be used as a statement of actual server functionality or a statement of required or desired server implementation.
+summary: A capability statement is a set of capabilities of a FHIR Server that may be used as a statement of actual server functionality or a statement of required or desired server implementation.
 ---
 
 {% include custom/search.warnbanner.html %}
 
-{% include custom/fhir.referencemin.html resource="" page="" fhirlink="[Conformance](http://www.hl7.org/fhir/dstu2/conformance.html)" content="User Stories" userlink="" %}
+{% include custom/fhir.referencemin.html resource="" page="" fhirlink="[Capability Statement](https://www.hl7.org/fhir/capabilitystatement.html)" content="User Stories" userlink="" %}
 
 
 ## 1. Read ##
@@ -19,12 +19,7 @@ GET [baseUrl]/metadata</div>
 
 The /metadata path on the root of the FHIR server will return the Conformance statement for the FHIR server:
 
-Alternatively, a HTTP OPTIONS request against the root of the FHIR server will also return the conformance profile:
-
-<div markdown="span" class="alert alert-success" role="alert">
-OPTIONS [baseUrl]/</div>
-
-For details of this interaction - see the [HL7 FHIR DSTU2 RESTful API](https://www.hl7.org/fhir/DSTU2/http.html#conformance)
+For details of this interaction - see the [HL7 FHIR RESTful API](https://www.hl7.org/fhir/http.html#capabilities)
 
 All requests SHALL contain a valid ‘Authorization’ header and SHALL contain an ‘Accept’ header with at least one of the following application/json+fhir or application/xml+fhir.
 

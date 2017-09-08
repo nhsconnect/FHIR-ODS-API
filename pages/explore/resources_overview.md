@@ -15,11 +15,11 @@ summary: "Overview of the Resources section"
 
 ### 1.1 API Requirements ###
 
-- SHALL support HL7 FHIR DSTU2 version 1.0.2.
+- SHALL support HL7 FHIR STU3 version 3.0.1.
 - SHALL support the FHIR ODS Organization resource profile.
 - SHALL support at least one additional resource profile from the list of Profiles
-- SHALL Implement REST behaviour according to the [FHIR specification](http://www.hl7.org/fhir/dstu2/http.html)
-- Resources SHALL identify the profile supported as part of the [FHIR Base Resource](https://hl7.org/fhir/DSTU2/resource-definitions.html#Resource.meta)
+- SHALL Implement REST behaviour according to the [FHIR specification](http://www.hl7.org/fhir/http.html)
+- Resources SHALL identify the profile supported as part of the [FHIR Base Resource](https://hl7.org/fhir/resource-definitions.html#Resource.meta)
 - SHALL support XML **or** JSON formats for all API interactions and SHOULD support both formats.
 
 
@@ -27,7 +27,7 @@ summary: "Overview of the Resources section"
 
 SHALL declare a Conformance identifying the list of profiles, operations, search parameter supported.
 
-In order to be a compliant FHIR server, client systems need to expose a valid FHIR [Conformance](https://www.hl7.org/fhir/DSTU2/conformance.html) profile. See also [FHIR ODS Lookup API FHIR conformance profile](api_foundation_conformance.html).
+In order to be a compliant FHIR server, client systems need to expose a valid FHIR [Conformance](https://www.hl7.org/fhir/conformance.html) profile. See also [FHIR ODS Lookup API FHIR conformance profile](api_foundation_conformance.html).
 
 {% include custom/contribute.html content="Get in touch with interoperabilityteam@nhs.net to improve the Prerequisites." %}
 
