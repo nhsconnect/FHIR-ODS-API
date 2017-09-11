@@ -4,7 +4,7 @@ keywords: development
 tags: [design,development]
 sidebar: overview_sidebar
 permalink: design_clinical_terminologies.html
-summary: "Brief guidance on how clinical terminologies are expected to be used within the Care Connect FHIR&reg; API."
+summary: "Brief guidance on how clinical terminologies are expected to be used within Healthj and Social Care APIs."
 ---
 
 ## UK Terminology Centre (UKTC) ## 

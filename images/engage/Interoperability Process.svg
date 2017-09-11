@@ -97,7 +97,7 @@
 			</g>
 			<g id="shape3-4" v:mID="3" v:groupContext="shape" transform="translate(0,-108)">
 				<title>Sheet.3</title>
-				<desc>Care Connect Interoperability Process (Extract)</desc>
+				<desc>Interoperability Process (Extract)</desc>
 				<v:userDefs>
 					<v:ud v:nameU="msvStructureType" v:prompt="" v:val="VT4(Heading)"/>
 					<v:ud v:nameU="msvSDContainerHeadingEdge" v:prompt="" v:val="VT4(Bottom)"/>
@@ -116,7 +116,7 @@
 				<v:textBlock v:margins="rect(4,4,4,4)"/>
 				<v:textRect cx="261" cy="128.5" width="522.01" height="36"/>
 				<path d="M0 146.5 L522 146.5 L522 110.5 L0 110.5 L0 146.5 Z" class="st2"/>
-				<text x="4" y="133.3" class="st3" v:langID="2057"><v:paragraph/><v:tabList/>Care Connect Interoperability Process (Extract)</text>			</g>
+				<text x="4" y="133.3" class="st3" v:langID="2057"><v:paragraph/><v:tabList/>Interoperability Process (Extract)</text>			</g>
 		</g>
 		<g id="shape4-7" v:mID="4" v:groupContext="shape" transform="translate(1.25,-1.25)">
 			<title>Swimlane List</title>
@@ -351,7 +351,7 @@
 						x="4.81" dy="1.2em" class="st11">Requirements and </tspan><tspan x="19.51" dy="1.2em" class="st11">Data Sets</tspan></text>		</g>
 		<g id="shape24-32" v:mID="24" v:groupContext="shape" v:layerMember="1" transform="translate(217.25,-19.25)">
 			<title>Process.24</title>
-			<desc>Identify FHIR Resources and Care Connect Profiles</desc>
+			<desc>Identify FHIR Resources</desc>
 			<v:custProps>
 				<v:cp v:nameU="Cost" v:lbl="Cost" v:prompt="" v:type="7" v:format="@" v:sortKey="" v:invis="false" v:ask="false"
 						v:langID="1033" v:cal="0"/>
@@ -381,8 +381,7 @@
 			<v:textRect cx="36" cy="119.5" width="72" height="54"/>
 			<rect x="0" y="92.5" width="72" height="54" class="st9"/>
 			<text x="14.54" y="107.5" class="st10" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Identify FHIR <tspan
-						x="10.81" dy="1.2em" class="st11">Resources and </tspan><tspan x="13.26" dy="1.2em" class="st11">Care Connect </tspan><tspan
-						x="23.39" dy="1.2em" class="st11">Profiles</tspan></text>		</g>
+						x="10.81" dy="1.2em" class="st11">Resources</tspan></text>		</g>
 		<g id="shape25-39" v:mID="25" v:groupContext="shape" v:layerMember="1" transform="translate(325.25,-19.25)">
 			<title>Process.25</title>
 			<desc>Map DataSet to Profile</desc>

@@ -23,7 +23,7 @@ In previous phases the following concepts need to have been encountered and reso
 - Transformation
 - Versioning
 
-[Coming - soon]
+{% include note.html content="Provided as an overview" %}
 
 
 # API Considerations #
@@ -32,4 +32,4 @@ Other API consideration are shown below. Please click on the parts of the API pr
 
 {% include custom/provide_api.svg %}
 
-{% include custom/contribute.html content="Get in involved and contribute to the above API considerations careconnect@interopen.org"%}
+{% include custom/contribute.html content="Get in involved and contribute to the above API considerations interoperabilityteam@nhs.net"%}

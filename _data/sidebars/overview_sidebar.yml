@@ -1,7 +1,7 @@
 entries:
 - title: FHIR&reg; ODS Lookup API
   product: FHIR&reg; ODS Lookup API
-  version: 0.0.0-alpha.0
+  version: 0.1.0-alpha.0
   levels: one
   folders:
 
@@ -28,7 +28,7 @@ entries:
       url: /overview_glossary.html
       output: web
 
-  - title: Engage
+  - title: Case Studies
     output: web
     folderitems:
 
@@ -45,55 +45,49 @@ entries:
         - title: "Case Study Overview"
           url: /engage_case_studies.html
           output: web
-        - title: "Michael's Story"
-          url: /engage_michaelsstory.html
-          output: web
-        - title: Bristol Connecting Care POC
-          url: /engage_poc_bristolcc.html
+        - title: "Placeholder for case study"
+          url: /engage_casestudy_placeholder.html
           output: web
 
-  - title: Explore
+  - title: Resources
     output: web
     folderitems:
     - title: Overview
       url: /explore.html
       output: web
-    - title: FHIR&reg ODS Lookup API Versioning
-      url: /explore_versioning.html
-      output: web
       subfolders:
       - title: Individuals &amp; Entities
         output: web
         subfolderitems:
-          - title: Organization
+          - title: Organisation
             url: /restfulapis_identification_organization.html
             output: web
       - title: Foundation
         output: web
         subfolderitems:
         - title: CapabilityStatement
-          url: /restfulapis_conformance_capabilitystatement.html
+          url: /api_foundation_capabilitystatement.html
           output: web
         - title: ValueSet
-          url: /restfulapis_terminology_valueset.html
+          url: /api_foundation_valueset.html
           output: web
-        - title: CodeSystem
-          url: /restfulapis_terminology_codesystem.html
-          output: web		  
       - title: API Guidance | FHIR&reg;
         output: web
         subfolderitems:
-        - title: Foundations
-          url: /foundations.html
-          output: web
         - title: API Codes
-          url: /development_api_codes.html
+          url: /explore_api_codes.html
+          output: web
+        - title: Search Parameters
+          url: /explore_search_parameters.html
           output: web
         - title: Open Source
-          url: /development_fhir_open_source_guidance.html
+          url: /explore_fhir_open_source_guidance.html
           output: web
         - title: Reference
-          url: /development_deliverables.html
+          url: /explore_reference.html
+          output: web
+        - title: FHIR&reg; ODS Lookup Versioning
+          url: /explore_cc_versioning.html
           output: web
   - title: Design & Build
     output: web
@@ -104,25 +98,21 @@ entries:
     - title: Patterns / Topology
       url: /design_patterns.html
       output: web
+    - title: Exchange Patterns
+      url: /design_exchange_patterns.html
+      output: web
     - title: Access
       url: /design_access.html
       output: web
     - title: Security
       url: /design_security.html
       output: web
-
       subfolders:
       - title: Build
         output: web
         subfolderitems:
-          - title: Patient Search
-            url: /design_patient_search.html
-            output: web
-          - title: Clinical | Care Coord
-            url: /design_pcc_clinical.html
-            output: web
-          - title: Medication | Care Coord
-            url: /design_pcc_medication.html
+          - title: Organisation Search
+            url: /build_organization_search.html
             output: web
 
   - title: Test
@@ -140,6 +130,9 @@ entries:
     - title: Security
       url: /test_security.html
       output: web
+    - title: Test Data
+      url: /test_data.html
+      output: web
 
   - title: Assure
     output: web
@@ -152,6 +145,9 @@ entries:
       output: web
     - title: Security
       url: /assure_security.html
+      output: web
+    - title: End To End
+      url: /assure_end_to_end.html
       output: web
 
   - title: Deploy

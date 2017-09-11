@@ -1,5 +1,5 @@
 ---
-title: Access | Test
+title: Access | Assure
 keywords: assure, access, security
 tags: [assure, access]
 sidebar: foundations_sidebar
@@ -17,7 +17,8 @@ Access at the Assure stage of API development needs finalisation of the followin
 - Transformation
 - Versioning
 
-[Coming - soon]
+{% include note.html content="Provided as an overview" %}
+
 
 # API Considerations #
 
@@ -25,4 +26,4 @@ Other API consideration are shown below. Please click on the parts of the API pr
 
 {% include custom/provide_api.svg %}
 
-{% include custom/contribute.html content="Get in involved and contribute to the above API considerations careconnect@interopen.org"%}
+{% include custom/contribute.html content="Get in involved and contribute to the above API considerations interoperabilityteam@nhs.net"%}

@@ -4,7 +4,7 @@ keywords: development,overview
 tags: [explanation]
 sidebar: overview_sidebar
 permalink: overview_api_journey.html
-summary: FHIR&reg; ODS Lookup API journey outlines the approach of developing a RESTful API and the journey taken to define and mature the FHIR&reg; ODS Lookup API
+summary: FHIR&reg; ODS Lookup API journey outlines the approach of developing RESTful APIs and the journey taken to define and mature ODS Lookup API.
 ---
 
 {% include important.html content="All phases outlined below are indicative and subject to on-going review." %}
@@ -12,25 +12,26 @@ summary: FHIR&reg; ODS Lookup API journey outlines the approach of developing a 
 
 # The Journey #
 
-The API Journey is a guide from imagination and exploring to developing FHIR&reg; ODS Lookup API profiles all the way to deploying a live API.  
+The API Journey is a guide from imagination and exploring to development and deploying a live API.  
 
 {% include custom/api_overview.svg %}
 
-The above steps outline a complete API journey.
+The above steps outline a complete API journey .
 
 # Profile journey #
 
 The current site focuses on a typical API Developer's Journey as highlighted by the green boxes below in the developer journey:
 
-<img src="images/roadmap/profile-focus.jpg" style="width:100%;max-width: 100%;">
+<img src="images/roadmap/profile-focus.png" style="width:100%;max-width: 100%;">
 
-NHS Digital is progressing the profile development. Please see the explanation of the complete development roadmap below.
+NHS Digital is testing process and invitations are open for the health and social care community to get involved and progress the wider developer ecosystem. Please see the explanation of the complete development roadmap below.
 
+{% include custom/contribute.html content="Please contact [interoperabilityteam@nhs.net] to get involved." %}
 
 # How this fits into the wider journey? #
 
 The current site focuses on a typical API Developer's Journey as highlighted by the green boxes below in the developer journey:
 
-<img src="images/roadmap/guide-focus.jpg" style="width:100%;max-width: 100%;">
+<img src="images/roadmap/guide-focus.png" style="width:100%;max-width: 100%;">
 
-NHS Digital is progressing the profile development. Please see the explanation of the complete development roadmap.
+Please see the explanation of the complete development roadmap.

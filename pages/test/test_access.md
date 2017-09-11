@@ -17,6 +17,8 @@ Access at the Test stage of API development needs careful consideration of the f
 - Transformation
 - Versioning
 
+{% include note.html content="Provided as an overview" %}
+
 
 # API Considerations #
 
@@ -24,4 +26,4 @@ Other API consideration are shown below. Please click on the parts of the API pr
 
 {% include custom/provide_api.svg %}
 
-{% include custom/contribute.html content="Get in involved and contribute to the above API considerations careconnect@interopen.org"%}
+{% include custom/contribute.html content="Get in involved and contribute to the above API considerations interoperabilityteam@nhs.net"%}
