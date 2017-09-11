@@ -1,9 +1,9 @@
 ---
-title: Foundation | Conformance
+title: Foundation | CapabilityStatement
 keywords: foundations, fhir
 tags: [rest,fhir,use_case,api,foundation,noccprofile]
 sidebar: accessrecord_rest_sidebar
-permalink: api_foundation_conformance.html
+permalink: api_foundation_capabilitystatement.html
 summary: A capability statement is a set of capabilities of a FHIR Server that may be used as a statement of actual server functionality or a statement of required or desired server implementation.
 ---
 
@@ -27,7 +27,7 @@ All requests SHALL contain a valid ‘Authorization’ header and SHALL contain 
 
 ### 2.1 Request Query ###
 
-Retrieve the Conformance statement from the FHIR Server, the format of the response body will be xml. Replace 'baseUrl' with the actual base Url of the FHIR Server.
+Retrieve the capability statement from the FHIR Server, the format of the response body will be xml. Replace 'baseUrl' with the actual base Url of the FHIR Server.
 
 #### 2.1.1. cURL ####
 
@@ -37,7 +37,7 @@ Retrieve the Conformance statement from the FHIR Server, the format of the respo
 
 ### 2.3 Response Body ###
 
-{% include important.html content="The following draft conformance statement will move as the implementation guide moves on." %}
+{% include important.html content="The following draft capability statement will move as the implementation guide moves on." %}
 
 ```xml
 <Conformance xmlns="http://hl7.org/fhir">
@@ -97,7 +97,7 @@ Retrieve the Conformance statement from the FHIR Server, the format of the respo
 </Conformance>
 ```
 
-{% include important.html content="The following draft conformance statement will move as the implementation guide moves on." %}
+{% include important.html content="The following draft capability statement will move as the implementation guide moves on." %}
 
 
 ### 2.4 C# ###
@@ -107,6 +107,6 @@ Retrieve the Conformance statement from the FHIR Server, the format of the respo
 ```csharp
 var client = new FhirClient("http://[fhir_base]/");
 client.PreferredFormat = ResourceFormat.Json;
-var resource = client.Conformance();
+var resource = client.ConformanceStatement();
 FhirSerializer.SerializeResourceToXml(resource).Dump();
 ```

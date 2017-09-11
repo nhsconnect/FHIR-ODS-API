@@ -13,7 +13,7 @@ summary: "How to use FHIR ODS Lookup API to perform searches on ODS"
 
 ## 1. Overview ##
 
-{% include custom/usecase.html content="" %}
+{% include custom/usecase.html content="A healthcare provider wishes to locate the details of several other healthcare organizations, where the information available to enter into any search parameters differers between each organization. The available information may be one or more of, Organization code, name, address, status or primary roles. In order to process the returned results in an efficient manner, the healthcare provider requires these to be in either JSON or XML format, whilst providing paged navigation." %}
 
 
 Within the NHS, there is a requirement to identify organizations across the Health and Social Care landscape. The Organizational Data Service (ODS) provides access to the repository of publishing codes that identify these organizations and provide valuable information that can reduce administration and improve data quality. ODS provide 3 file types:
@@ -24,10 +24,10 @@ Within the NHS, there is a requirement to identify organizations across the Heal
 
 
 {% include image.html
-max-width="200px" file="IHE/Iti_pam_ip.jpg" alt="Patient Identity Feeds"
+max-width="200px" file="build/ODS-Overview.png" alt="ODS Overview"
 caption="ODS Data Feeds" %}
 
-ODS Lookup API gives an API using [RESTful](https://en.wikipedia.org/wiki/Representational_state_transfer) interface following a {% include custom/patterns.inline.html content="[resource API pattern](http://www.servicedesignpatterns.com/WebServiceAPIStyles/ResourceAPI)" %} to provide access to the Organizational Data Service (ODS) repository.
+ODS Lookup API provides an API using a [RESTful](https://en.wikipedia.org/wiki/Representational_state_transfer) interface following a {% include custom/patterns.inline.html content="[resource API pattern](http://www.servicedesignpatterns.com/WebServiceAPIStyles/ResourceAPI)" %} to provide access to the Organizational Data Service (ODS) database.
 
 This is particularly suited to:
 * A health portal securely exposing organizational information to browser based plugins
@@ -81,7 +81,7 @@ GET https://fhir.nhs.uk/STU3/Organization?identifier=https://https://fhir.nhs.uk
 
 This will return all organizations with a organization code of RR8 (this may be more than one). An organization code is the main identifier within a NHS Organisation or Health Enterprise. It should be noted that codes allocated to GP practices are supplied by the NHS Prescription Service.
 
-### 2.2 Search by Logical ID
+### 2.2 Search by Logical ID ###
 
 Organizations stored on ODS may store the organization code as either a logical id, an identifier or as both. **TO BE CONFIRMED**
 
@@ -130,7 +130,7 @@ If the logical id exists, the following result is returned:
 
 {% include note.html content="XML has been generated from a test FHIR server and is subject to change" %}
 
-### 2.3 Searches using multiple criteria
+### 2.3 Searches using multiple criteria ###
 
 Due to the scale of the ODS database it will often be a necessity to perform searches using more than one search parameter to narrow down the results returned to the end user. 
 
@@ -140,7 +140,7 @@ To search for any record class 2 organization in Wigan, use the following query:
 GET http://fhir.nhs.uk/Organization?type=2&address=Wigan
 ```
 
-The follwoing bundle is returned containing two results that match the criteria used.
+The following bundle is returned containing two results that match the criteria used.
 
 ```xml
 <Bundle xmlns="http://hl7.org/fhir">
@@ -153,10 +153,10 @@ The follwoing bundle is returned containing two results that match the criteria 
    <total value="2"></total>
    <link>
       <relation value="self"></relation>
-      <url value="http://vonk.furore.com/Organization?type=2&amp;address=Wigan"></url>
+      <url value="http://fhir.nhs.uk/STU3/Organization?type=2&amp;address=Wigan"></url>
    </link>
    <entry>
-      <fullUrl value="http://vonk.furore.com/Organization/ef45503b-4d00-49a1-9620-6066d981820b"></fullUrl>
+      <fullUrl value="http://fhir.nhs.uk/STU3/Organization/ef45503b-4d00-49a1-9620-6066d981820b"></fullUrl>
       <resource>
          <Organization xmlns="http://hl7.org/fhir">
             <id value="">RJY12</id>
@@ -292,7 +292,7 @@ The follwoing bundle is returned containing two results that match the criteria 
 </Bundle>
 ```
 
-### 2.4 Search using SearchParameter
+### 2.4 Search using SearchParameter ###
 
 The structure of the data and its data types are not an exact match to the Organization resource elements used in FHIR. To overcome this type of issue, FHIR provides a facility to extend the base resource using extensions. The FHIR ODS lookup API uses several extensions to complete the data mapping from ODS to FHIR. As with all other FHIR elements, it is possible to search on extensions, although the approach to this does differ to that previosuly discussed.
 
@@ -309,6 +309,18 @@ Once uploaded to the FHIR server, this can be used as part of our query.
 ```xml
 GET .....TO DO
 ```
+
+### 2.5 Paging ###
+
+With the scale of the ODS data, the results returned from certain queries could be extensive and require a method for browsing the details returned. FHIR pagination provides the ability to return paged results, making the navigating of the results user friendly. The paging function is transparent to the client, and configured via the FHIR server, however it is possible to control the number of results returned to the client using the `_count` parameter:
+
+```
+GET http://fhir.nhs.uk/STU3/Organization?type=2&address=Wigan&_count=20
+```
+
+This would limit the results to a maximum of 20 items per page. **Check above GET statement**
+
+TODO - More on pagination.
 
 ### 2.2. Java Example ###
 
