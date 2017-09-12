@@ -24,7 +24,7 @@ Within the NHS, there is a requirement to identify organizations across the Heal
 
 
 {% include image.html
-max-width="200px" file="build/ODS-Overview.png" alt="ODS Overview"
+max-width="200px" file="build/ods-overview.png" alt="ODS Overview"
 caption="ODS Data Feeds" %}
 
 ODS Lookup API provides an API using a [RESTful](https://en.wikipedia.org/wiki/Representational_state_transfer) interface following a {% include custom/patterns.inline.html content="[resource API pattern](http://www.servicedesignpatterns.com/WebServiceAPIStyles/ResourceAPI)" %} to provide access to the Organizational Data Service (ODS) database.
@@ -132,9 +132,9 @@ If the logical id exists, the following result is returned:
 
 ### 2.3 Searches using multiple criteria ###
 
-Due to the scale of the ODS database it will often be a necessity to perform searches using more than one search parameter to narrow down the results returned to the end user. 
+Due to the scale of ODS it will often be a necessary to perform searches using more than one search parameter to narrow down the results returned to the end user. 
 
-To search for any record class 2 organization in Wigan, use the following query:
+To search for organizations with a Record Class of ‘2 - HSCSite’ in Wigan, use the following query:
 
 ```
 GET http://fhir.nhs.uk/Organization?type=2&address=Wigan
