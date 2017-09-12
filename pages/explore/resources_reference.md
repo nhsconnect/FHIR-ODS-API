@@ -19,7 +19,5 @@ summary: "Developer Cheat Sheet shortcuts for the <br/>technical build of FHIR&r
 
 | identifier | URI | Comment |
 |--------------------------------------------|----------|----|
-| SDS User Id/ Practitioner Code | https://fhir.nhs.uk/Id/sds-user-id | Practitioner |
 | SDS/ODS Organisation Code | https://fhir.nhs.uk/Id/ods-organization-code | Organization |
-| SDS/ODS Site Code | https://fhir.nhs.uk/Id/ods-site-code | Location |
 

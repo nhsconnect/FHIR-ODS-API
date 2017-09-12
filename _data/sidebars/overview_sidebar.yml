@@ -59,7 +59,7 @@ entries:
       - title: Individuals &amp; Entities
         output: web
         subfolderitems:
-          - title: Organisation
+          - title: Organization
             url: /restfulapis_identification_organization.html
             output: web
       - title: Foundation

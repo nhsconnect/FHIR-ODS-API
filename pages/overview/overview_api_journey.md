@@ -26,7 +26,7 @@ The current site focuses on a typical API Developer's Journey as highlighted by 
 
 NHS Digital is testing process and invitations are open for the health and social care community to get involved and progress the wider developer ecosystem. Please see the explanation of the complete development roadmap below.
 
-{% include custom/contribute.html content="Please contact [interoperabilityteam@nhs.net] to get involved." %}
+{% include custom/contribute.html content="Please contact [interoperabilityteam@nhs.net](interoperabilityteam@nhs.net) to get involved." %}
 
 # How this fits into the wider journey? #
 

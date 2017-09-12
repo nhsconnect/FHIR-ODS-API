@@ -13,10 +13,10 @@ summary: "How to use FHIR ODS Lookup API to perform searches on ODS"
 
 ## 1. Overview ##
 
-{% include custom/usecase.html content="A healthcare provider wishes to locate the details of several other healthcare organizations, where the information available to enter into any search parameters differers between each organization. The available information may be one or more of, Organization code, name, address, status or primary roles. In order to process the returned results in an efficient manner, the healthcare provider requires these to be in either JSON or XML format, whilst providing paged navigation." %}
+{% include custom/usecase.html content="A healthcare provider wishes to locate the details of several other healthcare organizations, where the information available to enter into any search parameters differers between each organization. The available information may be one or more of, Organization code, name, address, status or primary roles. In order to process the returned results in an efficient manner, the healthcare provider requires these to be in XML format, whilst providing paged navigation." %}
 
 
-Within the NHS, there is a requirement to identify organizations across the Health and Social Care landscape. The Organizational Data Service (ODS) provides access to the repository of publishing codes that identify these organizations and provide valuable information that can reduce administration and improve data quality. ODS provide 3 file types:
+Within the NHS, there is a requirement to identify organizations across the Health and Social Care landscape. The Organization Data Service (ODS) provides access to the repository of publishing codes that identify these organizations and provide valuable information that can reduce administration and improve data quality. ODS provide 3 file types:
 
 - Full files which provide a complete snapshot of all organizations.
 - Quarterly amendments provide amended or new records over a three month period.
@@ -67,7 +67,7 @@ To find a organization by ODS code we use the identifier. The earlier example co
 
 ```xml
 <identifier>
-    <system value="https://https://fhir.nhs.uk/Id/ods-organization-code"/>
+    <system value="https://fhir.nhs.uk/Id/ods-organization-code"/>
     <value value="RR8"/>
 </identifier>
 ```
