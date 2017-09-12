@@ -16,7 +16,7 @@ summary: "Overview of the Resources section"
 ### 1.1 API Requirements ###
 
 - SHALL support HL7 FHIR STU3 version 3.0.1.
-- SHALL support the FHIR ODS Organization resource profile.
+- SHALL support the FHIR ODS Organisation resource profile.
 - SHALL support at least one additional resource profile from the list of Profiles
 - SHALL Implement REST behaviour according to the [FHIR specification](http://www.hl7.org/fhir/http.html)
 - Resources SHALL identify the profile supported as part of the [FHIR Base Resource](https://hl7.org/fhir/resource-definitions.html#Resource.meta)
@@ -77,7 +77,7 @@ This section looks at the ODS Lookup profile API covered within this implementat
 <th>Entities</th>
 </tr>
 <tr>
-<td><a href="api_entity_organisation.html">Organization</a></td>
+<td><a href="api_entity_organisation.html">Organisation</a></td>
 </tr>
 <tr>
 <td>&nbsp;</td>

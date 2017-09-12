@@ -96,7 +96,7 @@ sidebars:
 - appointments_sidebar
 - tasks_sidebar
 
-description: "The FHIR ODS Lookup API supports the read only retrieval of information stored by the Organization Data Service."
+description: "The FHIR ODS Lookup API supports the read only retrieval of information stored by the Organisation Data Service."
 # the description is used in the feed.xml file
 
 sitemap: true

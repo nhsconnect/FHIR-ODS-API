@@ -1,7 +1,7 @@
 entries:
 - title: FHIR&reg; ODS Lookup API
   product: FHIR&reg; ODS Lookup API
-  version: 0.1.0-alpha.0
+  version: 0.4.0-alpha.0
   levels: one
   folders:
 

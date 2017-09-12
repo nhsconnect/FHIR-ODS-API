@@ -1,5 +1,5 @@
 ---
-title: Design | Organization (ODS) Search
+title: Design | Organisation Data Service (ODS) Search
 keywords: development
 tags: [design,development]
 sidebar: overview_sidebar
@@ -13,12 +13,12 @@ summary: "How to use FHIR ODS Lookup API to perform searches on ODS"
 
 ## 1. Overview ##
 
-{% include custom/usecase.html content="A healthcare provider wishes to locate the details of several other healthcare organizations, where the information available to enter into any search parameters differers between each organization. The available information may be one or more of, Organization code, name, address, status or primary roles. In order to process the returned results in an efficient manner, the healthcare provider requires these to be in XML format, whilst providing paged navigation." %}
+{% include custom/usecase.html content="A healthcare provider wishes to locate the details of several other healthcare organisations, where the information available to enter into any search parameters differers between each organisation. The available information may be one or more of, Organisation code, name, address, status or primary roles. In order to process the returned results in an efficient manner, the healthcare provider requires these to be in XML format, whilst providing paged navigation." %}
 
 
-Within the NHS, there is a requirement to identify organizations across the Health and Social Care landscape. The Organization Data Service (ODS) provides access to the repository of publishing codes that identify these organizations and provide valuable information that can reduce administration and improve data quality. ODS provide 3 file types:
+Within the NHS, there is a requirement to identify organisations across the Health and Social Care landscape. The Organisation Data Service (ODS) provides access to the repository of publishing codes that identify these organisations and provide valuable information that can reduce administration and improve data quality. ODS provide 3 file types:
 
-- Full files which provide a complete snapshot of all organizations.
+- Full files which provide a complete snapshot of all organisations.
 - Quarterly amendments provide amended or new records over a three month period.
 - Monthly amendments provide amended or new records over a one month period.
 
@@ -27,25 +27,25 @@ Within the NHS, there is a requirement to identify organizations across the Heal
 max-width="200px" file="build/ods-overview.png" alt="ODS Overview"
 caption="ODS Data Feeds" %}
 
-ODS Lookup API provides an API using a [RESTful](https://en.wikipedia.org/wiki/Representational_state_transfer) interface following a {% include custom/patterns.inline.html content="[resource API pattern](http://www.servicedesignpatterns.com/WebServiceAPIStyles/ResourceAPI)" %} to provide access to the Organizational Data Service (ODS) database.
+ODS Lookup API provides an API using a [RESTful](https://en.wikipedia.org/wiki/Representational_state_transfer) interface following a {% include custom/patterns.inline.html content="[resource API pattern](http://www.servicedesignpatterns.com/WebServiceAPIStyles/ResourceAPI)" %} to provide access to the Organisational Data Service (ODS) database.
 
 This is particularly suited to:
-* A health portal securely exposing organizational information to browser based plugins
-* Medical devices which need to access organizational information
-* Mobile devices used by physicians which need to establish organizational information.
-* Web based EPR/EHR applications which wish to provide dynamic updates of organization details.
-* Any low resource application which exposes organizational search functionality
+* A health portal securely exposing organisational information to browser based plugins
+* Medical devices which need to access organisational information
+* Mobile devices used by physicians which need to establish organisational information.
+* Web based EPR/EHR applications which wish to provide dynamic updates of organisation details.
+* Any low resource application which exposes organisational search functionality
 * A facade providing a simple API to a complex interface
 
-## 2. Client Organization Search ##
+## 2. Client Organisation Search ##
 
 ### 2.1 Foundation ###
 
 {% include image.html
-max-width="200px" file="build/ODS-Lookup.png" alt="Organization Lookup FHIR Actor Diagram"
-caption="Organization Lookup FHIR Actor Diagram" %}
+max-width="200px" file="build/ODS-Lookup.png" alt="Organisation Lookup FHIR Actor Diagram"
+caption="Organisation Lookup FHIR Actor Diagram" %}
 
-The ODS API Lookup can use any of the search parameters defined in the [ODS Lookup API](api_entity_organization.html) API. For example if organization code RR8 is available, the query would be.
+The ODS API Lookup can use any of the search parameters defined in the [ODS Lookup API](api_entity_organization.html) API. For example if organisation code RR8 is available, the query would be.
 
 ```
 GET https://fhir.nhs.uk/STU3/Organization?postalCode=NG10 1ZZ
@@ -53,7 +53,7 @@ GET https://fhir.nhs.uk/STU3/Organization?postalCode=NG10 1ZZ
 
 A sample response is shown below
 
-#### XML Example 1 - Bundle Organization ####
+#### XML Example 1 - Bundle Organisation ####
 
 <script src="https://gist.github.com/IOPS-DEV/ddc46233d23403e2dc0d705fac690a86.js"></script>
 
@@ -63,7 +63,7 @@ What we have just described is shown in the diagram below. When entered the url 
 max-width="200px" file="build/ods-basic-flow.png" alt="Basic Process Flow ODS Search FHIR" caption="Basic Process Flow" %}
 
 
-To find a organization by ODS code we use the identifier. The earlier example contained an ODS code, the ODS code RR8 belongs to the system `https://fhir.nhs.uk/Id/ods-organization-code`, which is identifier for the ODS code in England and Wales.
+To find a organisation by ODS code we use the identifier. The earlier example contained an ODS code, the ODS code RR8 belongs to the system `https://fhir.nhs.uk/Id/ods-organization-code`, which is identifier for the ODS code in England and Wales.
 
 ```xml
 <identifier>
@@ -72,22 +72,22 @@ To find a organization by ODS code we use the identifier. The earlier example co
 </identifier>
 ```
 
-To search for Organizations by organization code, use the following query:
+To search for Organisations by organisation code, use the following query:
 
 
 ```
-GET https://fhir.nhs.uk/STU3/Organization?identifier=https://https://fhir.nhs.uk/Id/ods-organization-code|RR8
+GET https://fhir.nhs.uk/STU3/Organization?**TODO** 
 ```
 
-This will return all organizations with a organization code of RR8 (this may be more than one). An organization code is the main identifier within a NHS Organisation or Health Enterprise. It should be noted that codes allocated to GP practices are supplied by the NHS Prescription Service.
+This will return all organisations with a organisation code of RR8 (this may be more than one). An organisation code is the main identifier within a NHS Organisation or Health Enterprise. It should be noted that codes allocated to GP practices are supplied by the NHS Prescription Service.
 
 ### 2.2 Search by Logical ID ###
 
-Organizations stored on ODS may store the organization code as either a logical id, an identifier or as both. **TO BE CONFIRMED**
+Organisations stored on ODS may store the organisation code as either a logical id, an identifier or as both. **TO BE CONFIRMED**
 
-A search using a logical id will return a single record which contains the details of the requested organization. There is neither the option or requirement to add any additional parameters to a logical id search, unless searching for a FHIR history record. 
+A search using a logical id will return a single record which contains the details of the requested organisation. There is neither the option or requirement to add any additional parameters to a logical id search, unless searching for a FHIR history record. 
 
-{% include warning.html content="ODS contains historic organizational records. These are not the same as FHIR history records which contain previous versions of the FHIR record" %}
+{% include warning.html content="ODS contains historic organisational records. These are not the same as FHIR history records which contain previous versions of the FHIR record" %}
 
 To search using logical id, use the following query:
 
@@ -134,7 +134,7 @@ If the logical id exists, the following result is returned:
 
 Due to the scale of ODS it will often be a necessary to perform searches using more than one search parameter to narrow down the results returned to the end user. 
 
-To search for organizations with a Record Class of ‘2 - HSCSite’ in Wigan, use the following query:
+To search for organisations with a Record Class of ‘2 - HSCSite’ in Wigan, use the following query:
 
 ```
 GET http://fhir.nhs.uk/Organization?type=2&address=Wigan
@@ -294,11 +294,11 @@ The following bundle is returned containing two results that match the criteria 
 
 ### 2.4 Search using SearchParameter ###
 
-The structure of the data and its data types are not an exact match to the Organization resource elements used in FHIR. To overcome this type of issue, FHIR provides a facility to extend the base resource using extensions. The FHIR ODS lookup API uses several extensions to complete the data mapping from ODS to FHIR. As with all other FHIR elements, it is possible to search on extensions, although the approach to this does differ to that previosuly discussed.
+The structure of the data and its data types are not an exact match to the Organisation resource elements used in FHIR. To overcome this type of issue, FHIR provides a facility to extend the base resource using extensions. The FHIR ODS lookup API uses several extensions to complete the data mapping from ODS to FHIR. As with all other FHIR elements, it is possible to search on extensions, although the approach to this does differ to that previosuly discussed.
 
 In order to search ODS using an extension, an additional resource must be created for the extension. The `SearchParameter` resource is used to define the search parameter that will be used in our url.
 
-To search for a an organization role we must create the following SearchParameter:
+To search for a an organisation role we must create the following SearchParameter:
 
 ```xml
 TO DO
@@ -326,19 +326,19 @@ TODO - More on pagination.
 
 The examples are built using [HAPI FHIR](http://hapifhir.io/) which is an open source implementation of the HL7 FHIR specification by the University Health Network, Canada. Source code can be found on [NHSConnect GitHub](https://github.com/nhsconnect/careconnect-java-examples/tree/master/ImplementationGuideExplore)
 
-The first example uses the same search parameters we used earlier, we are searching for Organization with a post code of NG10 1QQ. The first couple of lines setup a Stu3 FHIR context and set the baseUrl to be `https://fhir.nhs.uk/STU3/`. The output from running this code is shown earlier in this guide.
+The first example uses the same search parameters we used earlier, we are searching for Organisation with a post code of NG10 1QQ. The first couple of lines setup a Stu3 FHIR context and set the baseUrl to be `https://fhir.nhs.uk/STU3/`. The output from running this code is shown earlier in this guide.
 
 #### Java Example 1 - ODS Search ####
 
 <script src="https://gist.github.com/IOPS-DEV/b63b4394c201fa5b31db6f8f227b16d7.js"></script>
 
-The second example would return the same FHIR response but this time the search is using the organization code.
+The second example would return the same FHIR response but this time the search is using the organisation code.
 
-#### Java Example 2 - ODS Search Organization Code ####
+#### Java Example 2 - ODS Search Organisation Code ####
 
 <script src="https://gist.github.com/IOPS-DEV/e1616bdaea112231aa9ba08a8f331f12.js"></script>
 
-#### Java Example 3 - ODS Search Organization Role ####
+#### Java Example 3 - ODS Search Organisation Role ####
 
 <script src="https://gist.github.com/IOPS-DEV/9b27d9d46b6dd328263a8c7ca9690aa9.js"></script>
 
