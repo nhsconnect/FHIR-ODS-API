@@ -31,7 +31,7 @@ Retrieve the capability statement from the FHIR Server, the format of the respon
 
 #### 2.1.1. cURL ####
 
-{% include custom/embedcurl.html title="Read Server Conformance Statement" command="curl -H 'Accept: application/xml+fhir' -H 'Authorization: BEARER [token]' -X GET '[baseUrl]/metadata'" %}
+{% include custom/embedcurl.html title="Read Server Conformance Statement" command="curl -H 'Accept: application/fhir+xml' -H 'Authorization: BEARER [token]' -X GET '[baseUrl]/metadata'" %}
 
 {% include custom/search.response.headers.html resource="Conformance"  %}
 
@@ -107,6 +107,6 @@ Retrieve the capability statement from the FHIR Server, the format of the respon
 ```csharp
 var client = new FhirClient("http://[fhir_base]/");
 client.PreferredFormat = ResourceFormat.Json;
-var resource = client.ConformanceStatement();
+var resource = client.CapabilityStatement();
 FhirSerializer.SerializeResourceToXml(resource).Dump();
 ```
