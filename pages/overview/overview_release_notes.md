@@ -8,6 +8,14 @@ summary: Summary release notes of the versions released in FHIR&reg; ODS Lookup 
 ---
 
 {% include important.html content="This site is under active development by NHS Digital and is intended to provide all the technical resources you need to successfully develop applications using the FHIR&reg; ODS Lookup API. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis." %}
+## 0.5.0-alpha.0 ##
+
+Removed document and message from exchange patterns with ODS being API based.
+
+Added a draft CapabilityStatement
+
+Added new search examples
+
 
 ## 0.4.0-alpha.0 ##
 

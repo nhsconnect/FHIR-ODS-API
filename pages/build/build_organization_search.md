@@ -45,10 +45,10 @@ This is particularly suited to:
 max-width="200px" file="build/ODS-Lookup.png" alt="Organisation Lookup FHIR Actor Diagram"
 caption="Organisation Lookup FHIR Actor Diagram" %}
 
-The ODS API Lookup can use any of the search parameters defined in the [ODS Lookup API](api_entity_organization.html) API. For example if organisation code RR8 is available, the query would be.
+The ODS API Lookup can use any of the search parameters defined in the [ODS Lookup API](api_entity_organization.html) API. For example, to locate organisations with a post code of LS9 7TF, the query would be.
 
 ```
-GET https://fhir.nhs.uk/STU3/Organization?postalCode=NG10 1ZZ
+GET https://fhir.nhs.uk/STU3/Organization?postalCode=LS9 7TF
 ```
 
 A sample response is shown below
@@ -57,29 +57,27 @@ A sample response is shown below
 
 <script src="https://gist.github.com/IOPS-DEV/ddc46233d23403e2dc0d705fac690a86.js"></script>
 
-What we have just described is shown in the diagram below. When entered the url we did a ODS Search FHIR Query and the response is called ODS Search FHIR Query Response.
+What we have just described is shown in the diagram below. When entereing the url we did an ODS Search FHIR Query and the response is called ODS Search FHIR Query Response.
 
 {% include image.html
 max-width="200px" file="build/ods-basic-flow.png" alt="Basic Process Flow ODS Search FHIR" caption="Basic Process Flow" %}
 
+### 2.2 Search using Identifier ###
 
-To find a organisation by ODS code we use the identifier. The earlier example contained an ODS code, the ODS code RR8 belongs to the system `https://fhir.nhs.uk/Id/ods-organization-code`, which is identifier for the ODS code in England and Wales.
+To find a organisation by ODS code we use the identifier, which stores all Organisation codes in ODS. The earlier example used a post code to locate any records, which could return more than one result. With organisation codes being unique, searching using an identifier should in theory return only once record. The exception to this rule would be searching for records in FHIR using the `_history` parameter. 
 
-```xml
-<identifier>
-    <system value="https://fhir.nhs.uk/Id/ods-organization-code"/>
-    <value value="RR8"/>
-</identifier>
-```
 
 To search for Organisations by organisation code, use the following query:
 
 
 ```
-GET https://fhir.nhs.uk/STU3/Organization?**TODO** 
+GET https://fhir.nhs.uk/STU3/Organization?identifier=RXX 
 ```
 
-This will return all organisations with a organisation code of RR8 (this may be more than one). An organisation code is the main identifier within a NHS Organisation or Health Enterprise. It should be noted that codes allocated to GP practices are supplied by the NHS Prescription Service.
+This will return all organisations with a organisation code of RXX (this may be more than one). An organisation code is the main identifier within a NHS Organisation or Health Enterprise. It should be noted that codes allocated to GP practices are supplied by the NHS Prescription Service.
+
+<script src="https://gist.github.com/IOPS-DEV/25e3e70ac76e1dc3d0d6c6d367076d4d.js"></script>
+      
 
 ### 2.2 Search by Logical ID ###
 
@@ -92,41 +90,13 @@ A search using a logical id will return a single record which contains the detai
 To search using logical id, use the following query:
 
 ```
-GET https://fhir.nhs.uk/STU3/Organization/NMV04
+GET https://fhir.nhs.uk/STU3/Organization/RXX
 ```
 
 If the logical id exists, the following result is returned:
 
-```xml
-<Organization xmlns="http://hl7.org/fhir">
-   <id value="NMV04"></id>
-   <meta>
-      <versionId value="ef284764-c821-48ec-8391-101584938bff"></versionId>
-      <lastUpdated value="2017-09-07T13:50:56.373+00:00"></lastUpdated>
-   </meta>
-   <identifier>
-      <system value="https://fhir.nhs.uk/Id/ods-organization-code"></system>
-      <value value="NMV04"></value>
-   </identifier>
-   <active value="true"></active>
-   <type>
-      <coding>
-         <system value="https://fhir.nhs.uk/STU3/ODSAPI-OrganizationRecordClass-1"></system>
-         <code value="2"></code>
-         <display value="HSCSite"></display>
-      </coding>
-   </type>
-   <name value="SUTTONS MANOR"></name>
-   <address>
-      <line value="LONDON ROAD"></line>
-      <line value="STAPLEFORD TAWNEY"></line>
-      <city value="ROMFORD"></city>
-      <district value="ESSEX"></district>
-      <postalCode value="RM4 1BF"></postalCode>
-      <country value="ENGLAND"></country>
-   </address>
-</Organization>
-```
+<script src="https://gist.github.com/IOPS-DEV/eee16fbeeee41bb5622d3964bf9a1b74.js"></script>
+
 
 {% include note.html content="XML has been generated from a test FHIR server and is subject to change" %}
 
@@ -142,172 +112,65 @@ GET http://fhir.nhs.uk/Organization?type=2&address=Wigan
 
 The following bundle is returned containing two results that match the criteria used.
 
-```xml
-<Bundle xmlns="http://hl7.org/fhir">
-   <id value="4e31c618-9877-4cb2-8237-cec6756d8433"></id>
-   <meta>
-      <versionId value="46bd9ffa-ad31-4945-9fc8-ceedb2325d64"></versionId>
-      <lastUpdated value="2017-09-08T14:37:46.798+00:00"></lastUpdated>
-   </meta>
-   <type value="searchset"></type>
-   <total value="2"></total>
-   <link>
-      <relation value="self"></relation>
-      <url value="http://fhir.nhs.uk/STU3/Organization?type=2&amp;address=Wigan"></url>
-   </link>
-   <entry>
-      <fullUrl value="http://fhir.nhs.uk/STU3/Organization/ef45503b-4d00-49a1-9620-6066d981820b"></fullUrl>
-      <resource>
-         <Organization xmlns="http://hl7.org/fhir">
-            <id value="">RJY12</id>
-            <meta>
-               <versionId value="19e50004-7e27-48b0-a648-6f5de104cce7"></versionId>
-               <lastUpdated value="2017-09-08T14:32:34.757+00:00"></lastUpdated>
-            </meta>
-            <extension url="https://fhir.nhs.uk/StructureDefinition/STU3/Extension-ODSAPI-ActivePeriod-1">
-               <valuePeriod>
-                  <extension url="https://fhir.nhs.uk/StructureDefinition/STU3/Extension-ODSAPI-DateType-1">
-                     <valueString value="Operational"></valueString>
-                  </extension>
-                  <start value="2001-04-01"></start>
-               </valuePeriod>
-            </extension>
-            <extension url="https://fhir.nhs.uk/StructureDefinition/STU3/Extension-ODSAPI-OrganizationRole-1">
-               <extension url="role">
-                  <valueCoding>
-                     <system value="https://fhir.nhs.uk/STU3/ODSAPI-OrganizationRole-1"></system>
-                     <code value="198"></code>
-                     <display value="NHS TRUST SITE"></display>
-                  </valueCoding>
-               </extension>
-               <extension url="primaryRole">
-                  <valueBoolean value="true"></valueBoolean>
-               </extension>
-               <extension url="activePeriod">
-                  <valuePeriod>
-                     <extension url="https://fhir.nhs.uk/StructureDefinition/STU3/Extension-ODSAPI-DateType-1">
-                        <valueString value="Operational"></valueString>
-                     </extension>
-                     <start value="2009-10-01"></start>
-                  </valuePeriod>
-               </extension>
-               <extension url="status">
-                  <valueString value="Active"></valueString>
-               </extension>
-            </extension>
-            <identifier>
-               <system value="https://fhir.nhs.uk/Id/ods-organization-code"></system>
-               <value value="RJY12"></value>
-            </identifier>
-            <active value="true"></active>
-            <type>
-               <coding>
-                  <system value="https://fhir.nhs.uk/STU3/ODSAPI-OrganizationRecordClass-1"></system>
-                  <code value="2"></code>
-                  <display value="HSCSite"></display>
-               </coding>
-            </type>
-            <name value="CHILD &amp; FAMILY PSYCHIATRIC UNIT"></name>
-            <address>
-               <line value="155-157 MANCHESTER ROAD"></line>
-               <line value="INCE"></line>
-               <city value="WIGAN"></city>
-               <district value="LANCASHIRE"></district>
-               <postalCode value="WN2 2JA"></postalCode>
-               <country value="ENGLAND"></country>
-            </address>
-         </Organization>
-      </resource>
-      <search>
-         <mode value="match"></mode>
-      </search>
-   </entry>
-   <entry>
-      <fullUrl value="http://fhir.nhs.uk/Organization/7c82bf0a-3307-426f-9a3c-c02048c2da62"></fullUrl>
-      <resource>
-         <Organization xmlns="http://hl7.org/fhir">
-            <id value="RRF12"></id>
-            <meta>
-               <versionId value="fd4d7af3-dfd5-4cff-9960-538974809290"></versionId>
-               <lastUpdated value="2017-09-08T14:33:30.635+00:00"></lastUpdated>
-            </meta>
-            <extension url="https://fhir.nhs.uk/StructureDefinition/STU3/Extension-ODSAPI-ActivePeriod-1">
-               <valuePeriod>
-                  <extension url="https://fhir.nhs.uk/StructureDefinition/STU3/Extension-ODSAPI-DateType-1">
-                     <valueString value="Operational"></valueString>
-                  </extension>
-                  <start value="2001-04-01"></start>
-               </valuePeriod>
-            </extension>
-            <extension url="https://fhir.nhs.uk/StructureDefinition/STU3/Extension-ODSAPI-OrganizationRole-1">
-               <extension url="role">
-                  <valueCoding>
-                     <system value="https://fhir.nhs.uk/STU3/ODSAPI-OrganizationRole-1"></system>
-                     <code value="198"></code>
-                     <display value="NHS TRUST SITE"></display>
-                  </valueCoding>
-               </extension>
-               <extension url="primaryRole">
-                  <valueBoolean value="true"></valueBoolean>
-               </extension>
-               <extension url="activePeriod">
-                  <valuePeriod>
-                     <extension url="https://fhir.nhs.uk/StructureDefinition/STU3/Extension-ODSAPI-DateType-1">
-                        <valueString value="Operational"></valueString>
-                     </extension>
-                     <start value="2009-10-01"></start>
-                  </valuePeriod>
-               </extension>
-               <extension url="status">
-                  <valueString value="Active"></valueString>
-               </extension>
-            </extension>
-            <identifier>
-               <system value="https://fhir.nhs.uk/Id/ods-organization-code"></system>
-               <value value="RRF12"></value>
-            </identifier>
-            <active value="true"></active>
-            <type>
-               <coding>
-                  <system value="https://fhir.nhs.uk/STU3/ODSAPI-OrganizationRecordClass-1"></system>
-                  <code value="2"></code>
-                  <display value="HSCSite"></display>
-               </coding>
-            </type>
-            <name value="PLATT BRIDGE CLINIC"></name>
-            <address>
-               <line value="1 RIVINGTON AVENUE"></line>
-               <line value="PLATT BRIDGE"></line>
-               <city value="WIGAN"></city>
-               <district value="LANCASHIRE"></district>
-               <postalCode value="WN2 5NG"></postalCode>
-               <country value="ENGLAND"></country>
-            </address>
-         </Organization>
-      </resource>
-      <search>
-         <mode value="match"></mode>
-      </search>
-   </entry>
-</Bundle>
+
+<script src="https://gist.github.com/IOPS-DEV/ca6d412ce2363a95bce679ca3f54bcdd.js"></script>
+
+Using the same approach, we can narrow a search down to a organization name and area. Using only a name search of 'Freeman' for example would result in a large number of results returned, covering all organization roles and locations. Adding an address within the criteria can significantly reduce the results:
+
 ```
+GET http://fhir.nhs.uk/Organization?name=Freeman&address=Newcastle
+```
+Note that we have no specified a part of the address, such as a Town, or street. We only need to enter the address and our search will check against all child elements that are used to construct a full address.
+
 
 ### 2.4 Search using SearchParameter ###
 
-The structure of the data and its data types are not an exact match to the Organisation resource elements used in FHIR. To overcome this type of issue, FHIR provides a facility to extend the base resource using extensions. The FHIR ODS lookup API uses several extensions to complete the data mapping from ODS to FHIR. As with all other FHIR elements, it is possible to search on extensions, although the approach to this does differ to that previosuly discussed.
+{% include custom/information.html content="This section is still thorectical and requires confirmation of content which may be inaccurate" %}
+
+The structure of the data and its data types are not an exact match to the Organisation resource elements used in FHIR. To overcome this type of issue, FHIR provides a facility to extend the base resource using extensions. The FHIR ODS lookup API uses several extensions to complete the data mapping from ODS to FHIR. As with all other FHIR elements, it is possible to search on extensions, although the approach to this does differ to that previously discussed.
 
 In order to search ODS using an extension, an additional resource must be created for the extension. The `SearchParameter` resource is used to define the search parameter that will be used in our url.
 
 To search for a an organisation role we must create the following SearchParameter:
 
 ```xml
-TO DO
+<SearchParameter xmlns="http://hl7.org/fhir">
+   <id value="f4bb061c-d8cf-4a4b-9b92-8804d47fcfbb"/>
+   <meta>
+      <versionId value="c4d90756-5d7d-49f8-b10e-4767cabb60f6"/>
+      <lastUpdated value="2017-09-13T14:24:38.981+00:00"/>
+   </meta>
+   <url value="https://fhir.nhs.uk/STU3/SearchParameter/ods-role-extension-1"/>
+   <name value="Search Parameter on role extension"/>
+   <status value="active"/>
+   <publisher value="NHS Digital"/>
+   <code value="odsrole"/>
+   <base value="Organization"/>
+   <type value="string"/>
+   <description value="Test search"/>
+   <expression value="Organization.extension.('https://fhir.nhs.uk/STU3/StructureDefinition/Extension-ODSAPI-OrganizationRole-1')"/>
+   <xpathUsage value="normal"/>
+</SearchParameter>
 ```
 
-Once uploaded to the FHIR server, this can be used as part of our query.
+{% include important.html content="ODS Lookup API utilizes complex extensions. Care should be taken when creating SearchParameters to ensure that the correct expression is defined" %}
+
+Once uploaded to the FHIR server, the `CapabilityStatement` must also be updated to recognise this new search parameter **TO CHECK**
+
+```xml
+Add capability statement here
+```
+
+Once the SearchParameter has been registered with the FHIR server we can search using:
 
 ```xml
 GET .....TO DO
+```
+
+Which will return the following results:
+
+```
+results here
 ```
 
 ### 2.5 Paging ###
