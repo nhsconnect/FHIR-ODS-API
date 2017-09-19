@@ -134,43 +134,44 @@ In order to search ODS using an extension, an additional resource must be create
 To search for a an organisation role we must create the following SearchParameter:
 
 ```xml
-<SearchParameter xmlns="http://hl7.org/fhir">
-   <id value="f4bb061c-d8cf-4a4b-9b92-8804d47fcfbb"/>
-   <meta>
-      <versionId value="c4d90756-5d7d-49f8-b10e-4767cabb60f6"/>
-      <lastUpdated value="2017-09-13T14:24:38.981+00:00"/>
-   </meta>
-   <url value="https://fhir.nhs.uk/STU3/SearchParameter/ods-role-extension-1"/>
-   <name value="Search Parameter on role extension"/>
-   <status value="active"/>
-   <publisher value="NHS Digital"/>
-   <code value="odsrole"/>
-   <base value="Organization"/>
-   <type value="string"/>
-   <description value="Test search"/>
-   <expression value="Organization.extension.('https://fhir.nhs.uk/STU3/StructureDefinition/Extension-ODSAPI-OrganizationRole-1')"/>
-   <xpathUsage value="normal"/>
+<SearchParameter>
+    <url value="https://fhir.nhs.uk/STU3/SearchParameter/ODSAPI-OrganizationRole-Role-1" />
+    <name value="ODS API Organization Role" />
+    <status value="draft" />
+    <experimental value="true" />
+    <date value="2017-09-12" />
+    <publisher value="NHS Digital" />
+    <purpose value="This search parameter has been defined to enable the ability to query on the role of an ODS Organization." />
+    <code value="ods-org-role" />
+    <base value="Organization" />
+    <type value="token" />
+    <description value="A search parameter to query on the role of an ODS Organization." />
+    <expression value="Organization.extension('https://fhir.nhs.uk/STU3/StructureDefinition/Extension-ODSAPI-OrganizationRole-1').extension('role')" />
+    <xpath value="f:Organization/f:extension[@url='https://fhir.nhs.uk/STU3/StructureDefinition/Extension-ODSAPI-OrganizationRole-1']/f:extension[@url='role']" />
+    <xpathUsage value="normal" />
+    <comparator value="eq" />
+    <modifier value="exact" />
 </SearchParameter>
 ```
 
 {% include important.html content="ODS Lookup API utilizes complex extensions. Care should be taken when creating SearchParameters to ensure that the correct expression is defined" %}
 
-Once uploaded to the FHIR server, the `CapabilityStatement` must also be updated to recognise this new search parameter **TO CHECK**
-
-```xml
-Add capability statement here
-```
-
 Once the SearchParameter has been registered with the FHIR server we can search using:
 
-```xml
-GET .....TO DO
+```
+GET http://fhir.nhs.uk/STU3/Organization?ods-org-role=https://fhir.nhs.uk/STU3/ODSAPI-OrganizationRole-1|197
 ```
 
 Which will return the following results:
 
+<script src="https://gist.github.com/IOPS-DEV/d20f56ec9e809413507dce01275f5a51.js"></script>ts here
+
+The use of role code will be vital within the ODS Lookup API to reduce the number of results returned from any search that has been initiated. The combination of role code and other criteria will help keep results down to manageable proportions.
+
+Search using an organisation role, name and town:
+
 ```
-results here
+GET GET http://fhir.nhs.uk/STU3/Organization?ods-org-role=https://fhir.nhs.uk/STU3/ODSAPI-OrganizationRole-1|197&name=Frreeman&address=Newcastle
 ```
 
 ### 2.5 Paging ###
