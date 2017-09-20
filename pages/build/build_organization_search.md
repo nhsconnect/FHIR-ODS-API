@@ -164,19 +164,40 @@ GET http://fhir.nhs.uk/STU3/Organization?ods-org-role=https://fhir.nhs.uk/STU3/O
 
 Which will return the following results:
 
-<script src="https://gist.github.com/IOPS-DEV/d20f56ec9e809413507dce01275f5a51.js"></script>ts here
+<script src="https://gist.github.com/IOPS-DEV/d20f56ec9e809413507dce01275f5a51.js"></script>
 
-The use of role code will be vital within the ODS Lookup API to reduce the number of results returned from any search that has been initiated. The combination of role code and other criteria will help keep results down to manageable proportions.
+The use of role code will be vital within the ODS Lookup API to reduce the number of results returned from any search that has been initiated. The combination of role code and other criteria will help keep results down to manageable proportions. For more information on SearchParameter review this page [How to use create FHIR ODS Lookup API search parameters](build_organization_searchparameters.html)
 
 Search using an organisation role, name and town:
 
 ```
-GET GET http://fhir.nhs.uk/STU3/Organization?ods-org-role=https://fhir.nhs.uk/STU3/ODSAPI-OrganizationRole-1|197&name=Frreeman&address=Newcastle
+GET http://fhir.nhs.uk/STU3/Organization?ods-org-role=https://fhir.nhs.uk/STU3/ODSAPI-OrganizationRole-1|197&name=Freeman&address=Newcastle
 ```
+
+Search using same criteria as above, with an active period included to further reduce results:
+
+```
+GET https://fhir.nhs.uk/STU3/Organization?ods-org-role=https://fhir.nhs.uk/STU3/ODSAPI-OrganizationRole-1|197&name=Freeman&address=Newcastle&activeperiod=2015-04-01
+```
+
+Search for an Organisation where the role of the organisation is primary:
+
+```
+GET http://fhir.nhs.uk/STU3/Organization?ods-org-role=https://fhir.nhs.uk/STU3/ODSAPI-OrganizationRole-1|197&ods-org-primaryRole=true
+```
+
+Search for an active organisation using a date range:
+
+```
+GET https://fhir.nhs.uk/STU3/Organization?identity=RXX&ods-org-activeperiod=ge2015-04-01&ods-org-activeperiod=le2016-03-31
+```
+
+Note:ods-org-activeperiod searchparameter required.
 
 ### 2.5 Paging ###
 
 With the scale of the ODS data, the results returned from certain queries could be extensive and require a method for browsing the details returned. FHIR pagination provides the ability to return paged results, making the navigating of the results user friendly. The paging function is transparent to the client, and configured via the FHIR server, however it is possible to control the number of results returned to the client using the `_count` parameter:
+
 
 ```
 GET http://fhir.nhs.uk/STU3/Organization?type=2&address=Wigan&_count=20
