@@ -30,14 +30,13 @@ Fetches a bundle of all `Organization` resources for the specified search criter
 
 {% include custom/search.parameters.html resource="Organization"     link="https://www.hl7.org/fhir/organization.html#search)" %}
 
-| Name | Type | Description | Conformance  | Path |
-|------|------|-------------|-------|------|
-| `address-postalcode` | `string` | A postalCode specified in an address | MAY | Organization.address.postalCode |
-| `address-city` | `string` | A city specified in an address | MAY | Organization.address.city |
-| `identifier` | `token` | 	Any identifier for the organization (ODS code) | MAY | Organization.identifier |
-| `active` | `token` | 	Whether the organization's record is still in active use | MAY | Organization.active |
-| `name` | `string` | A portion of the name of the organization | MAY | Organization.name |
-| `role/primaryRole` | `token` | To be defined | TBC | To be defined |
+| Name | Type | Description | Path |
+|------|------|-------------|------|
+| `address-postalcode` | `string` | A postalCode specified in an address | Organization.address.postalCode |
+| `address-city` | `string` | A city specified in an address |Organization.address.city |
+| `identifier` | `token` | 	Any identifier for the organization (ODS code) | Organization.identifier |
+| `active` | `token` | 	Whether the organization's record is still in active use | Organization.active |
+| `name` | `string` | A portion of the name of the organization | Organization.name |
 
 {% include custom/search.nopat.string.html para="2.1.1." resource="Organization" content="address-postalcode"  example="DE22%203NE" text1="Postcode" text2="DE22 3NE" %}
 
@@ -51,19 +50,6 @@ Fetches a bundle of all `Organization` resources for the specified search criter
 
 {% include custom/search.response.html resource="Organization" %}
 
-## 3. Example ##
 
-### 3.1 Request Query ###
 
-Return all Organization resources with a ODS Code of C81010, the format of the response body will be xml. Replace 'baseUrl' with the actual base Url of the FHIR Server.
 
-#### 3.1.1. cURL ####
-
-{% include custom/embedcurl.html title="Search Organization" command="curl -H 'Accept: application/fhir+xml' -H 'Authorization: BEARER [token]' -X GET  '[baseUrl]/Organization?identifier=https://fhir.nhs.uk/Id/ods-organization-code|C81010'" %}
-
-{% include custom/search.response.headers.html resource="Organization" %}
-
-### 3.3 Response Body ###
-
-```TO ADD
-```

@@ -3,7 +3,7 @@ title: Open Source Guidance
 keywords: fhir, development, open source
 tags: [fhir,development]
 sidebar: overview_sidebar
-permalink: explore_fhir_open_source_guidance.html
+permalink: design_open_source.html
 summary: "Details of open source FHIR libraries."
 ---
 
@@ -18,10 +18,4 @@ The following open source FHIR libraries are available on GitHub:
 - JavaScript [Smart on FHIR](https://github.com/smart-on-fhir/client-js){:target="_blank"}
 - Python [Smart on FHIR](https://github.com/smart-on-fhir/client-py){:target="_blank"}
 
-## 2. Open Source FHIR Reference Servers ##
 
-The following open source FHIR Reference servers:
-
-- C#.NET [Spark FHIR Server](http://spark.furore.com/){:target="_blank"}
-- Java [HAPI FHIR](http://hapifhir.io/){:target="_blank"}
-- [SMART on FHIR](http://docs.smarthealthit.org/sandbox/){:target="_blank"}
