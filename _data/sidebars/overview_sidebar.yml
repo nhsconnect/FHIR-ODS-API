@@ -1,7 +1,7 @@
 entries:
 - title: FHIR&reg; ODS Lookup API
   product: FHIR&reg; ODS Lookup API
-  version: 0.6.0-alpha.0
+  version: 0.7.0-alpha.0
   levels: one
   folders:
 
@@ -43,7 +43,7 @@ entries:
     output: web
     folderitems:
     - title: Overview
-      url: /resources_overview.html
+      url: /explore.html
       output: web
     - title: Organization
       url: /restfulapis_identification_organization.html
@@ -54,8 +54,7 @@ entries:
         subfolderitems:
         - title: HTTP Response Codes
           url: /explore_api_codes.html
-          output: web
-        
+          output: web     
         - title: Reference
           url: /explore_reference.html
           output: web

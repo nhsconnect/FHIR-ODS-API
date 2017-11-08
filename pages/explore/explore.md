@@ -3,7 +3,7 @@ title: Resources Overview
 keywords: getcarerecord, structured, rest, resource
 tags: [rest,fhir,api]
 sidebar: foundations_sidebar
-permalink: resources_overview.html
+permalink: explore.html
 summary: "Overview of the Resources section"
 ---
 
@@ -50,7 +50,6 @@ This section looks at the ODS Lookup profile API covered within this implementat
 
 <table style="min-width:100%;width:100%">
 
-</tr>
 <tr>
 <th>Entities</th>
 </tr>
