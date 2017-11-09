@@ -18,19 +18,4 @@ The Design & Build section contains descriptions of approaches and suggestions f
 | Security | The security of the FHIR payload, access and data at rest are all important design decisions while building an API. | 
 | Build | A look at some tools and techniques to help build APIs using the Resources defined in Explore | 
 
-# Providing an API #
 
-The following diagram explains the elements of APIs allowing the development of APIs:
-
-{% include custom/provide_api.svg %}
-
-NHS Digital is contributing to progressing the profile development (see Overview section). Invitations are open for the health and social care community to get involved and progress the wider developer ecosystem as defined above. 
-
-
-# Contribute #
-
-This site is structured around API users, developers and architects. Please get involved in the journey.
-
-{% include custom/api_overview.svg %}
-
-{% include custom/contribute.html content="If you want to get involved in any part of this then please get in touch with interoperabilityteam@nhs.net "%}

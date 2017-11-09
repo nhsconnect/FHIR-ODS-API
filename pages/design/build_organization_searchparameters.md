@@ -60,9 +60,7 @@ To search for a an organisation role we must create the following SearchParamete
     <base value="Organization" />
     <type value="token" />
     <description value="A search parameter to query on the role of an ODS Organization." />
-    <expression value="Organization.extension('https://fhir.nhs.uk/STU3/StructureDefinition/Extension-ODSAPI-OrganizationRole-1').extension('role')" />
-    <xpath value="f:Organization/f:extension[@url='https://fhir.nhs.uk/STU3/StructureDefinition/Extension-ODSAPI-OrganizationRole-1']/f:extension[@url='role']" />
-    <xpathUsage value="normal" />
+    <expression value="Organization.extension('https://fhir.nhs.uk/STU3/StructureDefinition/Extension-ODSAPI-OrganizationRole-1').extension('role').value" />
     <comparator value="eq" />
     <modifier value="exact" />
 </SearchParameter>
@@ -73,7 +71,7 @@ To search for a an organisation role we must create the following SearchParamete
 Once the SearchParameter has been registered with the FHIR server we can search using:
 
 ```
-GET http://fhir.nhs.uk/STU3/Organization?ods-org-role=https://fhir.nhs.uk/STU3/ODSAPI-OrganizationRole-1|197
+GET http://fhir.nhs.uk/STU3/Organization?ods-org-role=197
 ```
 
 Which will return the following results:

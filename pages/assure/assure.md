@@ -1,7 +1,7 @@
 ---
 title: Assure Overview
 keywords: assure, accredit
-tags: [overview]
+tags: [assure]
 sidebar: foundations_sidebar
 permalink: assure.html
 summary: "These pages assist with requirements gathering and mapping stages of a FHIR API development process."
@@ -9,23 +9,9 @@ summary: "These pages assist with requirements gathering and mapping stages of a
 
 The Assure section contains descriptions of approaches and suggestions for building APIs at the Assure stage.
 
-| Page              |  Description    |
-|+---------------------|+--------------------------------+|
-| Access | The access mechanism and of requesting system is influenced by many factors. This section demonstrates the design decisions to consider | 
-| Security | The security of the FHIR payload, access and data at rest are all important design decisions while building an API.  | 
-| End to end | The end to end assurance necessary to deliver an assured API.  | 
+Any API developed must go through an solution assurance process which will assure the API meets the highest level of quality, is clinically safe for use and provides the necessary security features to keep organisations safe. This can be achieved through the test phase of development that may include the use of test services, involving the wider healthcare community and enabling end to end testing through tooling and test environments.
 
-# Providing an API #
-
-The following diagram explains the elements of APIs allowing a the development of APIs:
-
-{% include custom/provide_api.svg %}
+Additional details on how an API can be assured will be provided in due course.
 
 
-# Contribute #
 
-This site is structured around API users, developers and architects. Please get involved in the journey.
-
-{% include custom/api_overview.svg %}
-
-{% include custom/contribute.html content="If you want to get involved in any part of this then please get in touch with interoperabilityteam@nhs.net "%}
