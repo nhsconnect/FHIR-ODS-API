@@ -45,24 +45,14 @@ This is particularly suited to:
 max-width="200px" file="build/ODS-Lookup.png" alt="Organisation Lookup FHIR Actor Diagram"
 caption="Organisation Lookup FHIR Actor Diagram" %}
 
-The ODS API Lookup can use any of the search parameters defined in the [ODS Lookup API](api_entity_organization.html) API. For example, to locate organisations with a post code of LS9 7TF, the query would be.
+The ODS API Lookup can use any of the search parameters defined in the [ODS Lookup API](api_entity_organization.html) API. 
 
-```
-GET https://fhir.nhs.uk/STU3/Organization?postalCode=LS9 7TF
-```
-
-A sample response is shown below
-
-#### XML Example 1 - Bundle Organisation ####
-
-<script src="https://gist.github.com/IOPS-DEV/ddc46233d23403e2dc0d705fac690a86.js"></script>
-
-What we have just described is shown in the diagram below. When entereing the url we did an ODS Search FHIR Query and the response is called ODS Search FHIR Query Response.
+What we have just described is shown in the diagram below. When entering the url an ODS Lookup FHIR Query is performed and a ODS Lookup response is returned with an XML body and a HTTP response code. 
 
 {% include image.html
 max-width="200px" file="build/ods-basic-flow.png" alt="Basic Process Flow ODS Search FHIR" caption="Basic Process Flow" %}
 
-### 2.2 Search using Identifier ###
+### 2.2 Search using ODS Code ###
 
 To find a organisation by ODS code we use the identifier, which stores all Organisation codes in ODS. The earlier example used a post code to locate any records, which could return more than one result. With organisation codes being unique, searching using an identifier should in theory return only once record. The exception to this rule would be searching for records in FHIR using the `_history` parameter. 
 
@@ -78,134 +68,177 @@ This will return all organisations with a organisation code of RXX (this may be 
 
 <script src="https://gist.github.com/IOPS-DEV/25e3e70ac76e1dc3d0d6c6d367076d4d.js"></script>
       
+### 2.3 Search using Organisation Name ###
 
-### 2.2 Search by Logical ID ###
+Each organisation may be identified in ODS using its name, and ODS Lookup API is able to use this in an attempted to locate an organisation held on ODS. There are 3 variations of search available to locate an ODS record using a name.
 
-Organisations stored on ODS may store the organisation code as either a logical id, an identifier or as both. **TO BE CONFIRMED**
+**Searching using a name**
 
-A search using a logical id will return a single record which contains the details of the requested organisation. There is neither the option or requirement to add any additional parameters to a logical id search, unless searching for a FHIR history record. 
+There may be occasions where you wish to search for an organisation where the name begins with a specific name, such as "Leeds".
 
-{% include warning.html content="ODS contains historic organisational records. These are not the same as FHIR history records which contain previous versions of the FHIR record" %}
-
-To search using logical id, use the following query:
-
-```
-GET https://fhir.nhs.uk/STU3/Organization/RXX
-```
-
-If the logical id exists, the following result is returned:
-
-<script src="https://gist.github.com/IOPS-DEV/eee16fbeeee41bb5622d3964bf9a1b74.js"></script>
-
-
-{% include note.html content="XML has been generated from a test FHIR server and is subject to change" %}
-
-### 2.3 Searches using multiple criteria ###
-
-Due to the scale of ODS it will often be a necessary to perform searches using more than one search parameter to narrow down the results returned to the end user. 
-
-To search for organisations with a Record Class of ‘2 - HSCSite’ in Wigan, use the following query:
+To search for a name that begins with "Leeds", the following search should be executed: 
 
 ```
-GET http://fhir.nhs.uk/Organization?type=2&address=Wigan
+GET https://[baseurl]/organization?name=Leeds
 ```
+This will return all the results in a `bundle` searchset that have an organisation name that begins with "Leeds" e.g Leeds Chest Clinic (RQS98) and Leeds Central Ambulance Station (RX847)
 
-The following bundle is returned containing two results that match the criteria used.
+**Searching using an exact match**
 
+The ODS lookup API provides the functionality to search for an organisation using its name. This may be the entire organisation name, part of the name or where the name contains a defined value. 
 
-<script src="https://gist.github.com/IOPS-DEV/ca6d412ce2363a95bce679ca3f54bcdd.js"></script>
-
-Using the same approach, we can narrow a search down to a organization name and area. Using only a name search of 'Freeman' for example would result in a large number of results returned, covering all organization roles and locations. Adding an address within the criteria can significantly reduce the results:
-
-```
-GET http://fhir.nhs.uk/Organization?name=Freeman&address=Newcastle
-```
-Note that we have no specified a part of the address, such as a Town, or street. We only need to enter the address and our search will check against all child elements that are used to construct a full address.
-
-
-### 2.4 Search using SearchParameter ###
-
-{% include custom/information.html content="This section is still thorectical and requires confirmation of content which may be inaccurate" %}
-
-The structure of the data and its data types are not an exact match to the Organisation resource elements used in FHIR. To overcome this type of issue, FHIR provides a facility to extend the base resource using extensions. The FHIR ODS lookup API uses several extensions to complete the data mapping from ODS to FHIR. As with all other FHIR elements, it is possible to search on extensions, although the approach to this does differ to that previously discussed.
-
-In order to search ODS using an extension, an additional resource must be created for the extension. The `SearchParameter` resource is used to define the search parameter that will be used in our url.
-
-To search for a an organisation role we must create the following SearchParameter:
-
-```xml
-<SearchParameter>
-    <url value="https://fhir.nhs.uk/STU3/SearchParameter/ODSAPI-OrganizationRole-Role-1" />
-    <name value="ODS API Organization Role" />
-    <status value="draft" />
-    <experimental value="true" />
-    <date value="2017-09-12" />
-    <publisher value="NHS Digital" />
-    <purpose value="This search parameter has been defined to enable the ability to query on the role of an ODS Organization." />
-    <code value="ods-org-role" />
-    <base value="Organization" />
-    <type value="token" />
-    <description value="A search parameter to query on the role of an ODS Organization." />
-    <expression value="Organization.extension('https://fhir.nhs.uk/STU3/StructureDefinition/Extension-ODSAPI-OrganizationRole-1').extension('role')" />
-    <xpath value="f:Organization/f:extension[@url='https://fhir.nhs.uk/STU3/StructureDefinition/Extension-ODSAPI-OrganizationRole-1']/f:extension[@url='role']" />
-    <xpathUsage value="normal" />
-    <comparator value="eq" />
-    <modifier value="exact" />
-</SearchParameter>
-```
-
-{% include important.html content="ODS Lookup API utilizes complex extensions. Care should be taken when creating SearchParameters to ensure that the correct expression is defined" %}
-
-Once the SearchParameter has been registered with the FHIR server we can search using:
+To search for an exact name the following search should be executed:
 
 ```
-GET http://fhir.nhs.uk/STU3/Organization?ods-org-role=https://fhir.nhs.uk/STU3/ODSAPI-OrganizationRole-1|197
+GET https://[baseurl]/organization?name:exact=LEED TEACHING HOSPITALS NHS TRUST
 ```
 
-Which will return the following results:
+This will return all the results in a `bundle` searchset where the name of the organisation is exactly "LEEDS TEACHING NHS TRUST". 
 
-<script src="https://gist.github.com/IOPS-DEV/d20f56ec9e809413507dce01275f5a51.js"></script>
+{% include important.html content="Note that the search is case sensitive." %}
 
-The use of role code will be vital within the ODS Lookup API to reduce the number of results returned from any search that has been initiated. The combination of role code and other criteria will help keep results down to manageable proportions. For more information on SearchParameter review this page [How to use create FHIR ODS Lookup API search parameters](build_organization_searchparameters.html)
+**Searching using a contained match**
 
-Search using an organisation role, name and town:
+There may be occasions where only part of the organisation name is know, therefore an exact match cannot be found. In this scenario, a search can be performed which will look for any part of the name that contains the specified value.
 
-```
-GET http://fhir.nhs.uk/STU3/Organization?ods-org-role=https://fhir.nhs.uk/STU3/ODSAPI-OrganizationRole-1|197&name=Freeman&address=Newcastle
-```
-
-Search using same criteria as above, with an active period included to further reduce results:
+To search for a name that contains "LEEDS", the following search should be executed: 
 
 ```
-GET https://fhir.nhs.uk/STU3/Organization?ods-org-role=https://fhir.nhs.uk/STU3/ODSAPI-OrganizationRole-1|197&name=Freeman&address=Newcastle&activeperiod=2015-04-01
+GET https://[baseurl]/organization?name:contains=Leeds
 ```
 
-Search for an Organisation where the role of the organisation is primary:
+The search will return a `bundle` searchset with all organisations that contains the word "Leeds" within its name. e.g South Leeds Clinical Assessment Service (5HL18) and The North Leeds Medical Practice (B86013)
+
+### 2.3 Searches using Post Code ###
+
+Where an organisation address contains a postcode, the ODS Lookup API is able to use this in an attempted to locate an organisation held on ODS. There are 3 variations of search available to locate an ODS record using a postcode.
+
+**Searching using a partial postcode**
+
+Where a partial organisation postcode is available e.g LS1, it is possible to search ODS using this value. 
 
 ```
-GET http://fhir.nhs.uk/STU3/Organization?ods-org-role=https://fhir.nhs.uk/STU3/ODSAPI-OrganizationRole-1|197&ods-org-primaryRole=true
+GET https://[baseurl]/organization?address-postalcode=LS1
 ```
 
-Search for an active organisation using a date range:
+This will return the results in a `bundle` searchset for any organisation with a postcode beginning with LS1 e.g. All organisations with postcodes including LS1, LS10, LS11, LS12 
+
+**Searching using a contained match**
+
+There may be occasions where only part of the organisation name is know, therefore an exact match cannot be found. In this scenario, a search can be performed which will look for any part of postcode that contains the specified value.
 
 ```
-GET https://fhir.nhs.uk/STU3/Organization?identity=RXX&ods-org-activeperiod=ge2015-04-01&ods-org-activeperiod=le2016-03-31
+GET https://[baseurl]/organization?address-postalcode:contains=LS6 4
 ```
 
-Note:ods-org-activeperiod searchparameter required.
+This will return the results in a `bundle` searchset for any organisation containing LS6 4 anywhere in the postcode e.g. Sandfield House NH, LS6 4DZ
+
+**Searching using an exact match**
+
+Where a full postcode for an organisation is known, this can be used to search ODS. 
+
+To search for an exact postcode the following search should be executed:
+
+```
+GET https://[baseurl]/organization?address-postalcode:exact=LS6 4JN
+```
+
+This will return all the results in a `bundle` searchset where the postcode of the organisation is exactly LS6 4JN e.g Meanwood Health Centre, LS6 4JN
+
+{% include important.html content="Note that the search is case sensitive." %}
+
+### 2.4 Searches using address city###
+
+Where an organisation address is available, the ODS Lookup API is able to use this in an attempted to locate an organisation held on ODS. There are 3 variations of search available to locate an ODS record using a city.
+
+**Search using a partial city**
+
+Where a partial city is known e.g Peter, it is possible to search ODS using this value.
+
+```
+GET  https://[baseurl]/organization?address-city=Peter
+```
+
+This will return all the results in a `bundle` searchset where the city begins with Peter e.g Peterborough, Petersfield, Peterlee.
+
+**Searching using a contained match**
+
+Where part of the city name is known, this can be used to query ODS.
+
+```
+GET https://[baseurl]/organization?address-city:contains=Land
+```
+
+This will return the results in a `bundle` searchset for any organisation containing "Land" anywhere in the city e.g. Hayling Island, Llandrindod Wells, Sunderland 
+
+**Searching using an exact match**
+
+Where a city for an organisation is known, this can be used to search ODS. 
+
+To search for an exact city the following query should be executed:
+
+```
+https://[baseurl]/organization?address-city:exact=DERBY
+```
+
+This will return all the results in a `bundle` searchset where the city of the organisation is exactly Derby 
+
+{% include important.html content="Note that the search is case sensitive." %}
+
+### 2.5 Search using record status ###
+
+An ODS record may have one of two statuses set;active or inactive. This translates within the ODS lookup API to active being true or false. 
+
+```
+GET https://[baseurl]/organization?active=true
+```
+This will return all the results in a `bundle` searchset where the status of the organisation is active.
+
+``` 
+GET https://[baseurl]/organization?active=false
+```
+This will return all the results in a `bundle` searchset where the status of the organisation is inactive.
+
+### 2.6 Search for Organisation Roles ###
+
+Organisations within ODS have a specific role, which may also be a primary role e.g NHS TRUST as a primary role. The primary role is indicated using a marker that the ODS Lookup API interprets as true or false.
+
+**Search for a role**
+
+|Search|REST interaction|Expected Result|Example XML|
+|------|----------------|---------------------|-----------|
+|Role|https://[baseurl]/Organization?ods-org-role=197|This should return all Organizations with the role of ‘NHS TRUST‘||
+|Primary role|https://[baseurl]/Organization?ods-org-primaryRole=true|This should return all records with a primary role||
+|Role and Primary role|https://[baseurl]/Organization?ods-org-role=197&ods-org-primaryRole=true|This should return all primary Organizations with the role of ‘NHS TRUST‘||
+|Multiple roles|https://[baseurl]/Organization?ods-org-role=157&ods-org-role=15|This should return all Organizations with the roles of ‘NON-NHS ORGANISATION‘ **and** ‘REG'D UNDER PART 2 CARE STDS ACT 2000’||
+||https://[baseurl]/Organization?ods-org-role=157,15|This should return all Organizations with the roles of ‘NON-NHS ORGANISATION‘ or ‘REG'D UNDER PART 2 CARE STDS ACT 2000’||
+
+
+### 2.7 Searches using last updated date ###
+
+```
+GET https://[baseurl]/organization?_lastUpdated=gt2010-10-01
+```
+This should return all records updated since 1st Oct 2010 
+
+### 2.8 _lastUpdated
+
+The search parameter _lastUpdted may be used to return only records that have been updated since a specified date.
+
+```
+GET https://[baseurl]/organization?_lastUpdated=gt2010-10-01
+```
+This will return a `bundle` searchset containing all records updated since 1st October 2010.
 
 ### 2.5 Paging ###
 
 With the scale of the ODS data, the results returned from certain queries could be extensive and require a method for browsing the details returned. FHIR pagination provides the ability to return paged results, making the navigating of the results user friendly. The paging function is transparent to the client, and configured via the FHIR server, however it is possible to control the number of results returned to the client using the `_count` parameter:
 
-
 ```
-GET http://fhir.nhs.uk/STU3/Organization?type=2&address=Wigan&_count=20
+GET http://fhir.nhs.uk/STU3/Organization?type=2&city=Leeds&_count=20
 ```
+This would limit the results to a maximum of 20 items per page.
 
-This would limit the results to a maximum of 20 items per page. **Check above GET statement**
-
-TODO - More on pagination.
 
 ### 2.2. Java Example ###
 
@@ -213,19 +246,5 @@ The examples are built using [HAPI FHIR](http://hapifhir.io/) which is an open s
 
 The first example uses the same search parameters we used earlier, we are searching for Organisation with a post code of NG10 1QQ. The first couple of lines setup a Stu3 FHIR context and set the baseUrl to be `https://fhir.nhs.uk/STU3/`. The output from running this code is shown earlier in this guide.
 
-#### Java Example 1 - ODS Search ####
 
-<script src="https://gist.github.com/IOPS-DEV/b63b4394c201fa5b31db6f8f227b16d7.js"></script>
-
-The second example would return the same FHIR response but this time the search is using the organisation code.
-
-#### Java Example 2 - ODS Search Organisation Code ####
-
-<script src="https://gist.github.com/IOPS-DEV/e1616bdaea112231aa9ba08a8f331f12.js"></script>
-
-#### Java Example 3 - ODS Search Organisation Role ####
-
-<script src="https://gist.github.com/IOPS-DEV/9b27d9d46b6dd328263a8c7ca9690aa9.js"></script>
-
-{% include warning.html content="Above code is not verified. Do not use" %}
 

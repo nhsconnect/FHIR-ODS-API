@@ -84,5 +84,22 @@ ODS Lookup API will require a set of SearchParameter instances to provide extens
 
 These will need to be used with your chosen FHIR server solution.
 
+For more information on SearchParameter review this page [How to use create FHIR ODS Lookup API search parameters](build_organization_searchparameters.html)
 
+
+### Example Searches ###
+
+
+Search using an organisation role, name and town:
+
+```
+GET http://fhir.nhs.uk/STU3/Organization?ods-org-role=https://fhir.nhs.uk/STU3/ODSAPI-OrganizationRole-1|197&name=Freeman&address=Newcastle
+```
+
+Search for an Organisation where the role of the organisation is primary:
+
+```
+GET http://fhir.nhs.uk/STU3/Organization?ods-org-role=https://fhir.nhs.uk/STU3/ODSAPI-OrganizationRole-1|197&ods-org-primaryRole=true
+```
+```
 

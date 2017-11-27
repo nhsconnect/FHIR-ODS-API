@@ -27,7 +27,7 @@ github_editme_path: /edit/develop/
 #twitter_username: twitter_username
 #twitter_site_hashtags: twitter_site_hashtags
 
-fhir_profile_baseurl: https://fhir-test.hl7.org.uk/StructureDefinition/
+fhir_profile_baseurl: https://simplifier.net/Test-FHIRODSLookupAP/
 fhir_profile_ext:
 
 host: 127.0.0.1
