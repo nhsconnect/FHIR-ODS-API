@@ -13,7 +13,7 @@ summary: "How to use create FHIR ODS Lookup API search parameters"
 
 ## 1. Overview ##
 
-The default Organization resource does not cater for all the required data fields that are used by ODS, and therefore requires extensions to be added to the Organization profile. When adding extensions, there will be a requirement to provide a search using the data stored in the extensions. Searching using an extension is not the same as searching using an element that forms part of the standard resource. To search using an extension we must created additional `SearchParameter` instances that provide the necessary details to allow a REST search on the added extensions.
+The default Organization resource does not cater for all the required data fields that are used by ODS, and therefore requires extensions to be added to the Organization profile. When adding extensions, there will be a requirement to provide a search using the data stored in the extensions. Searching using an extension is not the same as searching using an element that forms part of the standard resource. To search using an extension we must create additional `SearchParameter` instances that provide the necessary details to allow a REST search on the added extensions.
 
 
 The Organisation profile includes the following extensions:
