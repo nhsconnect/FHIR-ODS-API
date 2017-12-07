@@ -1,0 +1,12 @@
+<h4 id="{{include.content}}">{{include.para}} {{include.content}}</h4>
+
+<div markdown="span" class="alert alert-success" role="alert">
+GET [baseUrl]/{{include.resource}}?{{include.content}}=[date]</div>
+
+<p>See <a href="http://hl7.org/fhir/search.html#lastUpdated" >_lastupdated</a> for details on this parameter.</p>
+
+<div class="language-http highlighter-rouge">
+<pre class="highlight"><code><span class="err">GET [baseUrl]/{{include.resource}}?{{include.content}}={{include.example}}
+</span></code>
+Return all {{include.resource}} resources where {{include.text1}} last updated after {{include.text2}}.</pre>
+</div>

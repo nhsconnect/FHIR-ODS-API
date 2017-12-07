@@ -13,9 +13,7 @@ The Design & Build section contains descriptions of approaches and suggestions f
 
 | Page              |  Description    |
 |+---------------------|+--------------------------------+|
-| Design Patterns / Topology | Describes access patterns necessary which influence the access, security and use of APIs. Depending on the pattern or topology of the requesting and responding system. The relationship between the requestor and responder influences the choice of access mechanism, security of payload and access finally build of the system |
-| Access | The access mechanism and of requesting system is influenced by many factors. This section demonstrates the design decisions to consider | 
-| Security | The security of the FHIR payload, access and data at rest are all important design decisions while building an API. | 
+| Open Source | Technologies that provide libraries which can be used with the API to build applications  | 
 | Build | A look at some tools and techniques to help build APIs using the Resources defined in Explore | 
 
 
