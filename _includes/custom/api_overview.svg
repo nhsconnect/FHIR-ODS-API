@@ -99,26 +99,23 @@
 			<text id="•" font-family="HelveticaNeue, Helvetica Neue" font-size="13" font-weight="normal" fill="#000000">
 				<tspan x="238.657531" y="136.691838">•</tspan>
 			</text>
-			<text id="APIs" font-family="HelveticaNeue, Helvetica Neue" font-size="13" font-weight="normal" letter-spacing="-0.0057375147" fill="#000000">
-				<tspan x="249.768642" y="136.691838">Search Ex.</tspan>
+			<text id="Validation-" font-family="HelveticaNeue, Helvetica Neue" font-size="13" font-weight="normal" letter-spacing="-0.0505807176" fill="#000000">
+				<tspan x="249.768642" y="136.691838">Build APIs	</tspan>
 			</text>
 			<text id="•" font-family="HelveticaNeue, Helvetica Neue" font-size="13" font-weight="normal" fill="#000000">
-				<tspan x="238.657531" y="158.831838">•</tspan>
+				<tspan x="238.657531" y="157.831838">•</tspan>
+			</text>
+			<text id="APIs" font-family="HelveticaNeue, Helvetica Neue" font-size="13" font-weight="normal" letter-spacing="-0.0057375147" fill="#000000">
+				<tspan x="249.768642" y="157.831838">Search Ex.</tspan>
+			</text>
+			<text id="•" font-family="HelveticaNeue, Helvetica Neue" font-size="13" font-weight="normal" fill="#000000">
+				<tspan x="238.657531" y="176.971838">•</tspan>
 			</text>
 			<text id="Code-" font-family="HelveticaNeue, Helvetica Neue" font-size="13" font-weight="normal" letter-spacing="-0.0249128919" fill="#000000">
-				<tspan x="249.768642" y="158.831838">Code	</tspan>
+				<tspan x="249.768642" y="176.971838">Code	</tspan>
 			</text>
 			<text id="examples" font-family="HelveticaNeue, Helvetica Neue" font-size="13" font-weight="normal" letter-spacing="0.00150987238" fill="#000000">
-				<tspan x="249.768642" y="176.971838">examples</tspan>
-			</text>
-			<text id="•" font-family="HelveticaNeue, Helvetica Neue" font-size="13" font-weight="normal" fill="#000000">
-				<tspan x="238.657531" y="198.421875">•</tspan>
-			</text>
-			<text id="Validation-" font-family="HelveticaNeue, Helvetica Neue" font-size="13" font-weight="normal" letter-spacing="-0.0505807176" fill="#000000">
-				<tspan x="249.768642" y="198.421875">Build	</tspan>
-			</text>
-			<text id="tools" font-family="HelveticaNeue, Helvetica Neue" font-size="13" font-weight="normal" letter-spacing="0.0166840889" fill="#000000">
-				<tspan x="249.768642" y="218.961875">APIs</tspan>
+				<tspan x="249.768642" y="198.421875">examples</tspan>
 			</text>
 			<path d="M334.333333,12.53 L441.123457,12.53 L467.666667,38.975 L441.123457,65.42 L334.333333,65.42 L360.876543,38.975 L334.333333,12.53 Z" id="Fill-9" fill="#4F81BD"/>
 			<text id="Test" font-family="HelveticaNeue, Helvetica Neue" font-size="15" font-weight="normal" letter-spacing="-0.0508710817" fill="#FFFFFF">
