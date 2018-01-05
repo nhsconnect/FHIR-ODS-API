@@ -9,6 +9,12 @@ summary: Summary release notes of the versions released in FHIR&reg; ODS Lookup 
 
 {% include important.html content="This site is under active development by NHS Digital and is intended to provide all the technical resources you need to successfully develop applications using the FHIR&reg; ODS Lookup API. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis." %}
 
+## 0.8.9-alpha.0
+
+- Correction to roadmap
+- Additional REST syntax examples added to resources page
+- DSTU3 links updated with STU3 links
+- 
 ## 0.7.0-alpha.0 
 
 **Overview**
@@ -92,7 +98,7 @@ Organisation menu placed into individuals and entities, rather than in a submenu
 Organisation search parameters added to build to include:
 
 - Logical id search
-- Post code search
+- Postcode search
 - Multiple criteria searching
 
 Examples of results returned from searches added

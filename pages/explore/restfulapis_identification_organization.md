@@ -34,16 +34,23 @@ Fetches a bundle of all `Organization` resources for the specified search criter
 |------|------|-------------|------|
 | `identifier` | `identifier` | Any identifier for the organization (ODS code) | 
 | `name` | `string` | A portion of the name of the organization | Organization.name |
-| `address-postalcode` | `string` | A postalCode specified in an address | Organization.address.postalCode |
+| `address-postalcode` | `string` | A postalCode specified in an address | Organization.address.postcode |
 | `address-city` | `string` | A city specified in an address |Organization.address.city |
 | `active` | `token` | Whether the organization's record is still in active use | Organization.active |
-| `ods-org-role` | `token` | Whether the role for the organization is it's primary role | Organization.extension.primaryRole|
-| `_lastupdated` | n/a | Search parameter used to select resources based on last date changed||
-| `_count` |n/a| Search result parameter used to minimise number of results per page||
-| `_summary`|n/a| Used to return a subset of the resource||
+| `ods-org-role` | `token` | Whether the role for the organization is it's primary role | Organization.extension('https://fhir.nhs.uk/STU3/StructureDefinition/Extension-ODSAPI-OrganizationRole-1').extension('role').value|
+| `ods-org-primaryRole` | `token` | Whether the role for the organization is it's primary role | Organization.extension('https://fhir.nhs.uk/STU3/StructureDefinition/Extension-ODSAPI-OrganizationRole-1').extension('primaryrole').value|
+
+### Additional Supported Parameters
+
+|Name | Description|
+|-----|------------|
+| `_id` | Search parameter _id refers to the logical id of the resource |
+| `_lastUpdated` | Search parameter used to select resources based on last date changed|
+| `_count` | Search result parameter used to minimise number of results per page|
+| `_summary`| Search result parameter used to return a subset of the resource|
 
 
-{% include custom/search.nopat.identifier.html para="2.1.1." resource="Organization" content="identifier" subtext="ODS Code" example="https://fhir.nhs.uk/Id/ods-organization-code|RTG" text1="ODS Code" text2="RTG (Derby Teaching Hospitals NHS Trust)" %}
+{% include custom/search.nopat.identifier.html para="2.1.1." resource="Organization" content="identifier" subtext="ODS Code" example="https://fhir.nhs.uk/Id/ods-organization-code|RTG" example2="RTG" text1="ODS Code" text2="RTG (Derby Teaching Hospitals NHS Trust)" %}
 
 {% include custom/search.nopat.string.html para="2.1.2." resource="Organization" content="name"  example="Derby Teaching Hospitals NHS Trust" text1="name" text2="Derby Teaching Hospitals NHS Trust" %}
 
@@ -53,13 +60,17 @@ Fetches a bundle of all `Organization` resources for the specified search criter
 
 {% include custom/search.nopat.active.html para="2.1.5." resource="Organization" content="active"  example="true" text1="active" text2="true" %}
 
-{% include custom/search.nopat.active.html para="2.1.6." resource="Organization" content="primaryrole"  example="true" text1="primaryRole" text2="true" %}
+{% include custom/search.nopat.role.html para="2.1.6." resource="Organization" content="role"  example="197" text1="role" text2="197" %}
 
-{% include custom/search.lastupdated.html para="2.1.7." resource="Organization" content="_lastupdated" example="gt2017-04-01" text1="organization" text2="2017-04-01" %}
+{% include custom/search.nopat.primaryrole.html para="2.1.7." resource="Organization" content="primaryrole"  example="true" text1="primaryRole" text2="true" %}
 
-{% include custom/search.count.html para="2.1.8." resource="Organization" content="_count" example="10" text1="organization" %}
+{% include custom/search.id.html para="2.1.8." resource="Organization" content="_id" example="RR8" text1="organization" %}
 
-{% include custom/search.summary.html para="2.1.9." resource="Organization" content="_summary" example="count" text1="organization" %}
+{% include custom/search.lastupdated.html para="2.1.9." resource="Organization" content="_lastupdated" example="gt2017-04-01" text1="organization" text2="2017-04-01" %}
+
+{% include custom/search.count.html para="2.1.10." resource="Organization" content="_count" example="10" text1="organization" %}
+
+{% include custom/search.summary.html para="2.1.." resource="Organization" content="_summary" example="count" text1="organization" %}
 
 {% include custom/search.response.html resource="Organization" %}
 
