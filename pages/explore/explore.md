@@ -13,7 +13,7 @@ summary: "Overview of the Resources section"
 
 ## 1. Resource API Structure ##
 
-The FHIR ODS Lookup profile API described in the Explore section of this implementation guide have been structured consistently in the following way:
+The FHIR ODS Lookup profile API described in the Explore section of this implementation guide has been structured consistently in the following way:
 - `0.` References
 - `1.` Read
 - `2.` Search Parameters
@@ -28,7 +28,7 @@ The FHIR ODS Lookup profile API described in the Explore section of this impleme
 </tr>
 <tr>
 <td>0. References</td>
-<td>Links to other parts of the implementation guide which might help with context and understanding the API's described</td>
+<td>Links to other parts of the implementation guide which might help with context and understanding the APIs described</td>
 </tr>
 <tr>
 <td>1. Read</td>
@@ -44,7 +44,7 @@ The FHIR ODS Lookup profile API described in the Explore section of this impleme
 </tr>
 </table>
 
-## 2. Resource API's ##
+## 2. Resource APIs ##
 This section looks at the ODS Lookup profile API covered within this implementation guide.
 
 
@@ -54,7 +54,7 @@ This section looks at the ODS Lookup profile API covered within this implementat
 <th>Entities</th>
 </tr>
 <tr>
-<td><a href="api_entity_organisation.html">Organisation</a></td>
+<td><a href="api_entity_organisation.html">Organization</a></td>
 </tr>
 </table>
 
@@ -64,5 +64,13 @@ This section looks at the ODS Lookup profile API covered within this implementat
 
 <tr>
 <td><a href="api_foundation_valueset.html">ValueSet</a></td>
+</tr>
+</table>
+
+<table style="min-width:100%;width:100%">
+<th>Terminology</th>
+
+<tr>
+<td><a href="api_foundation_codesystem.html">CodeSystem</a></td>
 </tr>
 </table>

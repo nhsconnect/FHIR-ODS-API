@@ -221,21 +221,24 @@ Organisations within ODS have a specific role, which may also be a primary role 
 ||https://[baseurl]/Organization?ods-org-role=157,15|This should return all Organizations with the roles of ‘NON-NHS ORGANISATION‘ or ‘REG'D UNDER PART 2 CARE STDS ACT 2000’||
 
 
-### 2.7 Searches using last updated date ###
+### 2.7 _lastUpdated
 
-```
-GET https://[baseurl]/organization?_lastUpdated=gt2010-10-01
-```
-This should return all records updated since 1st Oct 2010 
-
-### 2.8 _lastUpdated
-
-The search parameter _lastUpdted may be used to return only records that have been updated since a specified date.
+The search parameter _lastUpdated may be used to return only records that have been updated since a specified date.
 
 ```
 GET https://[baseurl]/organization?_lastUpdated=gt2010-10-01
 ```
 This will return a `bundle` searchset containing all records updated since 1st October 2010.
+
+{% include important.html content="Note that the search parameter is case sensitive." %}
+
+### 2.8 _summary
+
+Search only: just return a count of the matching resources, without returning the actual matches. 
+
+```
+GET https://[baseurl]/organization?_summary=count
+```
 
 ### 2.9 Paging ###
 
