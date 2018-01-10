@@ -25,5 +25,5 @@ This guide has been created to support the adoption of the FHIR&reg; ODS Lookup 
 
 {% include custom/api_overview.svg %}
 
-{% include custom/contribute.html content="If you want to get involved in any part of this then please get in touch with interoperabilityteam@nhs.net "%}
+{% include custom/contribute.html content="If you want to get involved in the development of this API then please get in touch with interoperabilityteam@nhs.net"%}
 
