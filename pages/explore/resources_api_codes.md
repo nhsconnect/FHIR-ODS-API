@@ -30,7 +30,7 @@ Requesting the secure endpoint (non-open) without valid credentials will result 
 Requesting data from an unknown instance or an instance where the application is not authorized will result in a 403 Forbidden response.
 
 #### 404 Not Found ####
-Requesting a resource which does not exist will resule in a 404 Not Found response.
+Requesting a resource which does not exist will result in a 404 Not Found response.
 
 #### 406 Not Acceptable ####
 Requested a media type other than JSON will result in a 406 Not Acceptable response.

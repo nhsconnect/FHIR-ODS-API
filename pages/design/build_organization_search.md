@@ -13,7 +13,7 @@ summary: "How to use FHIR ODS Lookup API to perform searches on ODS"
 
 ## 1. Overview ##
 
-{% include custom/usecase.html content="A healthcare provider wishes to locate the details of several other healthcare organisations, where the information available to enter into any search parameters differers between each organisation. The available information may be one or more of, Organisation code, name, address, status or primary roles. In order to process the returned results in an efficient manner, the healthcare provider requires these to be in XML format, whilst providing paged navigation." %}
+{% include custom/usecase.html content="A healthcare provider wishes to locate the details of several other healthcare organisations, where the information available to enter into any search parameters differs between each organisation. The available information may be one or more of, Organisation code, name, address, status or primary roles. In order to process the returned results in an efficient manner, the healthcare provider requires these to be in XML format, whilst providing paged navigation." %}
 
 
 Within the NHS, there is a requirement to identify organisations across the Health and Social Care landscape. The Organisation Data Service (ODS) provides access to the repository of publishing codes that identify these organisations and provide valuable information that can reduce administration and improve data quality. ODS provides 3 file types:
@@ -47,7 +47,7 @@ caption="Organisation Lookup FHIR Actor Diagram" %}
 
 The ODS API Lookup can use any of the search parameters defined in the [ODS Lookup API](api_entity_organization.html) API. 
 
-What we have just described is shown in the diagram below. When entering the url an ODS Lookup FHIR Query is performed and a ODS Lookup response is returned with an XML body and a HTTP response code. 
+What we have just described is shown in the diagram below. When entering the url an ODS Lookup FHIR Query is performed and an ODS Lookup response is returned with an XML body and a HTTP response code. 
 
 {% include image.html
 max-width="200px" file="build/ods-basic-flow.png" alt="Basic Process Flow ODS Search FHIR" caption="Basic Process Flow" %}
@@ -102,7 +102,7 @@ This will return all the results in a `bundle` searchset where the name of the o
 
 **Searching using a contained match**
 
-There may be occasions where only part of the organisation name is know, therefore an exact match cannot be found. In this scenario, a search can be performed which will look for any part of the name that contains the specified value.
+There may be occasions where only part of the organisation name is known, therefore an exact match cannot be found. In this scenario, a search can be performed which will look for any part of the name that contains the specified value.
 
 To search for a name that contains "LEEDS", the following search should be executed: 
 

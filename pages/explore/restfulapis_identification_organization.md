@@ -17,6 +17,8 @@ GET [baseUrl]/Organization/[id]</div>
 
 {% include custom/read.response.html resource="Organization" content="" %}
 
+***Placeholder for example Read response***
+
 ## 2. Search ##
 
 <div markdown="span" class="alert alert-success" role="alert">
@@ -30,22 +32,22 @@ Returns a bundle of all `Organization` resources that match the specified search
 
 | Name | Parameter Type | Description | Path |
 |------|------|-------------|------|
-| `_id` |`token`|The logical id of the resource (ODS Code)|	Organization.id|
-| `_lastUpdated` |`date`| To select resources based on the last time they were changed|Organization.meta.lastUpdated|
-| `identifier` | `token` | The identifier for the organization (ODS Code) | Organization.identifier |
-| `name` | `string` | A portion of the organization's name | Organization.name |
-| `active` | `token` | Whether the organization's record is still in active use | Organization.active |
-| `address-postalcode` | `string` | A postcode specified in an address | Organization.address.postalCode |
-| `address-city` | `string` | A city specified in an address | Organization.address.city |
-| `ods-org-role` | `token` | A role of the organization| Organization.extension('https://fhir.nhs.uk/STU3/StructureDefinition/Extension-ODSAPI-OrganizationRole-1').extension('role').value|
-| `ods-org-primaryRole` | `token` | Whether a role of the organization is it's primary role | Organization.extension('https://fhir.nhs.uk/STU3/StructureDefinition/Extension-ODSAPI-OrganizationRole-1').extension('primaryrole').value|
+| <a href="restfulapis_identification_organization.html#_id">`_id`</a> |`token`|The logical id of the resource (ODS Code)|	Organization.id|
+| <a href="restfulapis_identification_organization.html#_lastUpdated">`_lastUpdated`</a> |`date`| To select resources based on the last time they were changed|Organization.meta.lastUpdated|
+| <a href="restfulapis_identification_organization.html#identifier">`identifier`</a> | `token` | The identifier for the organization (ODS Code) | Organization.identifier |
+| <a href="restfulapis_identification_organization.html#name">`name`</a> | `string` | A portion of the organization's name | Organization.name |
+| <a href="restfulapis_identification_organization.html#tokenactive">`active`</a> | `token` | Whether the organization's record is still in active use | Organization.active |
+| <a href="restfulapis_identification_organization.html#address-postalcode">`address-postalcode`</a> | `string` | A postcode specified in an address | Organization.address.postalCode |
+| <a href="restfulapis_identification_organization.html#address-city">`address-city`</a> | `string` | A city specified in an address | Organization.address.city |
+| <a href="restfulapis_identification_organization.html#tokenods-org-role">`ods-org-role`</a> | `token` | A role of the organization| Organization.extension('https://fhir.nhs.uk/STU3/StructureDefinition/Extension-ODSAPI-OrganizationRole-1').extension('role').value|
+| <a href="restfulapis_identification_organization.html#tokenods-org-primaryRole">`ods-org-primaryRole`</a> | `token` | Whether a role of the organization is it's primary role | Organization.extension('https://fhir.nhs.uk/STU3/StructureDefinition/Extension-ODSAPI-OrganizationRole-1').extension('primaryrole').value|
 
 ### Additional Parameters ###
 
 | Name | Parameter Type | Description | Allowable Content |
 |------|------|-------------|------|
-| `_count`|`number` | Number of results per page| Whole number |
-| `_summary`|`string`| Search only: just return a count of the matching resources, without returning the actual matches |'count'|
+| <a href="restfulapis_identification_organization.html#_count">`_count`</a>|`number` | Number of results per page| Whole number |
+| <a href="restfulapis_identification_organization.html#_summary">`_summary`</a>|`string`| Search only: just return a count of the matching resources, without returning the actual matches |'count'|
 
 {% include custom/search.nopat.id.html para="2.1.1." resource="Organization" content="_id"  example="RTG" example2="RTG" text1="ODS Code" text2="RTG (Derby Teaching Hospitals NHS Trust)" %}
 
@@ -75,7 +77,7 @@ To search for a name that begins with "Leeds", the following search should be ex
 ```
 GET https://[baseurl]/Organization?name=Leeds
 ```
-This will return the ODS records that have an Organization name that begins with "Leeds" e.g. Leeds Chest Clinic (RQS98) and Leeds Central Ambulance Station (RX847) etc.
+This will return the ODS records that have an Organization name that begins with "Leeds" e.g. RQS98 - Leeds Chest Clinic and RX847 - Leeds Central Ambulance Station etc.
 
 **Contained match:**
 
@@ -86,7 +88,7 @@ To search for a name that contains "Leeds", the following search should be execu
 ```
 GET https://[baseurl]/Organization?name:contains=Leeds
 ```
-This will return the ODS records that have an Organization name that contains the word "Leeds" within its name e.g South Leeds Clinical Assessment Service (5HL18) and The North Leeds Medical Practice (B86013) etc.
+This will return the ODS records that have an Organization name that contains the word "Leeds" within its name e.g 5HL18 - South Leeds Clinical Assessment Service and B86013 - The North Leeds Medical Practice etc.
 
 **Exact match:**
 
@@ -210,7 +212,52 @@ This will return the ODS record where the city is exactly "DERBY".
 
 An ODS record contains one or many roles.
 
-* Add role query combinations
+**Composite Search Parameters**:
+
+Composite search parameters support joining single values. Multiple roles can be queried using an 'AND' or an 'OR' search.
+
+***AND Parameters*** 
+
+An 'AND' search can be executed by repeating the parameter. To search for ODS records that have the roles '76 - GP PRACTICE' **AND** '177 - PRESCRIBING COST CENTRE', the following search should be executed:
+
+```
+GET https://[baseurl]/Organization?ods-org-role=https://fhir.nhs.uk/STU3/ODSAPI-OrganizationRole-1|76&ods-org-role=https://fhir.nhs.uk/STU3/ODSAPI-OrganizationRole-1|177
+```
+*or*
+```
+GET https://[baseurl]/Organization?ods-org-role=76&ods-org-role=177
+```
+This will return ODS records that have the roles '76 - GP PRACTICE' **AND** '177 - PRESCRIBING COST CENTRE' e.g. A81001 - THE DENSHAM SURGERY.
+
+***OR Parameters*** 
+
+An 'OR' search can be executed by using a single parameter with multiple values separated by a `,`. To search for an ODS record with the roles '197 - NHS TRUST' **OR** '198 - NHS TRUST SITE', the following search should be executed:
+
+```
+GET https://[baseurl]/Organization?ods-org-role=https://fhir.nhs.uk/STU3/ODSAPI-OrganizationRole-1|197,198
+```
+*or*
+```
+GET https://[baseurl]/Organization?ods-org-role=197,198
+```
+This will return the ODS records that have either role '197 - NHS TRUST' **OR** '198 - NHS TRUST SITE'. 
+
+
+***AND and OR Parameters***
+'AND' parameters and 'OR' parameters may also be combined. To search for an ODS record with the role '157 - NON-NHS ORGANISATION' **AND** either roles '29 - TREATMENT CENTRE' **OR** '15 - REG'D UNDER PART 2 CARE STDS ACT 2000'.
+
+```
+GET https://[baseurl]/Organization?ods-org-role=https://fhir.nhs.uk/STU3/ODSAPI-OrganizationRole-1|157&ods-org-role=https://fhir.nhs.uk/STU3/ODSAPI-OrganizationRole-1|29,15
+```
+*or*
+```
+GET https://[baseurl]/Organization?ods-org-role=157&ods-org-role=29,15
+```
+This will return the ODS records that have the following role codes:
+
+- '157 NON-NHS ORGANISATION' **AND** '29 TREATMENT CENTRE'
+
+- '157 NON-NHS ORGANISATION' **AND** '15 REG'D UNDER PART 2 CARE STDS ACT 2000'
 
 {% include custom/search.nopat.primaryrole.html para="2.1.9." resource="Organization" content="ods-org-primaryRole"  example="true" text1="code" text2="true" %}
 
@@ -218,34 +265,42 @@ This search parameter MUST be used in conjunction with `ods-org-role`, it cannot
 
 An ODS record contains one role with a status of primary role.
 
-To search for an ODS record with a specified primary role '157', the following search should be executed:
+To search for an ODS record with a specified primary role '157 - NON-NHS ORGANISATION', the following search should be executed:
 
 ```
 GET https://[baseurl]/Organization?ods-org-role=https://fhir.nhs.uk/STU3/ODSAPI-OrganizationRole-1|157&ods-org-primaryRole=true
 ```
-or
+*or*
 ```
 GET https://[baseurl]/Organization?ods-org-role=157&ods-org-primaryRole=true
 ```
-This will return all the ODS records with a primary role of 157 'NON-NHS ORGANISATION'.
+This will return all the ODS records with a primary role of '157 - NON-NHS ORGANISATION'.
 
-To search for an ODS record without a specified primary role '157', the following search should be executed:
+To search for an ODS record without a specified primary role of '76 - GP PRACTICE', the following search should be executed:
 
 ```
 GET https://[baseurl]/Organization?ods-org-role=https://fhir.nhs.uk/STU3/ODSAPI-OrganizationRole-1|76&ods-org-primaryRole=false
 ```
-or
+*or*
 ```
 GET https://[baseurl]/Organization?ods-org-role=76&ods-org-primaryRole=true
 ```
-This will return all the ODS records with a role of 76 'GP PRACTICE' which is not a primary role.
+This will return all the ODS records with a role of '76 - GP PRACTICE' which is not a primary role.
 
 {% include custom/search.count.html para="2.1.10." resource="Organization" content="_count" example="10" text1="organization" %}
 
 {% include custom/search.summary.html para="2.1.11." resource="Organization" content="_summary" example="count" text1="organization" %}
 
+The supported modifiers for this search parameter are:
+
+| Modifier | Description |
+|------|------|
+|count|Search only: just return a count of the matching resources, without returning the actual matches|
+
 {% include custom/search.response.html resource="Organization" %}
 
+***Placeholder for example successful Search response***
 
 
+***Placeholder for example Operation Outcome response***
 
