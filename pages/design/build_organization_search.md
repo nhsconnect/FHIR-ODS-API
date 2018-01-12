@@ -1,10 +1,10 @@
 ---
-title: Design | Organisation Data Service (ODS) Search
+title: Build | Organisation Data Service (ODS) Search
 keywords: development
-tags: [design,development]
+tags: [build,development]
 sidebar: overview_sidebar
 permalink: build_organization_search.html
-summary: "How to use FHIR ODS Lookup API to perform searches on ODS"
+summary: "How to use FHIR ODS Lookup API to perform searches on ODS containing examples that use different technologies to perform a search. This includes HAPI, Java, C# and .NET."
 ---
 
 {% include custom/search.warnbanner.html %}
@@ -54,203 +54,151 @@ max-width="200px" file="build/ods-basic-flow.png" alt="Basic Process Flow ODS Se
 
 ### 2.2 Search using ODS Code ###
 
-To find an organisation by ODS code we use the identifier, which stores all Organisation codes in ODS. The earlier example used a postcode to locate any records, which could return more than one result. With organisation codes being unique, searching using an identifier should in theory return only one record. 
+To search for ODS records based on their logical or business identifier.
 
-To search for Organisations by organisation code, use the following query:
+#### 2.2.1 HAPI ####
 
 
-```
-GET https://fhir.nhs.uk/STU3/Organization?identifier=RXX 
-```
+#### 2.2.2 Java ####
 
-This will return all organisations with an organisation code of RXX (this may be more than one). An organisation code is the main identifier within an NHS Organisation or Health Enterprise. It should be noted that codes allocated to GP practices are supplied by the NHS Prescription Service.
 
-<script src="https://gist.github.com/IOPS-DEV/25e3e70ac76e1dc3d0d6c6d367076d4d.js"></script>
+#### 2.2.3 C# ####
+
+
+#### 2.2.4 .NET ####
+
+### 2.3 Search using last updated date ###
+
+To search for ODS records based on their last updated date.
+
+#### 2.3.1 HAPI ####
+
+
+#### 2.3.2 Java ####
+
+
+#### 2.3.3 C# ####
+
+
+#### 2.3.4 .NET ####
       
-### 2.3 Search using Organisation Name ###
+### 2.4 Search using Organisation name ###
 
-Each organisation may be identified in ODS using its name, and ODS Lookup API is able to use this in an attempted to locate an organisation held on ODS. There are 3 variations of search available to locate an ODS record using a name.
+To search for ODS records based on their name, including modifiers.
 
-**Searching using a name**
+#### 2.4.1 HAPI ####
 
-There may be occasions where you wish to search for an organisation where the name begins with a specific name, such as "Leeds". Search expressions must:
 
--	Contain a minimum of 3 characters and Maximum of 100 characters
--	Only include characters (A-Z a-z 0-9 &()'+ -_ -./ : : @) 'Space'
+#### 2.4.2 Java ####
 
-To search for a name that begins with "Leeds", the following search should be executed: 
 
-```
-GET https://[baseurl]/organization?name=Leeds
-```
-This will return all the results in a `bundle` searchset that have an organisation name that begins with "Leeds" e.g Leeds Chest Clinic (RQS98) and Leeds Central Ambulance Station (RX847)
+#### 2.4.3 C# ####
 
 
-**Searching using an exact match**
+#### 2.4.4 .NET ####
 
-The ODS lookup API provides the functionality to search for an organisation using its name. This may be the entire organisation name, part of the name or where the name contains a defined value. 
+### 2.5 Search using active status ###
 
-To search for an exact name the following search should be executed:
+To search for ODS records based on their status, active or inactive.
 
-```
-GET https://[baseurl]/organization?name:exact=LEED TEACHING HOSPITALS NHS TRUST
-```
+#### 2.5.1 HAPI ####
 
-This will return all the results in a `bundle` searchset where the name of the organisation is exactly "LEEDS TEACHING NHS TRUST". 
 
-{% include important.html content="Note that the search is case sensitive." %}
+#### 2.5.2 Java ####
 
-**Searching using a contained match**
 
-There may be occasions where only part of the organisation name is known, therefore an exact match cannot be found. In this scenario, a search can be performed which will look for any part of the name that contains the specified value.
+#### 2.5.3 C# ####
 
-To search for a name that contains "LEEDS", the following search should be executed: 
 
-```
-GET https://[baseurl]/organization?name:contains=Leeds
-```
+#### 2.5.4 .NET ####
 
-The search will return a `bundle` searchset with all organisations that contains the word "Leeds" within its name. e.g South Leeds Clinical Assessment Service (5HL18) and The North Leeds Medical Practice (B86013)
+### 2.6 Search using address postcode ###
 
-### 2.3 Searches using postcode ###
+To search for ODS records based on their address postcode. 
 
-Where an organisation address contains a postcode, the ODS Lookup API is able to use this in an attempted to locate an organisation held on ODS. There are 3 variations of search available to locate an ODS record using a postcode. Search expressions must:
+#### 2.6.1 HAPI ####
 
--	Contain a minimum of 2 characters
--	All characters MUST be alphanumeric
 
+#### 2.6.2 Java ####
 
-**Searching using a partial postcode**
 
-Where a partial organisation postcode is available e.g LS1, it is possible to search ODS using this value. 
+#### 2.6.3 C# ####
 
-```
-GET https://[baseurl]/organization?address-postalcode=LS1
-```
 
-This will return the results in a `bundle` searchset for any organisation with a postcode beginning with LS1 e.g. All organisations with postcodes including LS1, LS10, LS11, LS12 
+#### 2.6.4 .NET ####
 
-**Searching using a contained match**
+### 2.7 Search using address city ###
 
-There may be occasions where only part of the organisation name is know, therefore an exact match cannot be found. In this scenario, a search can be performed which will look for any part of postcode that contains the specified value.
+To search for ODS records based on their address city. 
 
-```
-GET https://[baseurl]/organization?address-postalcode:contains=LS6 4
-```
+#### 2.7.1 HAPI ####
 
-This will return the results in a `bundle` searchset for any organisation containing LS6 4 anywhere in the postcode e.g. Sandfield House NH, LS6 4DZ
 
-**Searching using an exact match**
+#### 2.7.2 Java ####
 
-Where a full postcode for an organisation is known, this can be used to search ODS. 
 
-To search for an exact postcode the following search should be executed:
+#### 2.7.3 C# ####
 
-```
-GET https://[baseurl]/organization?address-postalcode:exact=LS6 4JN
-```
 
-This will return all the results in a `bundle` searchset where the postcode of the organisation is exactly LS6 4JN e.g Meanwood Health Centre, LS6 4JN
+#### 2.7.4 .NET ####
 
-{% include important.html content="Note that the search is case sensitive." %}
+### 2.8 Search using Organisation role ###
 
-### 2.4 Searches using address city###
+To search for ODS records based on their role. 
 
-Where an organisation address is available, the ODS Lookup API is able to use this in an attempted to locate an organisation held on ODS. There are 3 variations of search available to locate an ODS record using a city.
+#### 2.8.1 HAPI ####
 
-**Search using a partial city**
 
-Where a partial city is known e.g Peter, it is possible to search ODS using this value.
+#### 2.8.2 Java ####
 
-```
-GET  https://[baseurl]/organization?address-city=Peter
-```
 
-This will return all the results in a `bundle` searchset where the city begins with Peter e.g Peterborough, Petersfield, Peterlee.
+#### 2.8.3 C# ####
 
-**Searching using a contained match**
 
-Where part of the city name is known, this can be used to query ODS.
+#### 2.8.4 .NET ####
 
-```
-GET https://[baseurl]/organization?address-city:contains=Land
-```
+### 2.9 Search using an Organisations primary role ###
 
-This will return the results in a `bundle` searchset for any organisation containing "Land" anywhere in the city e.g. Hayling Island, Llandrindod Wells, Sunderland 
+To search for ODS records based on their primary role. 
 
-**Searching using an exact match**
+#### 2.9.1 HAPI ####
 
-Where a city for an organisation is known, this can be used to search ODS. 
 
-To search for an exact city the following query should be executed:
+#### 2.9.2 Java ####
 
-```
-https://[baseurl]/organization?address-city:exact=DERBY
-```
 
-This will return all the results in a `bundle` searchset where the city of the organisation is exactly Derby 
+#### 2.9.3 C# ####
 
-{% include important.html content="Note that the search is case sensitive." %}
 
-### 2.5 Search using record status ###
+#### 2.9.4 .NET ####
 
-An ODS record may have one of two statuses set;active or inactive. This translates within the ODS lookup API to active being true or false. 
+### 2.10 Search and limit the results per page ###
+With the scale of the ODS data, the results returned from certain queries could be extensive and require a method for browsing the details returned. It is possible to control the number of results returned using the _count parameter.
 
-```
-GET https://[baseurl]/organization?active=true
-```
-This will return all the results in a `bundle` searchset where the status of the organisation is active.
+#### 2.10.1 HAPI ####
 
-``` 
-GET https://[baseurl]/organization?active=false
-```
-This will return all the results in a `bundle` searchset where the status of the organisation is inactive.
 
-### 2.6 Search for Organisation Roles ###
+#### 2.10.2 Java ####
 
-Organisations within ODS have a specific role, which may also be a primary role e.g NHS TRUST as a primary role. The primary role is indicated using a marker that the ODS Lookup API interprets as true or false.
 
-**Search for a role**
+#### 2.10.3 C# ####
 
-|Search|REST interaction|Expected Result|Example XML|
-|------|----------------|---------------------|-----------|
-|Role|https://[baseurl]/Organization?ods-org-role=197|This should return all Organizations with the role of ‘NHS TRUST‘||
-|Primary role|https://[baseurl]/Organization?ods-org-primaryRole=true|This should return all records with a primary role||
-|Role and Primary role|https://[baseurl]/Organization?ods-org-role=197&ods-org-primaryRole=true|This should return all primary Organizations with the role of ‘NHS TRUST‘||
-|Multiple roles|https://[baseurl]/Organization?ods-org-role=157&ods-org-role=15|This should return all Organizations with the roles of ‘NON-NHS ORGANISATION‘ **and** ‘REG'D UNDER PART 2 CARE STDS ACT 2000’||
-||https://[baseurl]/Organization?ods-org-role=157,15|This should return all Organizations with the roles of ‘NON-NHS ORGANISATION‘ or ‘REG'D UNDER PART 2 CARE STDS ACT 2000’||
 
+#### 2.10.4 .NET ####
 
-### 2.7 _lastUpdated
+### 2.11 Search and return a count ###
+Just return a count of the matching resources, without returning the actual matches
 
-The search parameter _lastUpdated may be used to return only records that have been updated since a specified date.
+#### 2.11.1 HAPI ####
 
-```
-GET https://[baseurl]/organization?_lastUpdated=gt2010-10-01
-```
-This will return a `bundle` searchset containing all records updated since 1st October 2010.
 
-{% include important.html content="Note that the search parameter is case sensitive." %}
+#### 2.11.2 Java ####
 
-### 2.8 _summary
 
-Search only: just return a count of the matching resources, without returning the actual matches. 
+#### 2.11.3 C# ####
 
-```
-GET https://[baseurl]/organization?_summary=count
-```
 
-### 2.9 Paging ###
-
-With the scale of the ODS data, the results returned from certain queries could be extensive and require a method for browsing the details returned. FHIR pagination provides the ability to return paged results, making the navigating of the results user friendly. The paging function is transparent to the client, and configured via the FHIR server, however it is possible to control the number of results returned to the client using the `_count` parameter:
-
-```
-GET http://fhir.nhs.uk/STU3/Organization?type=2&city=Leeds&_count=20
-```
-This would limit the results to a maximum of 20 items per page.
-
-
-
+#### 2.11.4 .NET ####
 
 
 

@@ -1,4 +1,5 @@
 <p>Return a single <code class="highlighter-rouge">{{include.resource}}</code> for the specified id{{include.content}}.</p>
+<p>By default the response will be returned in JSON, however XML is also supported.</p>
 
 <h3 id="readresponse">1.1. Response</h3>
 
@@ -8,15 +9,15 @@
   <tbody>
     <tr>
       <td>200</td>
-      <td>successful operation</td>
+      <td>OK</td>
     </tr>
     <tr>
       <td>404</td>
-      <td>resource not found</td>
+      <td>Not Found</td>
     </tr>
-    <tr>
-      <td>410</td>
-      <td>resource deleted</td>
+	<tr>
+      <td>500</td>
+      <td>Internal Server Error</td>
     </tr>
   </tbody>
 </table>

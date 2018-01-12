@@ -4,7 +4,7 @@ keywords: code, Organization
 tags: [rest, fhir, code ,development]
 sidebar: accessrecord_rest_sidebar
 permalink: build_code_organization.html
-summary: A set of organization examples that use different technologies to perform a search. This includes HAPI, Java, C#, .NET and Java.
+summary: A set of organization examples that use different technologies to perform a search. This includes HAPI, Java, C# and .NET.
 ---
 
 ## 1. Organization Search Example ##

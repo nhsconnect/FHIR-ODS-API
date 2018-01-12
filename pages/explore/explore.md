@@ -13,11 +13,10 @@ summary: "Overview of the Resources section"
 
 ## 1. Resource API Structure ##
 
-The FHIR ODS Lookup profile API described in the Explore section of this implementation guide has been structured consistently in the following way:
+The FHIR ODS Lookup profile API described in this section of the implementation guide has been structured consistently in the following way:
 - `0.` References
 - `1.` Read
-- `2.` Search Parameters
-- `3.` Example
+- `2.` Search
 
 ### 1.1 Resource API Structure Details ###
 
@@ -37,10 +36,6 @@ The FHIR ODS Lookup profile API described in the Explore section of this impleme
 <tr>
 <td>2. Search Parameters</td>
 <td>List of search parameters for the profile being described, including any tips for searching. This section shows examples of how to search using the provided search parameters</td>
-</tr>
-<tr>
-<td>3. Example</td>
-<td>Description of of the Request & Response headers, example of how to search on a server and the expected response body as an example</td>
 </tr>
 </table>
 

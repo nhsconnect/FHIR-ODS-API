@@ -22,9 +22,11 @@ GET [baseUrl]/Organization/[id]</div>
 ## 2. Search ##
 
 <div markdown="span" class="alert alert-success" role="alert">
-GET [baseUrl]/Organization?[searchParameters]</div>
+GET [baseUrl]/Organization?[SearchParameters]</div>
 
-Returns a bundle of all `Organization` resources that match the specified search criteria.
+Returns a `Bundle` of all `Organization` resources that match the specified search criteria.
+
+By default the response will be returned in JSON, however XML is also supported.
 
 ### 2.1. Search Parameters ###
 
@@ -289,6 +291,10 @@ This will return all the ODS records with a role of '76 - GP PRACTICE' which is 
 
 {% include custom/search.count.html para="2.1.10." resource="Organization" content="_count" example="10" text1="organization" %}
 
+**Paging**
+
+With the scale of the ODS data, the results returned from certain queries could be extensive and require a method for browsing the details returned. FHIR pagination provides the ability to return paged results, making the navigating of the results user friendly. It is possible to control the number of results returned using the `_count` parameter.  The maximum page size is 20. See <a href="https://www.hl7.org/fhir/stu3/http.html#paging">Paging</a> for further information.
+
 {% include custom/search.summary.html para="2.1.11." resource="Organization" content="_summary" example="count" text1="organization" %}
 
 The supported modifiers for this search parameter are:
@@ -299,8 +305,13 @@ The supported modifiers for this search parameter are:
 
 {% include custom/search.response.html resource="Organization" %}
 
-***Placeholder for example successful Search response***
+The below table summarises the types of error that could occur, and the HTTP response codes, along with the values to expect in the `OperationOutcome` in the response body.
+
+| HTTP Code | issue.severity | issue.code | issue.details.code | issue.details.display | issue.diagnostics
+| :--------- |:-------- |:-------- |:--------- |:-------- |:-------- |
+|400|error |invalid|INVALID_PARAMETER|Invalid parameter|tbc|
 
 
-***Placeholder for example Operation Outcome response***
+**Placeholder for example Operation Outcome response**
+
 

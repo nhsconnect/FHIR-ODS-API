@@ -1,7 +1,7 @@
 ---
-title: Assure Overview
-keywords: assure, accredit
-tags: [assure]
+title: Test Overview
+keywords: test
+tags: [overview]
 sidebar: foundations_sidebar
 permalink: test.html
 summary: "These pages assist with requirements gathering and mapping stages of a FHIR API development process."

@@ -1,7 +1,7 @@
 ---
 title: Deploy Overview
 keywords: deploy, pilot, live, monitor
-tags: [deploy]
+tags: [overview]
 sidebar: foundations_sidebar
 permalink: deploy.html
 summary: "These pages assist with requirements gathering and mapping stages of a FHIR API development process."
