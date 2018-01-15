@@ -75,12 +75,6 @@ entries:
           - title: Organization Search
             url: /build_organization_search.html
             output: web
-          - title: Search Parameters
-            url: /build_organization_searchparameters.html
-            output: web
-          - title: Code Examples
-            url: /build_code_organization.html
-            output: web
 
   - title: Test
     output: web
