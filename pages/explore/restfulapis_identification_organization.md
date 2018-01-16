@@ -17,7 +17,7 @@ GET [baseUrl]/Organization/[id]</div>
 
 {% include custom/read.response.html resource="Organization" content="" %}
 
-***Placeholder for example Read response***
+<script src="https://gist.github.com/IOPS-DEV/aa574228008b504d3df3d0902a6ae694.js"></script>
 
 ## 2. Search ##
 
@@ -311,7 +311,7 @@ The below table summarises the types of error that could occur, and the HTTP res
 | :--------- |:-------- |:-------- |:--------- |:-------- |:-------- |
 |400|error |invalid|INVALID_PARAMETER|Invalid parameter|tbc|
 
+<script src="https://gist.github.com/IOPS-DEV/55b50b6644ca50de729e2379b38684e7.js"></script>
 
-**Placeholder for example Operation Outcome response**
 
 
