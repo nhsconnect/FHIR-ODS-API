@@ -17,15 +17,7 @@ Successful Operation
 
 ### 1.2. 4xx Http Client Errors ###
 
-#### 400 Bad Request ####
-
-Failing to send a required query parameter will result in a 400 Bad Request response.
-
-#### 404 Not Found ####
-Requesting a resource which does not exist will result in a 404 Not Found response.
-
-#### 406 Not Acceptable ####
-Requested a media type other than JSON will result in a 406 Not Acceptable response.
+To be confirmed
 
 ### 1.3. 5xx Http Server Errors ###
 
