@@ -307,9 +307,15 @@ The supported modifiers for this search parameter are:
 
 The below table summarises the types of error that could occur, and the HTTP response codes, along with the values to expect in the `OperationOutcome` in the response body.
 
-| HTTP Code | issue.severity | issue.code | issue.details.code | issue.details.display | issue.diagnostics
-| :--------- |:-------- |:-------- |:--------- |:-------- |:-------- |
-|400|error |invalid|INVALID_PARAMETER|Invalid parameter|tbc|
+| HTTP Code | issue.severity | issue.code | issue.details.code | issue.details.display | 
+| :--------- |:-------- |:-------- |:--------- |:-------- |
+|404|error |invalid|NO_RECORD_FOUND|No record found|
+|406|error |invalid|INVALID_CODE_SYSTEM|Invalid code system|
+|406|error |invalid|INVALID_CODE_VALUE|Invalid code value|
+|406|error |invalid|INVALID_IDENTIFIER_SYSTEM|Invalid identifier system|
+|406|error |invalid|INVALID_IDENTIFIER_VALUE|Invalid identifier value|
+|406|error |invalid|INVALID_PARAMETER|Invalid parameter|
+|406|error |invalid|INVALID_VALUE|An input field has an invalid value for its type|
 
 <script src="https://gist.github.com/IOPS-DEV/55b50b6644ca50de729e2379b38684e7.js"></script>
 
