@@ -8,7 +8,7 @@ summary: A formally or informally recognized grouping of people or organizations
 ---
 {% include custom/search.warnbanner.html %}
 
-{% include custom/fhir.reference.html resource="Organization" page="ODSAPI-Organization" fhirlink="[Organization](https://www.hl7.org/fhir/stu3/organization.html)" content="User Stories" userlink="" %}
+{% include custom/fhir.reference.html resource="Organization" page="ODSAPI-Organization" fhirlink="[Organization](https://www.hl7.org/fhir/stu3/organization.html)" content="User Stories" userlink="engage_case_studies.html" %}
 
 ## 1. Read ##
 
@@ -96,7 +96,7 @@ This will return the ODS records that have an Organization name that contains th
 
 The `:exact` modifier returns results that match the entire supplied parameter, including casing and accents.
 
-{% include important.html content="Note that the search is case sensitive." %}
+{% include important.html content="Note that this search is case sensitive." %}
 
 To search for an exact name e.g. "LEEDS TEACHING HOSPITALS NHS TRUST", the following search should be executed:
 
@@ -160,7 +160,7 @@ This will return all the ODS records with a postcode containing LS6 4 anywhere i
 
 The `:exact` modifier returns results that match the entire supplied parameter, including casing and accents.
 
-{% include important.html content="Note that the search is case sensitive." %}
+{% include important.html content="Note that this search is case sensitive." %}
 
 This will return all the ODS records with a postcode
 
@@ -200,7 +200,7 @@ This will return the ODS records that have a city that contains the word "land" 
 
 The `:exact` modifier returns results that match the entire supplied parameter, including casing and accents.
 
-{% include important.html content="Note that the search is case sensitive." %}
+{% include important.html content="Note that this search is case sensitive." %}
 
 To search for an exact name e.g. "DERBY" , the following search should be executed:
 

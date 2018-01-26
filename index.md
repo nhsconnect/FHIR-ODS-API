@@ -14,7 +14,7 @@ summary: A brief introduction to getting started with the FHIR&reg; ODS Lookup A
 
 # Introduction #
 
-The FHIR&reg; ODS Lookup API within this site has been developed by NHS Digital. The API aims to  better support the delivery of care by opening up information and data stored by the Organisation Data Service (ODS).
+The FHIR&reg; ODS Lookup API has been developed by NHS Digital. The API aims to  better support the delivery of care by opening up information and data stored by the Organisation Data Service (ODS).
 
 The vision is to create a library of nationally defined HL7® FHIR® resources and interaction patterns that implementers can adopt to simplify integration and interoperability within UK health and social care.
 

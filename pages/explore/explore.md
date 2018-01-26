@@ -13,7 +13,7 @@ summary: "Overview of the Resources section"
 
 ## 1. Resource API Structure ##
 
-The FHIR ODS Lookup profile API described in this section of the implementation guide has been structured consistently in the following way:
+The FHIR ODS Lookup profile API described in this section of the Implementation Guide has been structured consistently in the following way:
 - `0.` References
 - `1.` Read
 - `2.` Search
@@ -27,7 +27,7 @@ The FHIR ODS Lookup profile API described in this section of the implementation 
 </tr>
 <tr>
 <td>0. References</td>
-<td>Links to other parts of the implementation guide which might help with context and understanding the APIs described</td>
+<td>Links to other parts of the Implementation Guide which might help with context and understanding the APIs described</td>
 </tr>
 <tr>
 <td>1. Read</td>
@@ -40,7 +40,7 @@ The FHIR ODS Lookup profile API described in this section of the implementation 
 </table>
 
 ## 2. Resource APIs ##
-This section looks at the ODS Lookup profile API covered within this implementation guide.
+This section lists the resources used in the ODS Lookup API that are covered within this Implementation Guide.
 
 
 <table style="min-width:100%;width:100%">

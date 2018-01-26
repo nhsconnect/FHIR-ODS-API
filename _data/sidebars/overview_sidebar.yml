@@ -48,6 +48,9 @@ entries:
     - title: Organization
       url: /restfulapis_identification_organization.html
       output: web
+    - title: Capability
+      url: /api_foundation_capabilitystatement.html
+      output: web
     - title: ValueSet
       url: /api_foundation_valueset.html
       output: web
