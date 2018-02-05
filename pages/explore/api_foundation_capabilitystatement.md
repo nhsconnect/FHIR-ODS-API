@@ -4,7 +4,7 @@ keywords: foundations, fhir
 tags: [rest,fhir,use_case,api,foundation,noccprofile]
 sidebar: accessrecord_rest_sidebar
 permalink: api_foundation_capabilitystatement.html
-summary: A capability statement is a set of capabilities of a FHIR Server that may be used as a statement of actual server functionality or a statement of required or desired server implementation.
+summary: A Capability Statement is a set of capabilities of a FHIR Server that may be used as a statement of actual server functionality or a statement of required or desired server implementation.
 ---
 
 {% include custom/search.warnbanner.html %}
@@ -17,7 +17,9 @@ summary: A capability statement is a set of capabilities of a FHIR Server that m
 <div markdown="span" class="alert alert-success" role="alert">
 GET [baseUrl]/metadata</div>
 
-The /metadata path on the root of the FHIR server will return the Conformance statement for the FHIR server:
+The /metadata path on the root of the FHIR server will return the Capability Statement for the FHIR server:
+
+By default the response will be returned in JSON, however XML is also supported.
 
 For details of this interaction - see the [HL7 FHIR RESTful API](https://www.hl7.org/fhir/http.html#capabilities)
 
@@ -27,11 +29,11 @@ All requests SHALL contain a valid ‘Authorization’ header and SHALL contain 
 
 ### 2.1 Request Query ###
 
-Retrieve the capability statement from the FHIR Server, the format of the response body will be xml. Replace 'baseUrl' with the actual base Url of the FHIR Server.
+Retrieve the Capability Statement from the FHIR Server, the format of the response body will be xml. Replace 'baseUrl' with the actual base Url of the FHIR Server.
 
 #### 2.1.1. cURL ####
 
-{% include custom/embedcurl.html title="Read Server Conformance Statement" command="curl -H 'Accept: application/fhir+xml' -H 'Authorization: BEARER [token]' -X GET '[baseUrl]/metadata'" %}
+{% include custom/embedcurl.html title="Read Server Capability Statement" command="curl -H 'Accept: application/fhir+xml' -H 'Authorization: BEARER [token]' -X GET '[baseUrl]/metadata'" %}
 
 {% include custom/search.response.headers.html resource="Conformance"  %}
 

@@ -8,5 +8,5 @@ summary: "Glossary of terms used in this Implementation Guide"
 toc: false
 ---
 
-Glossary of common terms and abbreviations used though-out the documentation site can be found at [NHS Digital Glossary of acronyms and abbreviations](http://content.digital.nhs.uk/article/2994/Glossary-of-acronyms)
+Glossary of common terms and abbreviations used though-out the documentation site can be found on the [Health Developer Network](https://developer.nhs.uk/library/glossary/).
 
