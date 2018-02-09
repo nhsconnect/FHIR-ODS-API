@@ -246,6 +246,7 @@ This will return the ODS records that have either role '197 - NHS TRUST' **OR** 
 
 
 ***AND and OR Parameters***
+
 'AND' parameters and 'OR' parameters may also be combined. To search for an ODS record with the role '157 - NON-NHS ORGANISATION' **AND** either roles '29 - TREATMENT CENTRE' **OR** '15 - REG'D UNDER PART 2 CARE STDS ACT 2000'.
 
 ```
