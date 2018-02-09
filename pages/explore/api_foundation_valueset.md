@@ -2,14 +2,14 @@
 title: Foundation | ValueSet
 keywords: foundations, fhir
 tags: [foundation,use_case,fhir,rest,api,noccprofile]
-sidebar: accessrecord_rest_sidebar
+sidebar: overview_sidebar
 permalink: api_foundation_valueset.html
-summary: A value set specifies a set of codes drawn from one or more code systems.
+summary: A ValueSet selects a set of codes from those defined by one or more code systems.
 ---
 
 {% include custom/search.warnbanner.html %}
 
-{% include custom/fhir.referencemin.html resource="" page="" fhirlink="[ValueSet](http://www.hl7.org/fhir/valueset.html)" content="User Stories" userlink="" %}
+{% include custom/fhir.referencemin.html resource="[ODS API Organization Role](https://fhir.nhs.uk/STU3/ValueSet/ODSAPI-OrganizationRole-1)" resource1="[ODS API Organization Record Class](https://fhir.nhs.uk/STU3/ValueSet/ODSAPI-OrganizationRecordClass-1)" page="" fhirlink="[ValueSet](http://www.hl7.org/fhir/stu3/valueset.html)" content="User Stories" userlink="" %}
 
 
 ## 1. Read ##

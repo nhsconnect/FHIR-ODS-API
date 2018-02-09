@@ -1,10 +1,10 @@
 ---
-title: Design | Organisation Data Service (ODS) Search
+title: Build | Organisation Data Service (ODS) Search
 keywords: development
-tags: [design,development]
+tags: [build,development]
 sidebar: overview_sidebar
 permalink: build_organization_search.html
-summary: "How to use FHIR ODS Lookup API to perform searches on ODS"
+summary: "How to use the FHIR ODS Lookup API to perform searches on ODS, containing examples that use different technologies to perform a search. This includes HAPI Java, C# .NET and cURL."
 ---
 
 {% include custom/search.warnbanner.html %}
@@ -13,7 +13,7 @@ summary: "How to use FHIR ODS Lookup API to perform searches on ODS"
 
 ## 1. Overview ##
 
-{% include custom/usecase.html content="A healthcare provider wishes to locate the details of several other healthcare organisations, where the information available to enter into any search parameters differers between each organisation. The available information may be one or more of, Organisation code, name, address, status or primary roles. In order to process the returned results in an efficient manner, the healthcare provider requires these to be in XML format, whilst providing paged navigation." %}
+{% include custom/usecase.html content="A healthcare provider wishes to locate the details of several other healthcare organisations, where the information available to enter into any search parameters differs between each organisation. The available information may be one or more of, id/identifier (ODS Code), name, address, status or role. In order to process the returned results in an efficient manner, the healthcare provider requires these to be in XML format, whilst providing paged navigation." %}
 
 
 Within the NHS, there is a requirement to identify organisations across the Health and Social Care landscape. The Organisation Data Service (ODS) provides access to the repository of publishing codes that identify these organisations and provide valuable information that can reduce administration and improve data quality. ODS provides 3 file types:
@@ -45,212 +45,187 @@ This is particularly suited to:
 max-width="200px" file="build/ODS-Lookup.png" alt="Organisation Lookup FHIR Actor Diagram"
 caption="Organisation Lookup FHIR Actor Diagram" %}
 
-The ODS API Lookup can use any of the search parameters defined in the [ODS Lookup API](api_entity_organization.html) API. 
+The ODS API Lookup can use any of the search parameters defined in the [ODS Lookup API](restfulapis_identification_organization.html). 
 
-What we have just described is shown in the diagram below. When entering the url an ODS Lookup FHIR Query is performed and a ODS Lookup response is returned with an XML body and a HTTP response code. 
+What we have just described is shown in the diagram below. When entering the url an ODS Lookup FHIR Query is performed and an ODS Lookup response is returned with an XML body and a HTTP response code. 
 
 {% include image.html
 max-width="200px" file="build/ods-basic-flow.png" alt="Basic Process Flow ODS Search FHIR" caption="Basic Process Flow" %}
 
-### 2.2 Search using ODS Code ###
+## 3. Search Parameters ##
 
-To find an organisation by ODS code we use the identifier, which stores all Organisation codes in ODS. The earlier example used a postcode to locate any records, which could return more than one result. With organisation codes being unique, searching using an identifier should in theory return only one record. 
+Examples of using different technologies to perform a search.
 
-To search for Organisations by organisation code, use the following query:
+| Parameter | Parameter Type | Description | HAPI Java | C# .NET | cURL |
+|------|------|-------------|------|------|------|
+| <a href="build_organization_search.html#31-search-using-ods-code">`_id`/`identifier`</a>|`token`|Search for ODS records based on their logical or business identifier|<a href="build_organization_search.html#311-hapi-java"><i class="fa fa-code"></i></a> | <a href="build_organization_search.html#312-c-net"><i class="fa fa-code"></i></a> | <a href="build_organization_search.html#313-curl"><i class="fa fa-code"></i></a> |
+| <a href="build_organization_search.html#32-search-using-last-updated-date">`_lastUpdated`</a> |`date`| Search for ODS records based on their last updated date| <a href="build_organization_search.html#321-hapi-java"><i class="fa fa-code"></i></a>| <a href="build_organization_search.html#322-c-net"><i class="fa fa-code"></i></a>|<a href="build_organization_search.html#323-curl"><i class="fa fa-code"></i></a>|
+| <a href="build_organization_search.html#33-search-using-name">`name`</a> | `string` | Search for ODS records based on their name, including modifiers. | <a href="build_organization_search.html#331-hapi-java"><i class="fa fa-code"></i></a>|<a href="build_organization_search.html#332-c-net"><i class="fa fa-code"></i></a>|<a href="build_organization_search.html#333-curl"><i class="fa fa-code"></i></a>|
+| <a href="build_organization_search.html#34-search-using-active-status">`active`</a> | `token` | Search for ODS records based on their status, active or inactive. | <a href="build_organization_search.html#341-hapi-java"><i class="fa fa-code"></i></a>|<a href="build_organization_search.html#342-c-net"><i class="fa fa-code"></i></a>|<a href="build_organization_search.html#343-curl"><i class="fa fa-code"></i></a>|
+| <a href="build_organization_search.html#35-search-using-address-postcode">`address-postalcode`</a> | `string` | Search for ODS records based on their address postcode | <a href="build_organization_search.html#351-hapi-java"><i class="fa fa-code"></i></a>|<a href="build_organization_search.html#352-c-net"><i class="fa fa-code"></i></a>|<a href="build_organization_search.html#353-curl"><i class="fa fa-code"></i></a>|
+| <a href="build_organization_search.html#36-search-using-address-city">`address-city`</a> | `string` | Search for ODS records based on their address city | <a href="build_organization_search.html#361-hapi-java"><i class="fa fa-code"></i></a>|<a href="build_organization_search.html#362-c-net"><i class="fa fa-code"></i></a>|<a href="build_organization_search.html#363-curl"><i class="fa fa-code"></i></a>|
+| <a href="build_organization_search.html#37-search-using-organisation-role">`ods-org-role`</a> | `token` | Search for ODS records based on their role | <a href="build_organization_search.html#371-hapi-java"><i class="fa fa-code"></i></a>|<a href="build_organization_search.html#372-c-net"><i class="fa fa-code"></i></a>|<a href="build_organization_search.html#373-curl"><i class="fa fa-code"></i></a>|
+| <a href="restfulapis_identification_organization.html#tokenods-org-primaryRole">`ods-org-primaryRole`</a> | `token` | Search for ODS records based on their primary role | <a href="build_organization_search.html#381-hapi-java"><i class="fa fa-code"></i></a>|<a href="build_organization_search.html#382-c-net"><i class="fa fa-code"></i></a>|<a href="build_organization_search.html#383-curl"><i class="fa fa-code"></i></a>|
+| <a href="build_organization_search.html#39-search-and-limit-the-results-per-page">`_count`</a> | `number` | Control the number of results returned per page | <a href="build_organization_search.html#391-hapi-java"><i class="fa fa-code"></i></a>|<a href="build_organization_search.html#392-c-net"><i class="fa fa-code"></i></a>|<a href="build_organization_search.html#393-curl"><i class="fa fa-code"></i></a>|
+| <a href="build_organization_search.html#310-search-and-return-a-count">`_summary=count`</a> | `string` |  Return a count of the matching resources | <a href="build_organization_search.html#3101-hapi-java"><i class="fa fa-code"></i></a>|<a href="build_organization_search.html#3102-c-net"><i class="fa fa-code"></i></a>|<a href="build_organization_search.html#3103-curl"><i class="fa fa-code"></i></a>|
 
 
-```
-GET https://fhir.nhs.uk/STU3/Organization?identifier=RXX 
-```
+### 3.1 Search using ODS Code ###
 
-This will return all organisations with an organisation code of RXX (this may be more than one). An organisation code is the main identifier within an NHS Organisation or Health Enterprise. It should be noted that codes allocated to GP practices are supplied by the NHS Prescription Service.
+To search for ODS records based on their logical or business identifier.
 
-<script src="https://gist.github.com/IOPS-DEV/25e3e70ac76e1dc3d0d6c6d367076d4d.js"></script>
+#### 3.1.1 HAPI Java ####
+
+<script src="https://gist.github.com/IOPS-DEV/ac96a4e81287ccef4e5cef5fbd3cb791.js"></script>
+
+#### 3.1.2 C# .NET ####
+
+<script src="https://gist.github.com/IOPS-DEV/950319b68d8441c326e03f96c9a2db29.js"></script>
+
+#### 3.1.3 cURL ####
+
+<script src="https://gist.github.com/IOPS-DEV/9bdcf2c7650387a8cf41dd79472fb5ce.js"></script>
+
+
+### 3.2 Search using last updated date ###
+
+To search for ODS records based on their last updated date.
+
+#### 3.2.1 HAPI Java ####
+
+<script src="https://gist.github.com/IOPS-DEV/bc094bbc9b2c3f1118e56de127f8c743.js"></script>
+
+#### 3.2.2 C# .NET ####
+
+<script src="https://gist.github.com/IOPS-DEV/948a77d0f958e04797e560fefa83595d.js"></script>
+
+#### 3.2.3 cURL ####
+
+<script src="https://gist.github.com/IOPS-DEV/2d5fb4ff30270d88bbeb8647715255f6.js"></script>
       
-### 2.3 Search using Organisation Name ###
+### 3.3 Search using name ###
 
-Each organisation may be identified in ODS using its name, and ODS Lookup API is able to use this in an attempted to locate an organisation held on ODS. There are 3 variations of search available to locate an ODS record using a name.
+To search for ODS records based on their name, including modifiers.
 
-**Searching using a name**
+#### 3.3.1 HAPI Java ####
 
-There may be occasions where you wish to search for an organisation where the name begins with a specific name, such as "Leeds". Search expressions must:
+<script src="https://gist.github.com/IOPS-DEV/6b880533ccfbac731de71185d68ceedc.js"></script>
 
--	Contain a minimum of 3 characters and Maximum of 100 characters
--	Only include characters (A-Z a-z 0-9 &()'+ -_ -./ : : @) 'Space'
+#### 3.3.2 C# .NET ####
 
-To search for a name that begins with "Leeds", the following search should be executed: 
+<script src="https://gist.github.com/IOPS-DEV/f11f3107237fda4cf8bae8a453291190.js"></script>
 
-```
-GET https://[baseurl]/organization?name=Leeds
-```
-This will return all the results in a `bundle` searchset that have an organisation name that begins with "Leeds" e.g Leeds Chest Clinic (RQS98) and Leeds Central Ambulance Station (RX847)
+#### 3.3.3 cURL ####
 
+<script src="https://gist.github.com/IOPS-DEV/f4d04199cb634eab653c7c3ce40975ec.js"></script>
 
-**Searching using an exact match**
+### 3.4 Search using active status ###
 
-The ODS lookup API provides the functionality to search for an organisation using its name. This may be the entire organisation name, part of the name or where the name contains a defined value. 
+To search for ODS records based on their status, active or inactive.
 
-To search for an exact name the following search should be executed:
+#### 3.4.1 HAPI Java ####
 
-```
-GET https://[baseurl]/organization?name:exact=LEED TEACHING HOSPITALS NHS TRUST
-```
+<script src="https://gist.github.com/IOPS-DEV/7459f30cf434c7280d039ca3f586a9a9.js"></script>
 
-This will return all the results in a `bundle` searchset where the name of the organisation is exactly "LEEDS TEACHING NHS TRUST". 
+#### 3.4.2 C# .NET ####
 
-{% include important.html content="Note that the search is case sensitive." %}
+<script src="https://gist.github.com/IOPS-DEV/7228a7e31a220deb02ffe233db69c2d2.js"></script>
 
-**Searching using a contained match**
+#### 3.4.3 cURL ####
 
-There may be occasions where only part of the organisation name is know, therefore an exact match cannot be found. In this scenario, a search can be performed which will look for any part of the name that contains the specified value.
+<script src="https://gist.github.com/IOPS-DEV/b7a58bed9c62fd8e9ff371c06ece8e36.js"></script>
 
-To search for a name that contains "LEEDS", the following search should be executed: 
+### 3.5 Search using address postcode ###
 
-```
-GET https://[baseurl]/organization?name:contains=Leeds
-```
+To search for ODS records based on their address postcode. 
 
-The search will return a `bundle` searchset with all organisations that contains the word "Leeds" within its name. e.g South Leeds Clinical Assessment Service (5HL18) and The North Leeds Medical Practice (B86013)
+#### 3.5.1 HAPI Java ####
 
-### 2.3 Searches using postcode ###
+<script src="https://gist.github.com/IOPS-DEV/bde37f79bec20a6d21d6e593f925c3f5.js"></script>
 
-Where an organisation address contains a postcode, the ODS Lookup API is able to use this in an attempted to locate an organisation held on ODS. There are 3 variations of search available to locate an ODS record using a postcode. Search expressions must:
+#### 3.5.2 C# .NET ####
 
--	Contain a minimum of 2 characters
--	All characters MUST be alphanumeric
+<script src="https://gist.github.com/IOPS-DEV/df56b8e369dbc6360ce82d0eb7522bd7.js"></script>
 
+#### 3.5.3 cURL ####
 
-**Searching using a partial postcode**
+<script src="https://gist.github.com/IOPS-DEV/29e62bf146e5c30b725f284880a708fb.js"></script>
 
-Where a partial organisation postcode is available e.g LS1, it is possible to search ODS using this value. 
+### 3.6 Search using address city ###
 
-```
-GET https://[baseurl]/organization?address-postalcode=LS1
-```
+To search for ODS records based on their address city. 
 
-This will return the results in a `bundle` searchset for any organisation with a postcode beginning with LS1 e.g. All organisations with postcodes including LS1, LS10, LS11, LS12 
+#### 3.6.1 HAPI Java ####
 
-**Searching using a contained match**
+<script src="https://gist.github.com/IOPS-DEV/4032679d2357c0e0ba7655688069f702.js"></script>
 
-There may be occasions where only part of the organisation name is know, therefore an exact match cannot be found. In this scenario, a search can be performed which will look for any part of postcode that contains the specified value.
+#### 3.6.2 C# .NET####
 
-```
-GET https://[baseurl]/organization?address-postalcode:contains=LS6 4
-```
+<script src="https://gist.github.com/IOPS-DEV/00a8a9e8b59bc58ddc9ca7042a9882da.js"></script>
 
-This will return the results in a `bundle` searchset for any organisation containing LS6 4 anywhere in the postcode e.g. Sandfield House NH, LS6 4DZ
+#### 3.6.3 cURL ####
 
-**Searching using an exact match**
+<script src="https://gist.github.com/IOPS-DEV/3186d87e5bbb411b84c2df89b3ee6e49.js"></script>
 
-Where a full postcode for an organisation is known, this can be used to search ODS. 
+### 3.7 Search using Organisation role ###
 
-To search for an exact postcode the following search should be executed:
+To search for ODS records based on their role. 
 
-```
-GET https://[baseurl]/organization?address-postalcode:exact=LS6 4JN
-```
+#### 3.7.1 HAPI Java ####
 
-This will return all the results in a `bundle` searchset where the postcode of the organisation is exactly LS6 4JN e.g Meanwood Health Centre, LS6 4JN
+<script src="https://gist.github.com/IOPS-DEV/16dd6f6e17a42418f92e08f9aac33ea2.js"></script>
 
-{% include important.html content="Note that the search is case sensitive." %}
+#### 3.7.2 C# .NET ####
 
-### 2.4 Searches using address city###
+<script src="https://gist.github.com/IOPS-DEV/ff70e330475c03a9a008b187c3d3943a.js"></script>
 
-Where an organisation address is available, the ODS Lookup API is able to use this in an attempted to locate an organisation held on ODS. There are 3 variations of search available to locate an ODS record using a city.
+#### 3.7.3 cURL ####
 
-**Search using a partial city**
+<script src="https://gist.github.com/IOPS-DEV/cc653098e730b217baab1a1d2ab94822.js"></script>
 
-Where a partial city is known e.g Peter, it is possible to search ODS using this value.
+### 3.8 Search using an Organisations primary role ###
 
-```
-GET  https://[baseurl]/organization?address-city=Peter
-```
+To search for ODS records based on their primary role. 
 
-This will return all the results in a `bundle` searchset where the city begins with Peter e.g Peterborough, Petersfield, Peterlee.
+#### 3.8.1 HAPI Java ####
 
-**Searching using a contained match**
+<script src="https://gist.github.com/IOPS-DEV/74da811c4ae61c555e1bfeec174317cf.js"></script>
 
-Where part of the city name is known, this can be used to query ODS.
+#### 3.8.2 C# .NET ####
 
-```
-GET https://[baseurl]/organization?address-city:contains=Land
-```
+<script src="https://gist.github.com/IOPS-DEV/f48a44b8773fe36ba05829b660b4acf5.js"></script>
 
-This will return the results in a `bundle` searchset for any organisation containing "Land" anywhere in the city e.g. Hayling Island, Llandrindod Wells, Sunderland 
+#### 3.8.3 cURL ####
 
-**Searching using an exact match**
+<script src="https://gist.github.com/IOPS-DEV/1dced73c0da9682eb956daa8e7114051.js"></script>
 
-Where a city for an organisation is known, this can be used to search ODS. 
+### 3.9 Search and limit the results per page ###
+With the scale of the ODS data, the results returned from certain queries could be extensive and require a method for browsing the details returned. It is possible to control the number of results returned using the _count parameter.
 
-To search for an exact city the following query should be executed:
+#### 3.9.1 HAPI Java ####
 
-```
-https://[baseurl]/organization?address-city:exact=DERBY
-```
+<script src="https://gist.github.com/IOPS-DEV/c1a5c92a5b1e99de41d131f18ec33bca.js"></script>
 
-This will return all the results in a `bundle` searchset where the city of the organisation is exactly Derby 
+#### 3.9.2 C# .NET ####
 
-{% include important.html content="Note that the search is case sensitive." %}
+<script src="https://gist.github.com/IOPS-DEV/2928f39c38e11375af5e71a06773d087.js"></script>
 
-### 2.5 Search using record status ###
+#### 3.9.3 cURL ####
 
-An ODS record may have one of two statuses set;active or inactive. This translates within the ODS lookup API to active being true or false. 
+<script src="https://gist.github.com/IOPS-DEV/0f52ea7128fae9b952e6e0b2f0b46c1e.js"></script>
 
-```
-GET https://[baseurl]/organization?active=true
-```
-This will return all the results in a `bundle` searchset where the status of the organisation is active.
+### 3.10 Search and return a count ###
+Just return a count of the matching resources, without returning the actual matches
 
-``` 
-GET https://[baseurl]/organization?active=false
-```
-This will return all the results in a `bundle` searchset where the status of the organisation is inactive.
+#### 3.10.1 HAPI Java ####
 
-### 2.6 Search for Organisation Roles ###
+<script src="https://gist.github.com/IOPS-DEV/fb91a03dd94cfc3ac51c118faae8fd9e.js"></script>
 
-Organisations within ODS have a specific role, which may also be a primary role e.g NHS TRUST as a primary role. The primary role is indicated using a marker that the ODS Lookup API interprets as true or false.
+#### 3.10.2 C# .NET ####
 
-**Search for a role**
+<script src="https://gist.github.com/IOPS-DEV/da8220638697aade1297b2c2a8e003f6.js"></script>
 
-|Search|REST interaction|Expected Result|Example XML|
-|------|----------------|---------------------|-----------|
-|Role|https://[baseurl]/Organization?ods-org-role=197|This should return all Organizations with the role of ‘NHS TRUST‘||
-|Primary role|https://[baseurl]/Organization?ods-org-primaryRole=true|This should return all records with a primary role||
-|Role and Primary role|https://[baseurl]/Organization?ods-org-role=197&ods-org-primaryRole=true|This should return all primary Organizations with the role of ‘NHS TRUST‘||
-|Multiple roles|https://[baseurl]/Organization?ods-org-role=157&ods-org-role=15|This should return all Organizations with the roles of ‘NON-NHS ORGANISATION‘ **and** ‘REG'D UNDER PART 2 CARE STDS ACT 2000’||
-||https://[baseurl]/Organization?ods-org-role=157,15|This should return all Organizations with the roles of ‘NON-NHS ORGANISATION‘ or ‘REG'D UNDER PART 2 CARE STDS ACT 2000’||
+#### 3.10.3 cURL ####
 
-
-### 2.7 _lastUpdated
-
-The search parameter _lastUpdated may be used to return only records that have been updated since a specified date.
-
-```
-GET https://[baseurl]/organization?_lastUpdated=gt2010-10-01
-```
-This will return a `bundle` searchset containing all records updated since 1st October 2010.
-
-{% include important.html content="Note that the search parameter is case sensitive." %}
-
-### 2.8 _summary
-
-Search only: just return a count of the matching resources, without returning the actual matches. 
-
-```
-GET https://[baseurl]/organization?_summary=count
-```
-
-### 2.9 Paging ###
-
-With the scale of the ODS data, the results returned from certain queries could be extensive and require a method for browsing the details returned. FHIR pagination provides the ability to return paged results, making the navigating of the results user friendly. The paging function is transparent to the client, and configured via the FHIR server, however it is possible to control the number of results returned to the client using the `_count` parameter:
-
-```
-GET http://fhir.nhs.uk/STU3/Organization?type=2&city=Leeds&_count=20
-```
-This would limit the results to a maximum of 20 items per page.
-
-
-
-
-
+<script src="https://gist.github.com/IOPS-DEV/bf3b525be224673c55201c7165f47dc7.js"></script>
 

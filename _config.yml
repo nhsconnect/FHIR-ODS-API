@@ -113,7 +113,7 @@ site:
   fhirprofiles:
     patient: "[FHIR ODS Lookup](https://fhir.nhs.uk/STU3/StructureDefinition/Organization-1.html)"
 
-gems:
+plugins:
    - jekyll-github-metadata
    - jekyll-mentions
    - jemoji

@@ -13,11 +13,10 @@ summary: "Overview of the Resources section"
 
 ## 1. Resource API Structure ##
 
-The FHIR ODS Lookup profile API described in the Explore section of this implementation guide has been structured consistently in the following way:
+The FHIR ODS Lookup profile API described in this section of the Implementation Guide has been structured consistently in the following way:
 - `0.` References
 - `1.` Read
-- `2.` Search Parameters
-- `3.` Example
+- `2.` Search
 
 ### 1.1 Resource API Structure Details ###
 
@@ -28,7 +27,7 @@ The FHIR ODS Lookup profile API described in the Explore section of this impleme
 </tr>
 <tr>
 <td>0. References</td>
-<td>Links to other parts of the implementation guide which might help with context and understanding the APIs described</td>
+<td>Links to other parts of the Implementation Guide which might help with context and understanding the APIs described</td>
 </tr>
 <tr>
 <td>1. Read</td>
@@ -38,14 +37,10 @@ The FHIR ODS Lookup profile API described in the Explore section of this impleme
 <td>2. Search Parameters</td>
 <td>List of search parameters for the profile being described, including any tips for searching. This section shows examples of how to search using the provided search parameters</td>
 </tr>
-<tr>
-<td>3. Example</td>
-<td>Description of of the Request & Response headers, example of how to search on a server and the expected response body as an example</td>
-</tr>
 </table>
 
 ## 2. Resource APIs ##
-This section looks at the ODS Lookup profile API covered within this implementation guide.
+This section lists the resources used in the ODS Lookup API that are covered within this Implementation Guide.
 
 
 <table style="min-width:100%;width:100%">
@@ -58,12 +53,11 @@ This section looks at the ODS Lookup profile API covered within this implementat
 </tr>
 </table>
 
-
 <table style="min-width:100%;width:100%">
-<th>Terminology</th>
+<th>Conformance</th>
 
 <tr>
-<td><a href="api_foundation_valueset.html">ValueSet</a></td>
+<td><a href="api_foundation_capabilitystatement.html">CapabilityStatement</a></td>
 </tr>
 </table>
 
@@ -71,6 +65,8 @@ This section looks at the ODS Lookup profile API covered within this implementat
 <th>Terminology</th>
 
 <tr>
-<td><a href="api_foundation_codesystem.html">CodeSystem</a></td>
+<td><a href="api_foundation_valueset.html">ValueSet</a> <br>
+<a href="api_foundation_codesystem.html">CodeSystem</a></td>
 </tr>
 </table>
+

@@ -2,14 +2,14 @@
 title: Foundation | CodeSystem
 keywords: foundations, fhir
 tags: [foundation,use_case,fhir,rest,api,noccprofile]
-sidebar: accessrecord_rest_sidebar
+sidebar: overview_sidebar
 permalink: api_foundation_codesystem.html
-summary: A code system specifies a set of codes drawn from more code systems.
+summary: A CodeSystem defines a set of codes with meanings.
 ---
 
 {% include custom/search.warnbanner.html %}
 
-{% include custom/fhir.referencemin.html resource="" page="" fhirlink="[CodeSystem](http://www.hl7.org/fhir/codesystem.html)" content="User Stories" userlink="" %}
+{% include custom/fhir.referencemin.html resource="[ODS API Organization Role](tbc)" resource1="[ODS API Organization Record Class](https://fhir.nhs.uk/STU3/CodeSystem/ODSAPI-OrganizationRecordClass-1)" page="" fhirlink="[CodeSystem](http://www.hl7.org/fhir/stu3/codesystem.html)" content="User Stories" userlink="" %}
 
 
 ## 1. Read ##

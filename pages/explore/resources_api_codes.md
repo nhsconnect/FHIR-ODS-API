@@ -15,30 +15,24 @@ summary: "Details of the API Codes used in the responses."
 #### 200 OK ####
 Successful Operation
 
-#### 201 Created ####
-The resource was created.
-
 ### 1.2. 4xx Http Client Errors ###
 
-#### 400 Bad Request ####
-Failing to send a required query parameter will result in a 400 Bad Request response.
-
-#### 401 Unauthorized ####
-Requesting the secure endpoint (non-open) without valid credentials will result in a 401 Unauthorized response.
-
-#### 403 Forbidden ####
-Requesting data from an unknown instance or an instance where the application is not authorized will result in a 403 Forbidden response.
-
 #### 404 Not Found ####
-Requesting a resource which does not exist will resule in a 404 Not Found response.
+No record found for supplied ODS code
 
 #### 406 Not Acceptable ####
-Requested a media type other than JSON will result in a 406 Not Acceptable response.
+This response can be generated for several reasons, examples are shown below:
 
-#### 409 Conflict Error ####
-Performing an update with an out-of-date version id will result in a 409 Conflict Error response.
-
-#### 422 Unprocessable Entity ####
-Performing an add or update with syntactically correct JSON body which is invalid according to business rules will result in a 422 Unprocessable Entity response.
+| issue.details.display | Examples of issue.diagnostics |
+|-----|-----|
+| Invalid code system | Invalid ods-org-role parameter. Should be https://fhir.nhs.uk/FHIR/STU3/CodeSystem/ODSAPI-OrganizationRole-1.|
+| Invalid code value | Invalid FHIR ods-org-role parameter |
+|Invalid identifier system | Invalid ods-org-role parameter. Should be https://fhir.nhs.uk/Id/ods-organization-code |
+| Invalid identifier value | Supplied identifier must be just alphanumeric characters.|
+| Invalid parameter | Unknown argument found address-postalcode1 <br> Unknown argument found ods-org-role1 <br> Unknown argument found ods-org-PrimaryRole <br> Unknown argument found address-city1 <br> Unknown argument found active1|
+|An input field has an invalid value for its type | Supplied address-postalcode is too short, min 2 characters <br> Supplied address-postalcode contains invalid characters, alphanumeric characters only <br> Supplied address-postalcode is too long, max 8 characters <br> Supplied address-city is too short, min 3 characters <br> Supplied date is invalid <br> Supplied limit is invalid, the parameter must take an integer between 0 and 20 <br> Unknown content type specified \"application/fhir+tESTXml\" <br> Supplied name:contains has invalid Character/s <br> Supplied address-city contains invalid characters, valid characters include:  , . ' and alphabetical characters <br> Invalid FHIR active parameter|
 
 ### 1.3. 5xx Http Server Errors ###
+
+#### 500 Internal Server Error ####
+The server encountered an unexpected condition that prevented it from fulfilling the request.
