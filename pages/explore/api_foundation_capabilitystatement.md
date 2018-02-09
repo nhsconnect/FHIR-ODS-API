@@ -39,7 +39,7 @@ Retrieve the Capability Statement from the FHIR Server, the format of the respon
 
 ### 2.3 Response Body ###
 
-{% include important.html content="The following draft capability statement will move as the implementation guide moves on." %}
+{% include important.html content="The following draft Capability Statement will move as the Implementation Guide moves on." %}
 
 <script src="https://gist.github.com/IOPS-DEV/a28653c2db94639b1a0ab2aafd259d2f.js"></script>
 

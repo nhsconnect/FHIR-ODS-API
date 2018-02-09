@@ -9,7 +9,7 @@ summary: "Developer Cheat Sheet shortcuts for the <br/>technical build of FHIR&r
 
 {% include custom/search.warnbanner.html %}
 
-## 1. Profiles: ##
+## 1. Profiles ##
 
 | Profile | ValueSets | CodeSystems |
 | :--------- |:-------- |:-------- |

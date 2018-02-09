@@ -53,12 +53,11 @@ This section lists the resources used in the ODS Lookup API that are covered wit
 </tr>
 </table>
 
-
 <table style="min-width:100%;width:100%">
-<th>Terminology</th>
+<th>Conformance</th>
 
 <tr>
-<td><a href="api_foundation_valueset.html">ValueSet</a></td>
+<td><a href="api_foundation_capabilitystatement.html">CapabilityStatement</a></td>
 </tr>
 </table>
 
@@ -66,6 +65,8 @@ This section lists the resources used in the ODS Lookup API that are covered wit
 <th>Terminology</th>
 
 <tr>
-<td><a href="api_foundation_codesystem.html">CodeSystem</a></td>
+<td><a href="api_foundation_valueset.html">ValueSet</a> <br>
+<a href="api_foundation_codesystem.html">CodeSystem</a></td>
 </tr>
 </table>
+
