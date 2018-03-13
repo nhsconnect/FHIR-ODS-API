@@ -1,0 +1,59 @@
+---
+title: Foundation | ValueSet
+keywords: foundations, fhir
+tags: [foundation,use_case,fhir,rest,api,noccprofile]
+sidebar: overview_sidebar
+permalink: api_foundation_valueset.html
+summary: A ValueSet selects a set of codes from those defined by one or more code systems.
+---
+
+{% include custom/search.warnbanner.html %}
+
+{% include custom/fhir.referencemin.html resource="[ODS API Organization Role](https://fhir.nhs.uk/STU3/ValueSet/ODSAPI-OrganizationRole-1)" resource1="[ODS API Organization Record Class](https://fhir.nhs.uk/STU3/ValueSet/ODSAPI-OrganizationRecordClass-1)" page="" fhirlink="[ValueSet](http://www.hl7.org/fhir/stu3/valueset.html)" content="User Stories" userlink="" %}
+
+
+## 1. Read ##
+
+<div markdown="span" class="alert alert-success" role="alert">
+GET [baseUrl]/ValueSet/[id]</div>
+
+{% include custom/read.response.html resource="ValueSet" content="" %}
+
+## 2. Example ##
+
+### 2.1 Request Query ###
+
+Return the ValueSet ODS lookup API 'ODS API Organization Role'. Replace 'baseUrl' with the actual base Url of the FHIR Server.
+
+#### 2.1.1. cURL ####
+
+{% include custom/embedcurl.html title="Read ODS lookup API 'ODS API Organization Role ValueSet'" command="curl -H 'Accept: application/fhir+xml' -H 'Authorization: BEARER [token]' -X GET  'https://fhir.nhs.uk/STU3/ValueSet/ODSAPI-OrganizationRole-1'" %}
+
+{% include custom/search.response.headers.html resource="ValueSet"  %}
+
+### 2.3 Response Body ###
+
+```xml
+<ValueSet>
+    <url value="https://fhir.nhs.uk/STU3/ValueSet/ODSAPI-OrganizationRole-1" />
+    <version value="0.0.1" />
+    <name value="ODS API Organization Role" />
+    <status value="draft" />
+    <date value="2017-06-17" />
+    <publisher value="NHS Digital" />
+    <contact>
+        <name value="Interoperability Team" />
+        <telecom>
+            <value value="interoperabilityteam@nhs.net" />
+            <use value="work" />
+        </telecom>
+    </contact>
+    <description value="A ValueSet that identifies the role(s) of the organization." />
+    <copyright value="Copyright © 2017 Health and Social Care Information Centre. NHS Digital is the trading name of the Health and Social Care Information Centre." />
+    <compose>
+        <include>
+            <system value="https://fhir.nhs.uk/STU3/ODSAPI-OrganizationRole-1" />
+        </include>
+    </compose>
+</ValueSet>
+```
