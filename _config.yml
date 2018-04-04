@@ -27,7 +27,7 @@ github_editme_path: /edit/develop/
 #twitter_username: twitter_username
 #twitter_site_hashtags: twitter_site_hashtags
 
-fhir_profile_baseurl: https://simplifier.net/Test-FHIRODSLookupAP/
+fhir_profile_baseurl: https://fhir.nhs.uk/
 fhir_profile_ext:
 
 host: 127.0.0.1
@@ -102,16 +102,16 @@ description: "The FHIR ODS Lookup API supports the read only retrieval of inform
 sitemap: true
 
 # needed for sitemap.xml file only
-url: https://nhsconnect.github.io/CareConnectAPI
+url: https://nhsconnect.github.io/FHIR-ODS-API/
 
-repository: nhsconnect/CareConnectAPI
+repository: nhsconnect/FHIR-ODS-API
 
 gist:
   noscript: false
 
 site:
   fhirprofiles:
-    patient: "[FHIR ODS Lookup](https://fhir.nhs.uk/STU3/StructureDefinition/Organization-1.html)"
+    Organization: "[FHIR ODS Lookup](https://fhir.nhs.uk/STU3/StructureDefinition/Organization-1.html)"
 
 plugins:
    - jekyll-github-metadata

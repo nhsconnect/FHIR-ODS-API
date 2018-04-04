@@ -9,7 +9,7 @@ summary: A CodeSystem defines a set of codes with meanings.
 
 {% include custom/search.warnbanner.html %}
 
-{% include custom/fhir.referencemin.html resource="[ODS API Organization Role](tbc)" resource1="[ODS API Organization Record Class](https://fhir.nhs.uk/STU3/CodeSystem/ODSAPI-OrganizationRecordClass-1)" page="" fhirlink="[CodeSystem](http://www.hl7.org/fhir/stu3/codesystem.html)" content="User Stories" userlink="" %}
+{% include custom/fhir.referencemin.html resource="[ODS API Organization Role](https://directory.spineservices.nhs.uk/STU3/CodeSystem/ODSAPI-OrganizationRole-1)" resource1="[ODS API Organization Record Class](https://fhir.nhs.uk/STU3/CodeSystem/ODSAPI-OrganizationRecordClass-1)" page="" fhirlink="[CodeSystem](http://www.hl7.org/fhir/stu3/codesystem.html)" content="User Stories" userlink="" %}
 
 
 ## 1. Read ##
@@ -27,36 +27,10 @@ Return the CodeSystem ODS lookup API 'ODS API Organization Role'. Replace 'baseU
 
 #### 2.1.1. cURL ####
 
-{% include custom/embedcurl.html title="Read ODS lookup API 'ODS API Organization Role CodeSystem'" command="curl -H 'Accept: application/fhir+xml' -H 'Authorization: BEARER [token]' -X GET  'https://fhir.nhs.uk/STU3/CodeSystem/ODSAPI-OrganizationRecordClass-1'" %}
+{% include custom/embedcurl.html title="Read ODS lookup API 'ODS API Organization Role CodeSystem'" command="curl -H 'Accept: application/fhir+xml' -X GET  'https://fhir.nhs.uk/STU3/CodeSystem/ODSAPI-OrganizationRecordClass-1'" %}
 
 {% include custom/search.response.headers.html resource="CodeSystem"  %}
 
 ### 2.3 Response Body ###
 
-```xml
-<CodeSystem>
-    <url value="https://fhir.nhs.uk/STU3/CodeSystem/ODSAPI-OrganizationRecordClass-1" />
-    <version value="0.0.1" />
-    <name value="ODS API Organization Record Class" />
-    <status value="draft" />
-    <publisher value="NHS Digital" />
-    <contact>
-        <name value="Interoperability Team" />
-        <telecom>
-            <value value="interoperabilityteam@nhs.net" />
-            <use value="work" />
-        </telecom>
-    </contact>
-    <description value="A CodeSystem that identifies the organization record class." />
-    <copyright value="Copyright © 2017 Health and Social Care Information Centre. NHS Digital is the trading name of the Health and Social Care Information Centre." />
-    <content value="complete" />
-    <concept>
-        <code value="1" />
-        <display value="HSCOrg" />
-    </concept>
-    <concept>
-        <code value="2" />
-        <display value="HSCSite" />
-    </concept>
-</CodeSystem>
-```
+<script src="https://gist.github.com/IOPS-DEV/dd835e309db1b643f056e39d02c886ce.js"></script>

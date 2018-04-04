@@ -8,7 +8,7 @@ summary: A formally or informally recognized grouping of people or organizations
 ---
 {% include custom/search.warnbanner.html %}
 
-{% include custom/fhir.reference.html resource="Organization" page="ODSAPI-Organization" fhirlink="[Organization](https://www.hl7.org/fhir/stu3/organization.html)" content="User Stories" userlink="engage_case_studies.html" %}
+{% include custom/fhir.referencemin.html resource="[ODSAPI-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/ODSAPI-Organization-1)" page="" fhirlink="[Organization](https://www.hl7.org/fhir/stu3/organization.html)" content="User Stories" userlink="engage_case_studies.html" %}
 
 ## 1. Read ##
 
@@ -44,7 +44,7 @@ By default the response will be returned in JSON, however XML is also supported.
 | <a href="restfulapis_identification_organization.html#tokenods-org-role">`ods-org-role`</a> | `token` | A role of the organization| Organization.extension('https://fhir.nhs.uk/STU3/StructureDefinition/Extension-ODSAPI-OrganizationRole-1').extension('role').value|
 | <a href="restfulapis_identification_organization.html#tokenods-org-primaryRole">`ods-org-primaryRole`</a> | `token` | Whether a role of the organization is it's primary role | Organization.extension('https://fhir.nhs.uk/STU3/StructureDefinition/Extension-ODSAPI-OrganizationRole-1').extension('primaryrole').value|
 
-### Additional Parameters ###
+Additional Parameters:
 
 | Name | Parameter Type | Description | Allowable Content |
 |------|------|-------------|------|
@@ -310,13 +310,13 @@ The below table summarises the types of error that could occur, and the HTTP res
 
 | HTTP Code | issue.severity | issue.code | issue.details.code | issue.details.display | 
 | :--------- |:-------- |:-------- |:--------- |:-------- |
-|404|error |invalid|NO_RECORD_FOUND|No record found|
-|406|error |invalid|INVALID_CODE_SYSTEM|Invalid code system|
-|406|error |invalid|INVALID_CODE_VALUE|Invalid code value|
-|406|error |invalid|INVALID_IDENTIFIER_SYSTEM|Invalid identifier system|
-|406|error |invalid|INVALID_IDENTIFIER_VALUE|Invalid identifier value|
-|406|error |invalid|INVALID_PARAMETER|Invalid parameter|
-|406|error |invalid|INVALID_VALUE|An input field has an invalid value for its type|
+|404|error |not-found|NO_RECORD_FOUND|No record found|
+|400|error |code-invalid|INVALID_CODE_SYSTEM|Invalid code system|
+|400|error |code-invalid|INVALID_CODE_VALUE|Invalid code value|
+|400|error |code-invalid|INVALID_IDENTIFIER_SYSTEM|Invalid identifier system|
+|400|error |code-invalid|INVALID_IDENTIFIER_VALUE|Invalid identifier value|
+|400|error |invalid|INVALID_PARAMETER|Invalid parameter|
+|400|error |invalid|INVALID_VALUE|An input field has an invalid value for its type|
 
 <script src="https://gist.github.com/IOPS-DEV/55b50b6644ca50de729e2379b38684e7.js"></script>
 
