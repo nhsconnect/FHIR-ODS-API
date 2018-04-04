@@ -13,4 +13,5 @@ summary: "Communication channels used for the FHIR&reg; ODS Lookup API."
 For general enquiries please send an email to the NHS Digital Interoperability Team at <a href="mailto:interoperabilityteam@nhs.net">interoperabilityteam@nhs.net</a>.
 <br><br>
 
+For general queries regarding ODS data please contact <a href="exeter.helpdesk@nhs.net">exeter.helpdesk@nhs.net</a>.
 <br><br>

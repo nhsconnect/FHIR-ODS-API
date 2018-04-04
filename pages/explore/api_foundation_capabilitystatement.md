@@ -9,7 +9,7 @@ summary: A Capability Statement is a set of capabilities of a FHIR Server that m
 
 {% include custom/search.warnbanner.html %}
 
-{% include custom/fhir.referencemin.html resource="" page="" fhirlink="[Capability Statement](https://www.hl7.org/fhir/capabilitystatement.html)" content="User Stories" userlink="" %}
+{% include custom/fhir.referencemin.html resource="[Capability Statement](https://fhir.nhs.uk/STU3/StructureDefinition/NHSDigital-CapabilityStatement-1)" page="" fhirlink="[Capability Statement](https://www.hl7.org/fhir/capabilitystatement.html)" content="User Stories" userlink="" %}
 
 
 ## 1. Read ##
@@ -23,7 +23,7 @@ By default the response will be returned in JSON, however XML is also supported.
 
 For details of this interaction - see the [HL7 FHIR RESTful API](https://www.hl7.org/fhir/http.html#capabilities)
 
-All requests SHALL contain a valid ‘Authorization’ header and SHALL contain an ‘Accept’ header with at least one of the following application/fhir+xml or application/fhir+json.
+
 
 ## 2. Example ##
 
@@ -33,7 +33,7 @@ Retrieve the Capability Statement from the FHIR Server, the format of the respon
 
 #### 2.1.1. cURL ####
 
-{% include custom/embedcurl.html title="Read Server Capability Statement" command="curl -H 'Accept: application/fhir+xml' -H 'Authorization: BEARER [token]' -X GET '[baseUrl]/metadata'" %}
+{% include custom/embedcurl.html title="Read Server Capability Statement" command="curl -H 'Accept: application/fhir+xml' -X GET '[baseUrl]/metadata'" %}
 
 {% include custom/search.response.headers.html resource="Conformance"  %}
 
