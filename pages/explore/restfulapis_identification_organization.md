@@ -8,7 +8,7 @@ summary: A formally or informally recognized grouping of people or organizations
 ---
 {% include custom/search.warnbanner.html %}
 
-{% include custom/fhir.reference.html resource="Organization" page="ODSAPI-Organization" fhirlink="[Organization](https://www.hl7.org/fhir/stu3/organization.html)" content="User Stories" userlink="engage_case_studies.html" %}
+{% include custom/fhir.referencemin.html resource="[ODSAPI-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/ODSAPI-Organization-1)" page="" fhirlink="[Organization](https://www.hl7.org/fhir/stu3/organization.html)" content="User Stories" userlink="engage_case_studies.html" %}
 
 ## 1. Read ##
 
@@ -44,7 +44,7 @@ By default the response will be returned in JSON, however XML is also supported.
 | <a href="restfulapis_identification_organization.html#tokenods-org-role">`ods-org-role`</a> | `token` | A role of the organization| Organization.extension('https://fhir.nhs.uk/STU3/StructureDefinition/Extension-ODSAPI-OrganizationRole-1').extension('role').value|
 | <a href="restfulapis_identification_organization.html#tokenods-org-primaryRole">`ods-org-primaryRole`</a> | `token` | Whether a role of the organization is it's primary role | Organization.extension('https://fhir.nhs.uk/STU3/StructureDefinition/Extension-ODSAPI-OrganizationRole-1').extension('primaryrole').value|
 
-### Additional Parameters ###
+Additional Parameters:
 
 | Name | Parameter Type | Description | Allowable Content |
 |------|------|-------------|------|
@@ -77,7 +77,7 @@ By default, a field matches a string query if the value of the field equals or s
 To search for a name that begins with "Leeds", the following search should be executed: 
 
 ```
-GET https://[baseUrl]/Organization?name=Leeds
+GET [baseUrl]/Organization?name=Leeds
 ```
 This will return the ODS records that have an Organization name that begins with "Leeds" e.g. RQS98 - Leeds Chest Clinic and RX847 - Leeds Central Ambulance Station etc.
 
@@ -88,7 +88,7 @@ The `:contains` modifier returns results that include the supplied parameter val
 To search for a name that contains "Leeds", the following search should be executed:
 
 ```
-GET https://[baseUrl]/Organization?name:contains=Leeds
+GET [baseUrl]/Organization?name:contains=Leeds
 ```
 This will return the ODS records that have an Organization name that contains the word "Leeds" within its name e.g 5HL18 - South Leeds Clinical Assessment Service and B86013 - The North Leeds Medical Practice etc.
 
@@ -101,7 +101,7 @@ The `:exact` modifier returns results that match the entire supplied parameter, 
 To search for an exact name e.g. "LEEDS TEACHING HOSPITALS NHS TRUST", the following search should be executed:
 
 ```
-GET https://[baseUrl]/Organization?name:exact=LEEDS TEACHING HOSPITALS NHS TRUST
+GET [baseUrl]/Organization?name:exact=LEEDS TEACHING HOSPITALS NHS TRUST
 ```
 
 This will return the ODS record where the Organization name is exactly "LEEDS TEACHING HOSPITALS NHS TRUST". 
@@ -114,14 +114,14 @@ An ODS record contains a status of active or inactive.
 To search for an active ODS record, the following search should be executed:
 
 ```
-GET https://[baseUrl]/organization?active=true
+GET [baseUrl]/Organization?active=true
 ```
 This will return all the ODS records where the status of the organisation is active.
 
 To search for an for an inactive ODS record, the following search should be executed:
 
 ``` 
-GET https://[baseUrl]/organization?active=false
+GET [baseUrl]/Organization?active=false
 ```
 This will return all the ODS records where the status of the organisation is inactive.
 
@@ -139,7 +139,7 @@ By default, a field matches a string query if the value of the field equals or s
 To search for a postcode that begins with "LS1", the following search should be executed:
 
 ```
-GET https://[baseUrl]/organization?address-postalcode=LS1
+GET [baseUrl]/Organization?address-postalcode=LS1
 ```
 
 This will return all the ODS records with a postcode beginning with LS1 (All organisations with postcodes including LS1, LS10, LS11, etc.)
@@ -151,7 +151,7 @@ The `:contains` modifier returns results that include the supplied parameter val
 To search for a postcode that contains with "LS6 4", the following search should be executed:
 
 ```
-GET https://[baseUrl]/organization?address-postalcode:contains=LS6 4
+GET [baseUrl]/Organization?address-postalcode:contains=LS6 4
 ```
 
 This will return all the ODS records with a postcode containing LS6 4 anywhere in the postcode e.g. Sandfield House NH, LS6 4DZ
@@ -167,7 +167,7 @@ This will return all the ODS records with a postcode
 To search for an exact postcode "LS6 4JN" the following search should be executed:
 
 ```
-GET https://[baseUrl]/organization?address-postalcode:exact=LS6 4JN
+GET [baseUrl]/Organization?address-postalcode:exact=LS6 4JN
 ```
 
 This will return all the ODS records with a postcode of LS6 4JN e.g Meanwood Health Centre, LS6 4JN
@@ -181,7 +181,7 @@ By default, a field matches a string query if the value of the field equals or s
 To search for a city that begins with "Peter", the following search should be executed: 
 
 ```
-GET https://[baseUrl]/Organization?address-city=Peter
+GET [baseUrl]/Organization?address-city=Peter
 ```
 This will return the ODS records that have a city that begins with "Peter" e.g. Peterborough, Petersfield, Peterlee etc.
 
@@ -192,7 +192,7 @@ The `:contains` modifier returns results that include the supplied parameter val
 To search for a city that contains "land", the following search should be executed:
 
 ```
-GET https://[baseUrl]/Organization?address-city:contains=land
+GET [baseUrl]/Organization?address-city:contains=land
 ```
 This will return the ODS records that have a city that contains the word "land" e.g Hayling Island, Llandrindod Wells, Sunderland etc.
 
@@ -205,12 +205,12 @@ The `:exact` modifier returns results that match the entire supplied parameter, 
 To search for an exact name e.g. "DERBY" , the following search should be executed:
 
 ```
-GET https://[baseUrl]/Organization?name:exact=DERBY
+GET [baseUrl]/Organization?name:exact=DERBY
 ```
 
 This will return the ODS record where the city is exactly "DERBY". 
 
-{% include custom/search.nopat.role.html para="2.1.8." resource="Organization" content="ods-org-role"  example="https://[baseUrl]/STU3/CodeSystem/ODSAPI-OrganizationRole-1|197" text1="system" text2="https://[baseUrl]/STU3/CodeSystem/ODSAPI-OrganizationRole-1" text3="code" text4="197 (NHS Trust)" example2="197" text5="system" text6="197 (NHS Trust)"%}
+{% include custom/search.nopat.role.html para="2.1.8." resource="Organization" content="ods-org-role"  example="[baseUrl]/STU3/CodeSystem/ODSAPI-OrganizationRole-1|197" text1="system" text2="[baseUrl]/STU3/CodeSystem/ODSAPI-OrganizationRole-1" text3="code" text4="197 (NHS Trust)" example2="197" text5="system" text6="197 (NHS Trust)"%}
 
 An ODS record contains one or many roles.
 
@@ -223,11 +223,11 @@ Composite search parameters support joining single values. Multiple roles can be
 An 'AND' search can be executed by repeating the parameter. To search for ODS records that have the roles '76 - GP PRACTICE' **AND** '177 - PRESCRIBING COST CENTRE', the following search should be executed:
 
 ```
-GET https://[baseUrl]/Organization?ods-org-role=https://[baseUrl]/STU3/CodeSystem/ODSAPI-OrganizationRole-1|76&ods-org-role=https://[baseUrl]/STU3/CodeSystem/ODSAPI-OrganizationRole-1|177
+GET [baseUrl]/Organization?ods-org-role=[baseUrl]/STU3/CodeSystem/ODSAPI-OrganizationRole-1|76&ods-org-role=[baseUrl]/STU3/CodeSystem/ODSAPI-OrganizationRole-1|177
 ```
 *or*
 ```
-GET https://[baseUrl]/Organization?ods-org-role=76&ods-org-role=177
+GET [baseUrl]/Organization?ods-org-role=76&ods-org-role=177
 ```
 This will return ODS records that have the roles '76 - GP PRACTICE' **AND** '177 - PRESCRIBING COST CENTRE' e.g. A81001 - THE DENSHAM SURGERY.
 
@@ -236,11 +236,11 @@ This will return ODS records that have the roles '76 - GP PRACTICE' **AND** '177
 An 'OR' search can be executed by using a single parameter with multiple values separated by a `,`. To search for an ODS record with the roles '197 - NHS TRUST' **OR** '198 - NHS TRUST SITE', the following search should be executed:
 
 ```
-GET https://[baseUrl]/Organization?ods-org-role=https://[baseUrl]/STU3/CodeSystem/ODSAPI-OrganizationRole-1|197,198
+GET [baseUrl]/Organization?ods-org-role=[baseUrl]/STU3/CodeSystem/ODSAPI-OrganizationRole-1|197,198
 ```
 *or*
 ```
-GET https://[baseUrl]/Organization?ods-org-role=197,198
+GET [baseUrl]/Organization?ods-org-role=197,198
 ```
 This will return the ODS records that have either role '197 - NHS TRUST' **OR** '198 - NHS TRUST SITE'. 
 
@@ -250,11 +250,11 @@ This will return the ODS records that have either role '197 - NHS TRUST' **OR** 
 'AND' parameters and 'OR' parameters may also be combined. To search for an ODS record with the role '157 - NON-NHS ORGANISATION' **AND** either roles '29 - TREATMENT CENTRE' **OR** '15 - REG'D UNDER PART 2 CARE STDS ACT 2000'.
 
 ```
-GET https://[baseUrl]/Organization?ods-org-role=https://[baseUrl]/STU3/CodeSystem/ODSAPI-OrganizationRole-1|157&ods-org-role=https://[baseUrl]/STU3/CodeSystem/ODSAPI-OrganizationRole-1|29,15
+GET [baseUrl]/Organization?ods-org-role=[baseUrl]/STU3/CodeSystem/ODSAPI-OrganizationRole-1|157&ods-org-role=[baseUrl]/STU3/CodeSystem/ODSAPI-OrganizationRole-1|29,15
 ```
 *or*
 ```
-GET https://[baseUrl]/Organization?ods-org-role=157&ods-org-role=29,15
+GET [baseUrl]/Organization?ods-org-role=157&ods-org-role=29,15
 ```
 This will return the ODS records that have the following role codes:
 
@@ -271,22 +271,22 @@ An ODS record contains one role with a status of primary role.
 To search for an ODS record with a specified primary role '157 - NON-NHS ORGANISATION', the following search should be executed:
 
 ```
-GET https://[baseUrl]/Organization?ods-org-role=https://[baseUrl]/STU3/CodeSystem/ODSAPI-OrganizationRole-1|157&ods-org-primaryRole=true
+GET [baseUrl]/Organization?ods-org-role=[baseUrl]/STU3/CodeSystem/ODSAPI-OrganizationRole-1|157&ods-org-primaryRole=true
 ```
 *or*
 ```
-GET https://[baseUrl]/Organization?ods-org-role=157&ods-org-primaryRole=true
+GET [baseUrl]/Organization?ods-org-role=157&ods-org-primaryRole=true
 ```
 This will return all the ODS records with a primary role of '157 - NON-NHS ORGANISATION'.
 
 To search for an ODS record without a specified primary role of '76 - GP PRACTICE', the following search should be executed:
 
 ```
-GET https://[baseUrl]/Organization?ods-org-role=https://[baseUrl]/STU3/CodeSystem/ODSAPI-OrganizationRole-1|76&ods-org-primaryRole=false
+GET [baseUrl]/Organization?ods-org-role=[baseUrl]/STU3/CodeSystem/ODSAPI-OrganizationRole-1|76&ods-org-primaryRole=false
 ```
 *or*
 ```
-GET https://[baseurl]/Organization?ods-org-role=76&ods-org-primaryRole=true
+GET [baseurl]/Organization?ods-org-role=76&ods-org-primaryRole=true
 ```
 This will return all the ODS records with a role of '76 - GP PRACTICE' which is not a primary role.
 
@@ -310,13 +310,13 @@ The below table summarises the types of error that could occur, and the HTTP res
 
 | HTTP Code | issue.severity | issue.code | issue.details.code | issue.details.display | 
 | :--------- |:-------- |:-------- |:--------- |:-------- |
-|404|error |invalid|NO_RECORD_FOUND|No record found|
-|406|error |invalid|INVALID_CODE_SYSTEM|Invalid code system|
-|406|error |invalid|INVALID_CODE_VALUE|Invalid code value|
-|406|error |invalid|INVALID_IDENTIFIER_SYSTEM|Invalid identifier system|
-|406|error |invalid|INVALID_IDENTIFIER_VALUE|Invalid identifier value|
-|406|error |invalid|INVALID_PARAMETER|Invalid parameter|
-|406|error |invalid|INVALID_VALUE|An input field has an invalid value for its type|
+|404|error |not-found|NO_RECORD_FOUND|No record found|
+|400|error |code-invalid|INVALID_CODE_SYSTEM|Invalid code system|
+|400|error |code-invalid|INVALID_CODE_VALUE|Invalid code value|
+|400|error |code-invalid|INVALID_IDENTIFIER_SYSTEM|Invalid identifier system|
+|400|error |code-invalid|INVALID_IDENTIFIER_VALUE|Invalid identifier value|
+|400|error |invalid|INVALID_PARAMETER|Invalid parameter|
+|400|error |invalid|INVALID_VALUE|An input field has an invalid value for its type|
 
 <script src="https://gist.github.com/IOPS-DEV/55b50b6644ca50de729e2379b38684e7.js"></script>
 
