@@ -7,8 +7,6 @@ permalink: api_foundation_capabilitystatement.html
 summary: A Capability Statement is a set of capabilities of a FHIR Server that may be used as a statement of actual server functionality or a statement of required or desired server implementation.
 ---
 
-{% include custom/search.warnbanner.html %}
-
 {% include custom/fhir.referencemin.html resource="[Capability Statement](https://fhir.nhs.uk/STU3/StructureDefinition/NHSDigital-CapabilityStatement-1)" page="" fhirlink="[Capability Statement](https://www.hl7.org/fhir/capabilitystatement.html)" content="User Stories" userlink="" %}
 
 
@@ -39,12 +37,8 @@ Retrieve the Capability Statement from the FHIR Server, the format of the respon
 
 ### 2.3 Response Body ###
 
-{% include important.html content="The following draft Capability Statement will move as the Implementation Guide moves on." %}
-
 <script src="https://gist.github.com/IOPS-DEV/a28653c2db94639b1a0ab2aafd259d2f.js"></script>
 
-
-{% include important.html content="The following draft capability statement will move as the implementation guide moves on." %}
 
 
 ### 2.4 C# ###

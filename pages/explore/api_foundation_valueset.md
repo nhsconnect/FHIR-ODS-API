@@ -7,8 +7,6 @@ permalink: api_foundation_valueset.html
 summary: A ValueSet selects a set of codes from those defined by one or more code systems.
 ---
 
-{% include custom/search.warnbanner.html %}
-
 {% include custom/fhir.referencemin.html resource="[ODS API Organization Role](https://fhir.nhs.uk/STU3/ValueSet/ODSAPI-OrganizationRole-1)" resource1="[ODS API Organization Record Class](https://fhir.nhs.uk/STU3/ValueSet/ODSAPI-OrganizationRecordClass-1)" page="" fhirlink="[ValueSet](http://www.hl7.org/fhir/stu3/valueset.html)" content="User Stories" userlink="" %}
 
 

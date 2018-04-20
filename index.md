@@ -8,10 +8,6 @@ toc: false
 summary: A brief introduction to getting started with the FHIR&reg; ODS Lookup API
 ---
 
-{% include important.html content="This site is under active development by NHS Digital and is intended to provide all the technical resources you need to successfully develop the FHIR&reg; ODS Lookup API. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis." %}
-
-{% include warning.html content="This site is provided for information only and it is advised not to develop against these specifications until a formal announcement has been made." %}
-
 # Introduction #
 
 The FHIR&reg; ODS Lookup API has been developed by NHS Digital. The API aims to  better support the delivery of care by opening up information and data stored by the Organisation Data Service (ODS).
@@ -25,5 +21,4 @@ This guide has been created to support the adoption of the FHIR&reg; ODS Lookup 
 
 {% include custom/api_overview.svg %}
 
-{% include custom/contribute.html content="If you want to get involved in the development of this API then please get in touch with interoperabilityteam@nhs.net"%}
 

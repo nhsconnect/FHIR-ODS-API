@@ -6,7 +6,6 @@ sidebar: accessrecord_rest_sidebar
 permalink: restfulapis_identification_organization.html
 summary: A formally or informally recognized grouping of people or organizations formed for the purpose of achieving some form of collective action. Includes companies, institutions, corporations, departments, community groups, healthcare practice groups, etc.
 ---
-{% include custom/search.warnbanner.html %}
 
 {% include custom/fhir.referencemin.html resource="[ODSAPI-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/ODSAPI-Organization-1)" page="" fhirlink="[Organization](https://www.hl7.org/fhir/stu3/organization.html)" content="User Stories" userlink="engage_case_studies.html" %}
 

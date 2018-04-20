@@ -7,10 +7,7 @@ permalink: api_foundation_codesystem.html
 summary: A CodeSystem defines a set of codes with meanings.
 ---
 
-{% include custom/search.warnbanner.html %}
-
 {% include custom/fhir.referencemin.html resource="[ODS API Organization Role](https://directory.spineservices.nhs.uk/STU3/CodeSystem/ODSAPI-OrganizationRole-1)" resource1="[ODS API Organization Record Class](https://fhir.nhs.uk/STU3/CodeSystem/ODSAPI-OrganizationRecordClass-1)" page="" fhirlink="[CodeSystem](http://www.hl7.org/fhir/stu3/codesystem.html)" content="User Stories" userlink="" %}
-
 
 ## 1. Read ##
 
