@@ -10,7 +10,7 @@ summary: A brief introduction to getting started with the FHIR&reg; ODS Lookup A
 
 # Introduction #
 
-The FHIR&reg; ODS Lookup API has been developed by NHS Digital and provides a searchable national repository of NHS Organisation Reference Data. The data returned by the FHIR&reg; interface is managed and published by ODS (Organisation Data Service) within NHS Digital. The FHIR&reg; ODS Lookup API forms part of the ODS API Suite further information relating to the ODS API Suite can be found at: <a href="https://digital.nhs.uk/organisation-data-service/APIs">NHS Digital website</a>.
+The FHIR&reg; ODS Lookup API has been developed by NHS Digital and provides a searchable national repository of NHS Organisation Reference Data. The data returned by the FHIR&reg; interface is managed and published by ODS (Organisation Data Service) within NHS Digital. The FHIR&reg; ODS Lookup API forms part of the ODS API Suite further information relating to the ODS API Suite can be found at: <a href="https://digital.nhs.uk/services/organisation-data-service/apis-for-the-organisation-data-service">NHS Digital website</a>.
 
 The vision is to create a library of nationally defined HL7® FHIR® resources and interaction patterns that implementers can adopt to simplify integration and interoperability within UK health and social care.
 
