@@ -7,8 +7,6 @@ permalink: design.html
 summary: "Describes the steps required to design & build an API described in Explore"
 ---
 
-{% include important.html content="All information provided below is indicative and subject to on-going review." %}
-
 The Design & Build section contains descriptions of approaches and suggestions for building APIs.
 
 | Page              |  Description    |

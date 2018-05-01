@@ -7,17 +7,15 @@ permalink: api_foundation_capabilitystatement.html
 summary: A Capability Statement is a set of capabilities of a FHIR Server that may be used as a statement of actual server functionality or a statement of required or desired server implementation.
 ---
 
-{% include custom/search.warnbanner.html %}
-
 {% include custom/fhir.referencemin.html resource="[Capability Statement](https://fhir.nhs.uk/STU3/StructureDefinition/NHSDigital-CapabilityStatement-1)" page="" fhirlink="[Capability Statement](https://www.hl7.org/fhir/capabilitystatement.html)" content="User Stories" userlink="" %}
 
 
 ## 1. Read ##
 
 <div markdown="span" class="alert alert-success" role="alert">
-GET [baseUrl]/metadata</div>
+GET https://directory.spineservices.nhs.uk/STU3/metadata</div>
 
-The /metadata path on the root of the FHIR server will return the Capability Statement for the FHIR server:
+The /metadata path on the root of the FHIR server will return the <code class="highlighter-rouge">CapabilityStatement</code> for the FHIR server:
 
 By default the response will be returned in JSON, however XML is also supported.
 
@@ -33,18 +31,14 @@ Retrieve the Capability Statement from the FHIR Server, the format of the respon
 
 #### 2.1.1. cURL ####
 
-{% include custom/embedcurl.html title="Read Server Capability Statement" command="curl -H 'Accept: application/fhir+xml' -X GET '[baseUrl]/metadata'" %}
+{% include custom/embedcurl.html title="Read Server Capability Statement" command="curl -H 'Accept: application/fhir+xml' -X GET 'https://directory.spineservices.nhs.uk/STU3/metadata'" %}
 
 {% include custom/search.response.headers.html resource="Conformance"  %}
 
 ### 2.3 Response Body ###
 
-{% include important.html content="The following draft Capability Statement will move as the Implementation Guide moves on." %}
-
 <script src="https://gist.github.com/IOPS-DEV/a28653c2db94639b1a0ab2aafd259d2f.js"></script>
 
-
-{% include important.html content="The following draft capability statement will move as the implementation guide moves on." %}
 
 
 ### 2.4 C# ###

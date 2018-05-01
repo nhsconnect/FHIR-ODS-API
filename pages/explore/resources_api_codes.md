@@ -6,21 +6,20 @@ sidebar: overview_sidebar
 permalink: resources_api_codes.html
 summary: "Details of the API Codes used in the responses."
 ---
-{% include custom/search.warnbanner.html %}
 
 ## 1. API Codes ##
 
 ### 1.1. 2xx Http Success ###
 
 #### 200 OK ####
-Successful Operation
+Successful Operation.
 
 ### 1.2. 4xx Http Client Errors ###
 
 #### 404 Not Found ####
-No record found for supplied ODS code
+No record found for the supplied ODS code.
 
-#### 406 Not Acceptable ####
+#### 400 Bad Request ####
 This response can be generated for several reasons, examples are shown below:
 
 | issue.details.display | Examples of issue.diagnostics |

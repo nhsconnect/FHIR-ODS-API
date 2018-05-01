@@ -7,8 +7,10 @@ permalink: overview_release_notes.html
 summary: Summary release notes of the FHIR&reg; ODS Lookup API Implementation Guide
 ---
 
-{% include important.html content="This site is under active development by NHS Digital and is intended to provide all the technical resources you need to successfully develop applications using the FHIR&reg; ODS Lookup API. This project is being developed using an agile methodology so iterative updates to content will be added on a regular basis." %}
+## 1.0.0-Live ##
 
+Implementation Guide uplifted to Live status
+- Removal of development banners and warnings
 
 ## 1.1.0-beta ##
 
