@@ -7,8 +7,6 @@ permalink: explore.html
 summary: "Overview of the Resources section"
 ---
 
-{% include custom/search.warnbanner.html %}
-
 {% include custom/api_overview.svg %}
 
 ## 1. Resource API Structure ##
@@ -49,7 +47,7 @@ This section lists the resources used in the ODS Lookup API that are covered wit
 <th>Entities</th>
 </tr>
 <tr>
-<td><a href="api_entity_organisation.html">Organization</a></td>
+<td><a href="restfulapis_identification_organization.html">Organization</a></td>
 </tr>
 </table>
 

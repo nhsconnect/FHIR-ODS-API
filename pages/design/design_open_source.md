@@ -7,8 +7,6 @@ permalink: design_open_source.html
 summary: "Details of open source FHIR libraries."
 ---
 
-{% include custom/search.warnbanner.html %}
-
 ## 1. Open Source FHIR Libraries ##
 
 The following open source FHIR libraries are available on GitHub:

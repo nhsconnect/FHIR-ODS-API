@@ -7,9 +7,7 @@ permalink: build_organization_search.html
 summary: "How to use the FHIR ODS Lookup API to perform searches on ODS, containing examples that use different technologies to perform a search. This includes HAPI Java, C# .NET and cURL."
 ---
 
-{% include custom/search.warnbanner.html %}
-
-{% include custom/ihe.reference.html apicontent="[Organization](api_entity_organisation.html) "  odscontent="[NHS Digital ODS Offical Site](https://digital.nhs.uk/organisation-data-service)"  patterncontent="[Shared Repository](https://developer.nhs.uk/library/architecture/integration-patterns/portal/)" %}
+{% include custom/ihe.reference.html apicontent="[Organization](restfulapis_identification_organization.html) "  odscontent="[NHS Digital ODS Offical Site](https://digital.nhs.uk/organisation-data-service)"  patterncontent="[Shared Repository](https://developer.nhs.uk/library/architecture/integration-patterns/portal/)" %}
 
 ## 1. Overview ##
 
@@ -30,12 +28,12 @@ caption="ODS Data Feeds" %}
 ODS Lookup API provides an API using a [RESTful](https://en.wikipedia.org/wiki/Representational_state_transfer) interface following a {% include custom/patterns.inline.html content="[resource API pattern](http://www.servicedesignpatterns.com/WebServiceAPIStyles/ResourceAPI)" %} to provide access to the Organisational Data Service (ODS) database.
 
 This is particularly suited to:
-* A health portal securely exposing organisational information to browser based plugins
-* Medical devices which need to access organisational information
+* A health portal securely exposing organisational information to browser based plugins.
+* Medical devices which need to access organisational information.
 * Mobile devices used by physicians which need to establish organisational information.
 * Web based EPR/EHR applications which wish to provide dynamic updates of organisation details.
-* Any low resource application which exposes organisational search functionality
-* A facade providing a simple API to a complex interface
+* Any low resource application which exposes organisational search functionality.
+* A facade providing a simple API to a complex interface.
 
 ## 2. Client Organisation Search ##
 
