@@ -13,9 +13,9 @@ summary: A Capability Statement is a set of capabilities of a FHIR Server that m
 ## 1. Read ##
 
 <div markdown="span" class="alert alert-success" role="alert">
-GET [baseUrl]/metadata</div>
+GET https://directory.spineservices.nhs.uk/STU3/metadata</div>
 
-The /metadata path on the root of the FHIR server will return the Capability Statement for the FHIR server:
+The /metadata path on the root of the FHIR server will return the <code class="highlighter-rouge">CapabilityStatement</code> for the FHIR server:
 
 By default the response will be returned in JSON, however XML is also supported.
 
@@ -31,7 +31,7 @@ Retrieve the Capability Statement from the FHIR Server, the format of the respon
 
 #### 2.1.1. cURL ####
 
-{% include custom/embedcurl.html title="Read Server Capability Statement" command="curl -H 'Accept: application/fhir+xml' -X GET '[baseUrl]/metadata'" %}
+{% include custom/embedcurl.html title="Read Server Capability Statement" command="curl -H 'Accept: application/fhir+xml' -X GET 'https://directory.spineservices.nhs.uk/STU3/metadata'" %}
 
 {% include custom/search.response.headers.html resource="Conformance"  %}
 
