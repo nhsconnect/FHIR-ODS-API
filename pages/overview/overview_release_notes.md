@@ -7,15 +7,18 @@ permalink: overview_release_notes.html
 summary: Summary release notes of the FHIR&reg; ODS Lookup API Implementation Guide
 ---
 
+## 1.1.1-Live ##
+
+- Removed unnecessary placeholder sections from site
+
+## 1.1.0-Live ##
+
+- Amendment to error handling
+
 ## 1.0.0-Live ##
 
 Implementation Guide uplifted to Live status
 - Removal of development banners and warnings
-
-## 1.1.0-beta ##
-
-- Amendment to error handling
-
 
 ## 1.0.0-beta ##
 
