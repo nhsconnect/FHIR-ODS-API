@@ -48,7 +48,7 @@ Return the CodeSystem ODS lookup API 'ODS API Organization Role'. Replace 'baseU
 
 #### 2.1.1. cURL ####
 
-{% include custom/embedcurl.html title="Read ODS lookup API 'ODS API Organization Role CodeSystem'" command="curl -H 'Accept: application/fhir+xml' -X GET  'https://fhir.nhs.uk/STU3/CodeSystem/ODSAPI-OrganizationRecordClass-1'" %}
+{% include custom/embedcurl.html title="Read ODS lookup API 'ODS API Organization Role CodeSystem'" command="curl -H 'Accept: application/fhir+xml' -X GET  'https://directory.spineservices.nhs.uk/STU3/CodeSystem/ODSAPI-OrganizationRecordClass-1'" %}
 
 {% include custom/search.response.headers.html resource="CodeSystem"  %}
 
