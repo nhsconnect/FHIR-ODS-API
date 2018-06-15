@@ -7,8 +7,6 @@ permalink: explore.html
 summary: "Overview of the Resources section"
 ---
 
-{% include custom/api_overview.svg %}
-
 ## 1. Resource API Structure ##
 
 The FHIR ODS Lookup profile API described in this section of the Implementation Guide has been structured consistently in the following way:
